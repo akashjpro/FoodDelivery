@@ -3,73 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorHomeBackground"
     android:layout_height="match_parent"
     tools:context=".ui.home.Home">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_tootbar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_tootbar" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="250dp"
+        android:layout_width="@dimen/home_title_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_50"
-        android:layout_marginLeft="@dimen/margin_50"
-        android:layout_marginTop="@dimen/margin_100"
-        android:text="Delicious food for you"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        android:textStyle="bold"
+        android:layout_marginStart="@dimen/home_title_margin_left"
+        android:layout_marginLeft="@dimen/home_title_margin_left"
+        android:layout_marginTop="@dimen/home_title_margin_top"
+        android:text="@string/home_tittle"
+        android:textAppearance="@style/Overlay.Home.Title1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
         android:id="@+id/editTextSearch"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/home_editTextSearch_height"
+        android:layout_marginStart="@dimen/home_editTextSearch_margin"
+        android:layout_marginLeft="@dimen/home_editTextSearch_margin"
+        android:layout_marginTop="@dimen/home_editTextSearch_margin_top"
+        android:layout_marginEnd="@dimen/home_editTextSearch_margin"
+        android:layout_marginRight="@dimen/home_editTextSearch_margin"
         android:background="@drawable/botron"
         android:drawableLeft="@drawable/ic_baseline_search_24"
         android:inputType="text"
-        android:hint="   Search"
+        android:hint="@string/search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:paddingLeft="20dp" />
+        android:padding="@dimen/home_editTextSearch_padding"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="@dimen/home_tabLayout_margin_left"
+        android:layout_marginTop="@dimen/home_tabLayout_margin_top"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorHomeBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearch">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Foods" />
+            android:text="@string/tap1" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Drinks" />
+            android:text="@string/tap2" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Snacks" />
+            android:text="@string/tap3" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -77,20 +77,19 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:text="see more"
-        android:textColor="@color/primaryColor"
+        android:layout_marginTop="@dimen/home_see_more_margin_top"
+        android:layout_marginRight="@dimen/home_see_more_margin_right"
+        android:text="@string/see_more"
+        android:textAppearance="@style/Overlay.Home.Title2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewFoods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/home_RecyclerView_margin_left"
+        android:layout_marginLeft="@dimen/home_RecyclerView_margin_left"
+        android:layout_marginTop="@dimen/home_RecyclerView_margin_top"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,6 +99,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorHomeBackground"
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent" />
 

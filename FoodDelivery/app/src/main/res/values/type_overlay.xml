@@ -37,5 +37,13 @@
     </style>
 
     <!-- Home Screen -->
-
+    <style name="Overlay.Home.Title1" parent="Overlay">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/zen_dots_regular</item>
+    </style>
+    <style name="Overlay.Home.Title2" parent="Overlay">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/primaryColor</item>
+    </style>
 </resources>

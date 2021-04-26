@@ -15,5 +15,10 @@
     <string name="forgot_passcode" translatable="false">Forgot passcode?</string>
 
     <!-- Home Screen -->
-
+    <string name="home_tittle" translatable="false">Delicious food for you</string>
+    <string name="search" translatable="false">Search</string>
+    <string name="tap1" translatable="false">Foods</string>
+    <string name="tap2" translatable="false">Drinks</string>
+    <string name="tap3" translatable="false">Snacks</string>
+    <string name="see_more" translatable="false">See more</string>
 </resources>

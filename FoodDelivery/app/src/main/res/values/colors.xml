@@ -22,5 +22,7 @@
     <color name="colorTabLayoutTitleActive">@color/black</color>
     <color name="colorTabLayoutTitleUnActive">#9696B2</color>
     <color name="colorTabIndicator">@color/primaryColor</color>
-
+    <!--Home Screen-->
+    <color name="colorHomeBackground">#F2F2F2</color>
+    <color name="colorHomeBackgroundSearch">#EFEEEE</color>
 </resources>
