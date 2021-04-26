@@ -11,5 +11,7 @@
 
     <!-- Login and SignUp Screen -->
     <string name="login">Đăng nhập</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="forgot_passcode">Quên mật khẩu?</string>
 
 </resources>
