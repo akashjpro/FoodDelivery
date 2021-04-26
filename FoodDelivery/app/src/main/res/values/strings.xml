@@ -13,4 +13,7 @@
     <string name="login_email" translatable="false">Email address</string>
     <string name="login_pass" translatable="false">Password</string>
     <string name="forgot_passcode" translatable="false">Forgot passcode?</string>
+
+    <!-- Home Screen -->
+
 </resources>

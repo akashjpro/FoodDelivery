@@ -11,9 +11,6 @@
         android:theme="@style/Theme.FoodDelivery">
         <activity android:name=".ui.spicychiecrns.Spicy_chiecrns"></activity>
         <activity android:name=".ui.home.Home" />
-        <activity
-            android:name=".ui.home"
-            android:label="@string/title_activity_home" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

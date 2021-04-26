@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background=""
     tools:context=".ui.loginandsignup.LoginAndSignupActivity">
 
     <ImageView
         android:id="@+id/imgTopFrame"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/image_TopFrame_height"
-        android:layout_marginBottom="@dimen/margin_450"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/frame_rectangle" />
 
     <ImageView
@@ -31,7 +31,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_32"
+        android:layout_marginBottom="@dimen/linearLayout_margin_bottom"
         app:layout_constraintBottom_toBottomOf="@+id/imgTopFrame"
         app:layout_constraintEnd_toEndOf="@id/imgTopFrame"
         app:layout_constraintStart_toStartOf="@id/imgTopFrame">
@@ -39,23 +39,23 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin_24"
-            android:layout_marginRight="@dimen/margin_24"
+            android:layout_marginLeft="@dimen/taps_margin"
+            android:layout_marginRight="@dimen/taps_margin"
             android:layout_weight="1"
             app:tabIndicatorHeight="@dimen/tab_Indicator_Height">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_24"
-                android:layout_marginRight="@dimen/margin_24"
+                android:layout_marginLeft="@dimen/taps_margin"
+                android:layout_marginRight="@dimen/taps_margin"
                 android:text="@string/login" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_24"
-                android:layout_marginRight="@dimen/margin_24"
+                android:layout_marginLeft="@dimen/taps_margin"
+                android:layout_marginRight="@dimen/taps_margin"
                 android:text="@string/sign_up" />
 
         </com.google.android.material.tabs.TabLayout>
@@ -80,10 +80,10 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_40"
-        android:layout_marginLeft="@dimen/margin_40"
-        android:layout_marginEnd="@dimen/margin_40"
-        android:layout_marginRight="@dimen/margin_40"
+        android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:text="@string/login_email"
         android:textAppearance="@style/Overlay.Login.Title2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,10 +94,10 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_40"
-        android:layout_marginLeft="@dimen/margin_40"
-        android:layout_marginEnd="@dimen/margin_40"
-        android:layout_marginRight="@dimen/margin_40"
+        android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,14 +105,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_40"
-        android:layout_marginLeft="@dimen/margin_40"
-        android:layout_marginTop="@dimen/margin_32"
-        android:layout_marginEnd="@dimen/margin_40"
-        android:layout_marginRight="@dimen/margin_40"
+        android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginTop="@dimen/textViewPassword_margin_top"
+        android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:text="@string/login_pass"
         android:textAppearance="@style/Overlay.Login.Title2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,23 +123,23 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_40"
-        android:layout_marginLeft="@dimen/margin_40"
-        android:layout_marginEnd="@dimen/margin_40"
-        android:layout_marginRight="@dimen/margin_40"
+        android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewForgotPasscode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_40"
-        android:layout_marginLeft="@dimen/margin_40"
-        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginTop="@dimen/textViewForgotPasscode_margin_top"
         android:text="@string/forgot_passcode"
         android:textAppearance="@style/Overlay.Login.Title1"
         app:layout_constraintStart_toStartOf="parent"
