@@ -2,9 +2,14 @@
 <resources>
     <string name="app_name">Giao đồ ăn</string>
 
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <nhậpstring name="title_dashboard">Dashboard</nhậpstring>
+    <string name="title_notifications">Notifications</string>
+
     <!-- Splash Screen -->
 
     <!-- Login and SignUp Screen -->
-    <string name="login">Login</string>
+    <string name="login">Đăng nhập</string>
 
 </resources>
