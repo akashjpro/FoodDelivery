@@ -4,11 +4,19 @@
     <dimen name="margin_16">16dp</dimen>
     <dimen name="margin_24">24dp</dimen>
     <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_40">40dp</dimen>
     <dimen name="margin_64">64dp</dimen>
+    <dimen name="margin_450">450dp</dimen>
 
     <!-- Splash Screen -->
     <dimen name="image_logo_width">300dp</dimen>
     <dimen name="image_logo_height">300dp</dimen>
+
+    <!--    Login Screen-->
+    <dimen name="login_image_logo_width">150dp</dimen>
+    <dimen name="login_image_logo_height">150dp</dimen>
+    <dimen name="image_TopFrame_height">400dp</dimen>
+    <dimen name="tab_Indicator_Height">2dp</dimen>
 
     <!-- Login and SignUp Screen -->
     <dimen name="button_login_width">314dp</dimen>

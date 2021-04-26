@@ -9,4 +9,8 @@
 
     <!-- Login and SignUp Screen -->
     <string name="login">Login</string>
+    <string name="sign_up" translatable="false">Sign-up</string>
+    <string name="login_email" translatable="false">Email address</string>
+    <string name="login_pass" translatable="false">Password</string>
+    <string name="forgot_passcode" translatable="false">Forgot passcode?</string>
 </resources>
