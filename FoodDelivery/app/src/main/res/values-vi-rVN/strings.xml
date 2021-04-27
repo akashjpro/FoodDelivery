@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Giao đồ ăn</string>
-
     <string name="title_activity_home">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -12,13 +11,23 @@
     <!-- Login and SignUp Screen -->
     <string name="login">Đăng nhập</string>
     <string name="sign_up">Đăng ký</string>
-    <string name="forgot_passcode">Quên mật khẩu?</string>
+    <string name="login_email">Địa chỉ </string>
+    <string name="login_pass">Mật khẩu</string>
+    <string name="forgot_pass_code">Quên mật khẩu?</string>
 
     <!--Home Screen-->
+    <string name="home_tittle">Thức ăn thơm ngon cho bạn</string>
     <string name="search">Tìm kiếm</string>
-    <string name="tap1">Thức ăn</string>
-    <string name="tap2">Đồ uống</string>
-    <string name="tap3">Thức ăn nhanh</string>
+    <string name="foods">Thức ăn</string>
+    <string name="drinks">Đồ uống</string>
+    <string name="snacks">Thức ăn nhanh</string>
     <string name="see_more">Xem thêm</string>
+
+    <!--Spicy Chiecrns Screen-->
+    <string name="spicy_chiecrns_screen_title">Tìm thấy 6 kết quả</string>
+
+    <!--    My profile-->
+    <string name="information">Thông tin</string>
+    <string name="paymentmethod">Phương thức thanh toán</string>
 
 </resources>

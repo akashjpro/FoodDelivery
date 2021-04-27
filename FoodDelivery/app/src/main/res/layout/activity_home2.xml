@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/home_menu"
         app:menu="@menu/menu_tootbar" />
 
     <TextView
@@ -24,7 +25,6 @@
         android:textAppearance="@style/Overlay.Home.Title1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/editTextSearch"
@@ -53,23 +53,25 @@
         android:layout_marginTop="@dimen/home_tabLayout_margin_top"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/colorHomeBackground"
+        app:tabGravity="start"
+        app:tabMode="scrollable"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearch">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tap1" />
+            android:text="@string/foods" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tap2" />
+            android:text="@string/drinks" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tap3" />
+            android:text="@string/snacks" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -102,6 +104,5 @@
         android:background="@color/colorHomeBackground"
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

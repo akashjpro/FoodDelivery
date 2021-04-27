@@ -5,10 +5,5 @@
         android:icon="@drawable/shoppingcart"
         android:title="Cart"
         app:showAsAction="always" />
-    <item
 
-        android:icon="@drawable/home_menu"
-        android:title="Menu"
-        app:showAsAction="always"
-        />
 </menu>
