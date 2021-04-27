@@ -28,6 +28,6 @@
 
     <!--    My profile-->
     <string name="information">Thông tin</string>
-    <string name="paymentmethod">Phương thức thanh toán</string>
+    <string name="payment_method">Phương thức thanh toán</string>
 
 </resources>

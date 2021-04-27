@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="@dimen/view_margin_top"
-        android:background="@drawable/botron_1"
+        android:background="@drawable/shape_rectangle_while4"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView

@@ -14,7 +14,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/botronimage"
+        android:background="@drawable/shape_rectangle_while5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginBottom="120dp"
-        android:src="@drawable/image"
+        android:src="@drawable/img_image"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view" />

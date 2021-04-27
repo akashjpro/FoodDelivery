@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:scaleType="center"
-        android:src="@drawable/bg_splash"/>
+        android:src="@drawable/img_bg_splash"/>
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -25,6 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_bella_olonje_new" />
+        app:srcCompat="@drawable/img_logo_bella_olonje_new" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

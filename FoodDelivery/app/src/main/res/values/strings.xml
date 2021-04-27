@@ -28,6 +28,6 @@
 
     <!--    My profile-->
     <string name="information">Information</string>
-    <string name="paymentmethod">Payment Method</string>
+    <string name="payment_method">Payment Method</string>
 
 </resources>

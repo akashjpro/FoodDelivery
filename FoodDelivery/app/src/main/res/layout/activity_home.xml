@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/home_menu"
-        app:menu="@menu/menu_tootbar" />
+        app:navigationIcon="@drawable/img_home_menu"
+        app:menu="@menu/menu_toolbar" />
 
     <TextView
         android:id="@+id/textView4"
@@ -35,7 +35,7 @@
         android:layout_marginTop="@dimen/home_editTextSearch_margin_top"
         android:layout_marginEnd="@dimen/home_editTextSearch_margin"
         android:layout_marginRight="@dimen/home_editTextSearch_margin"
-        android:background="@drawable/botron"
+        android:background="@drawable/shape_rectangle_while3"
         android:drawableLeft="@drawable/ic_baseline_search_24"
         android:inputType="text"
         android:hint="@string/search"
