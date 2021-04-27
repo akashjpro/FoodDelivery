@@ -21,4 +21,9 @@
     <string name="tap2" translatable="false">Drinks</string>
     <string name="tap3" translatable="false">Snacks</string>
     <string name="see_more" translatable="false">See more</string>
+
+    <!--Spicy Chiecrns Screen-->
+    <string name="spicy_chiecrns_screen_title" translatable="false">Found 6 results</string>
+
+
 </resources>

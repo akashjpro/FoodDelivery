@@ -39,8 +39,8 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/taps_margin"
-            android:layout_marginRight="@dimen/taps_margin"
+            android:layout_marginEnd="@dimen/taps_margin"
+            android:layout_marginStart="@dimen/taps_margin"
             android:layout_weight="1"
             app:tabIndicatorHeight="@dimen/tab_Indicator_Height">
 
@@ -62,27 +62,12 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
-        android:layout_width="@dimen/button_login_width"
-        android:layout_height="@dimen/button_login_height"
-        android:layout_marginBottom="@dimen/button_login_margin_bottom"
-        android:text="@string/login"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.LoginAndSignUp.ButtonText"
-        app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
         android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:text="@string/login_email"
         android:textAppearance="@style/Overlay.Login.Title2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,9 +79,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
         android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,10 +91,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
         android:layout_marginTop="@dimen/textViewPassword_margin_top"
         android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:text="@string/login_pass"
         android:textAppearance="@style/Overlay.Login.Title2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,9 +104,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
         android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginRight="@dimen/edit_text_and_text_view_margin"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,11 +116,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
+        android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
         android:layout_marginTop="@dimen/textViewForgotPasscode_margin_top"
         android:text="@string/forgot_passcode"
         android:textAppearance="@style/Overlay.Login.Title1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="@dimen/button_login_width"
+        android:layout_height="@dimen/button_login_height"
+        android:layout_marginBottom="52dp"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.LoginAndSignUp.ButtonText"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

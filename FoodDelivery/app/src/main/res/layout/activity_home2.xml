@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.Home">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"

@@ -14,4 +14,11 @@
     <string name="sign_up">Đăng ký</string>
     <string name="forgot_passcode">Quên mật khẩu?</string>
 
+    <!--Home Screen-->
+    <string name="search">Tìm kiếm</string>
+    <string name="tap1">Thức ăn</string>
+    <string name="tap2">Đồ uống</string>
+    <string name="tap3">Thức ăn nhanh</string>
+    <string name="see_more">Xem thêm</string>
+
 </resources>
