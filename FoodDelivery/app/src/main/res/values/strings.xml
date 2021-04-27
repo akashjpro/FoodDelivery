@@ -25,5 +25,7 @@
     <!--Spicy Chiecrns Screen-->
     <string name="spicy_chiecrns_screen_title" translatable="false">Found 6 results</string>
 
-
+<!--    My profile-->
+    <string name="information" translatable="false">Information</string>
+    <string name="paymentmethod" translatable="false">Payment Method</string>
 </resources>
