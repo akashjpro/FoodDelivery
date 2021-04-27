@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorHomeBackground"
-    tools:context=".ui.Myprofile.Myprofile">
+    tools:context=".ui.myprofile.MyProfile">
 
 
     <TextView
