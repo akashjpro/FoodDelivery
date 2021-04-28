@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
         android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
-        android:layout_marginTop="@dimen/textViewForgotPasscode_margin_top"
+        android:layout_marginTop="@dimen/text_view_forgot_pass_code_margin_top"
         android:text="@string/forgot_pass_code"
         android:textAppearance="@style/Overlay.Login.Title1"
         app:layout_constraintStart_toStartOf="parent"

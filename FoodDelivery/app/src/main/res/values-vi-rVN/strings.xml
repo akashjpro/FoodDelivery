@@ -29,5 +29,13 @@
     <!--    My profile-->
     <string name="information">Thông tin</string>
     <string name="payment_method">Phương thức thanh toán</string>
+    <string name="my_profile_name">Marvis Ighedosa</string>
+
+     <!-- TODO -->
+    <string name="my_profile_email">dosamarvis@gmail.commy</string>
+    <string name="my_profile_address">No 15 uti street of ovie palace road efurun delta state</string>
+    <string name="my_profile_radioButton_card">Card</string>
+    <string name="my_profile_radioButton_bankaccount">Bank account</string>
+    <string name="my_profile_radioButton_paypal">Paypal</string>
 
 </resources>
