@@ -47,4 +47,14 @@
     <string name="food_information_title2">Return policy</string>
     <string name="food_information_title3">Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</string>
 
+    <!--    Check out Screen-->
+    <string name="check_out_title">Delivery</string>
+    <string name="check_out_title1">Address details</string>
+    <string name="check_out_title2">Delivery method.</string>
+    <string name="check_out_change">change</string>
+    <string name="check_out_button">Proceed to payment</string>
+    <string name="check_out_radiobutton1">Door delivery</string>
+    <string name="check_out_radiobutton2">Pick up</string>
+    <string name="check_out_total">Total</string>
+
 </resources>

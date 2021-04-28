@@ -90,4 +90,42 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">15dp</item>
     </style>
+
+
+    <!--    Check out Screen-->
+    <style name="Overlay.checkout.Title" parent="Overlay">
+        <item name="fontFamily">@font/zen_dots_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+    <style name="Overlay.checkout.Title1" parent="Overlay">
+        <item name="fontFamily">@font/exo_semi_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="Overlay.checkout.Title2" parent="Overlay">
+        <item name="fontFamily">@font/exo_semi_bold</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+    <style name="Overlay.checkout.Title3" parent="Overlay">
+        <item name="fontFamily">@font/exo_thin</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="Overlay.checkout.Title4" parent="Overlay">
+        <item name="fontFamily">@font/exo_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+    <style name="Overlay.checkout.Title5" parent="Overlay">
+        <item name="fontFamily">@font/exo_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="Overlay.checkout.Title6" parent="Overlay">
+        <item name="fontFamily">@font/exo_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
 </resources>

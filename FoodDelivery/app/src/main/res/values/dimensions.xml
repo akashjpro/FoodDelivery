@@ -79,11 +79,20 @@
     <dimen name="food_information_viewpager2_width">0dp</dimen>
     <dimen name="food_information_viewpager2_height">300dp</dimen>
     <dimen name="food_information_CircleIndicator3_width">0dp</dimen>
-    <dimen name="food_information_CircleIndicator3_height">10dp</dimen>
-    <dimen name="food_information_text_view_margin_40">40dp</dimen>
-    <dimen name="food_information_text_view_margin_50">50dp</dimen>
-    <dimen name="food_information_text_view_margin_10">10dp</dimen>
+    <dimen name="food_information_CircleIndicator3_height">@dimen/margin_10</dimen>
+    <dimen name="food_information_text_view_margin_40">@dimen/margin_40</dimen>
+    <dimen name="food_information_text_view_margin_50">@dimen/margin_50</dimen>
+    <dimen name="food_information_text_view_margin_10">@dimen/margin_10</dimen>
     <dimen name="food_information_text_view_margin_30">30dp</dimen>
 
+    <!--Check out screen-->
+    <dimen name="check_out_image_farm_height1">200dp</dimen>
+    <dimen name="check_out_image_farm_height2">160dp</dimen>
+    <dimen name="check_out_margin_50">@dimen/margin_50</dimen>
+    <dimen name="check_out_margin_20">@dimen/margin_20</dimen>
+    <dimen name="check_out_margin_10">@dimen/margin_10</dimen>
+    <dimen name="check_out_margin_100">@dimen/margin_100</dimen>
+    <dimen name="check_out_layout_width">0dp</dimen>
+    <dimen name="check_out_button_height">70dp</dimen>
 
 </resources>
