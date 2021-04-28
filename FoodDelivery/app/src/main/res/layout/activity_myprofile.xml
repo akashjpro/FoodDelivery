@@ -53,7 +53,7 @@
         android:layout_marginStart="@dimen/m_tv_margin_15"
         android:layout_marginLeft="@dimen/m_tv_margin_15"
         android:layout_marginTop="@dimen/m_imageViewUser_margin"
-        android:text="Marvis Ighedosa"
+        android:text="@string/my_profile_name"
         android:textAppearance="@style/Overlay.MyProfile.Name"
 
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
@@ -82,7 +82,7 @@
         android:layout_marginTop="@dimen/m_tv_margin_10"
         android:layout_marginEnd="@dimen/m_tv_margin_20"
         android:layout_marginRight="@dimen/m_tv_margin_20"
-        android:text="dosamarvis@gmail.com"
+        android:text="@string/my_profile_email"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -96,7 +96,7 @@
         android:layout_marginTop="@dimen/m_tv_margin_10"
         android:layout_marginEnd="@dimen/m_tv_margin_20"
         android:layout_marginRight="@dimen/m_tv_margin_20"
-        android:text="No 15 uti street of ovie palace road efurun delta state"
+        android:text="@string/my_profile_address"
         app:layout_constraintEnd_toEndOf="@id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -133,7 +133,9 @@
         android:layout_marginStart="@dimen/m_radiobutton_margin"
         android:layout_marginTop="@dimen/m_radiobutton_margin"
         android:layout_marginEnd="@dimen/m_radiobutton_margin"
-        android:text="RadioButton"
+        android:drawableLeft="@drawable/card"
+        android:text="@string/my_profile_radioButton_card"
+        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3" />
@@ -145,7 +147,9 @@
         android:layout_marginStart="@dimen/m_radiobutton_margin"
         android:layout_marginTop="@dimen/m_radiobutton_margin"
         android:layout_marginEnd="@dimen/m_radiobutton_margin"
-        android:text="RadioButton"
+        android:drawableLeft="@drawable/bankaccount"
+        android:text="@string/my_profile_radioButton_bankaccount"
+        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/radioButton" />
@@ -157,7 +161,9 @@
         android:layout_marginStart="@dimen/m_radiobutton_margin"
         android:layout_marginTop="@dimen/m_radiobutton_margin"
         android:layout_marginEnd="@dimen/m_radiobutton_margin"
-        android:text="RadioButton"
+        android:drawableLeft="@drawable/paypal"
+        android:text="@string/my_profile_radioButton_paypal"
+        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/radioButton2" />

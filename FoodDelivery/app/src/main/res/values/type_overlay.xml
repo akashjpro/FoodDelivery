@@ -66,8 +66,11 @@
     <style name="Overlay.MyProfile.Name" parent="Overlay">
         <item name="fontFamily">@font/exo_semi_bold</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">20dp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item></style>
+    <style name="Overlay.MyProfile.PaymentMethod" parent="Overlay">
+        <item name="fontFamily">@font/exo_semi_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
     </style>
 
 </resources>

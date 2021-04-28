@@ -28,4 +28,10 @@
 <!--    My profile-->
     <string name="information" translatable="false">Information</string>
     <string name="paymentmethod" translatable="false">Payment Method</string>
+    <string name="my_profile_name" translatable="false">Marvis Ighedosa</string>
+    <string name="my_profile_email" translatable="false">dosamarvis@gmail.commy</string>
+    <string name="my_profile_address" translatable="false">No 15 uti street of ovie palace road efurun delta state</string>
+    <string name="my_profile_radioButton_card" translatable="false">Card</string>
+    <string name="my_profile_radioButton_bankaccount" translatable="false">Bank account</string>
+    <string name="my_profile_radioButton_paypal" translatable="false">Paypal</string>
 </resources>
