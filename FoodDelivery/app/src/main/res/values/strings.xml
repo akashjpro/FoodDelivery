@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FoodDelivery</string>
     <string name="title_activity_home">MainActivity</string>
@@ -9,29 +10,24 @@
 
     <!-- Login and SignUp Screen -->
     <string name="login">Login</string>
-    <string name="sign_up" translatable="false">Sign-up</string>
-    <string name="login_email" translatable="false">Email address</string>
-    <string name="login_pass" translatable="false">Password</string>
-    <string name="forgot_passcode" translatable="false">Forgot passcode?</string>
+    <string name="sign_up">Sign-up</string>
+    <string name="login_email">Email address</string>
+    <string name="login_pass">Password</string>
+    <string name="forgot_pass_code">Forgot passcode?</string>
 
     <!-- Home Screen -->
-    <string name="home_tittle" translatable="false">Delicious food for you</string>
-    <string name="search" translatable="false">Search</string>
-    <string name="tap1" translatable="false">Foods</string>
-    <string name="tap2" translatable="false">Drinks</string>
-    <string name="tap3" translatable="false">Snacks</string>
-    <string name="see_more" translatable="false">See more</string>
+    <string name="home_tittle">Delicious food for you</string>
+    <string name="search">Search</string>
+    <string name="foods">Foods</string>
+    <string name="drinks">Drinks</string>
+    <string name="snacks">Snacks</string>
+    <string name="see_more">See more</string>
 
     <!--Spicy Chiecrns Screen-->
-    <string name="spicy_chiecrns_screen_title" translatable="false">Found 6 results</string>
+    <string name="spicy_chiecrns_screen_title">Found 6 results</string>
 
-<!--    My profile-->
-    <string name="information" translatable="false">Information</string>
-    <string name="paymentmethod" translatable="false">Payment Method</string>
-    <string name="my_profile_name" translatable="false">Marvis Ighedosa</string>
-    <string name="my_profile_email" translatable="false">dosamarvis@gmail.commy</string>
-    <string name="my_profile_address" translatable="false">No 15 uti street of ovie palace road efurun delta state</string>
-    <string name="my_profile_radioButton_card" translatable="false">Card</string>
-    <string name="my_profile_radioButton_bankaccount" translatable="false">Bank account</string>
-    <string name="my_profile_radioButton_paypal" translatable="false">Paypal</string>
+    <!--    My profile-->
+    <string name="information">Information</string>
+    <string name="payment_method">Payment Method</string>
+
 </resources>

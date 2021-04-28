@@ -18,6 +18,9 @@ ext {
 
     // Material library
     material_version = "1.3.0"
+
+    // Circle image view library
+    circle_image_view = "1.2.1"
 }
 
 buildscript {

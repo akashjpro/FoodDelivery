@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/frame_rectangle" />
+        app:srcCompat="@drawable/img_frame_rectangle" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="@id/imgTopFrame"
         app:layout_constraintStart_toStartOf="@id/imgTopFrame"
         app:layout_constraintTop_toTopOf="@+id/imgTopFrame"
-        app:srcCompat="@drawable/logo_bella_olonje1" />
+        app:srcCompat="@drawable/img_logo_bella_olonje1" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
@@ -118,13 +118,14 @@
         android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
         android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
         android:layout_marginTop="@dimen/textViewForgotPasscode_margin_top"
-        android:text="@string/forgot_passcode"
+        android:text="@string/forgot_pass_code"
         android:textAppearance="@style/Overlay.Login.Title1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
+        android:onClick="onClickLogin"
         android:layout_width="@dimen/button_login_width"
         android:layout_height="@dimen/button_login_height"
         android:layout_marginBottom="52dp"

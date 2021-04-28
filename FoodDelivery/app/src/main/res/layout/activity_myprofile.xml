@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorHomeBackground"
-    tools:context=".ui.Myprofile.Myprofile">
+    tools:context=".ui.myprofile.MyProfile">
 
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_marginStart="@dimen/m_margin_strart_end"
         android:layout_marginEnd="@dimen/m_margin_strart_end"
         android:layout_marginTop="@dimen/m_image_frame_margin_top"
-        android:src="@drawable/image01"
+        android:src="@drawable/shape_rectangle_while1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         android:layout_marginLeft="@dimen/m_imageViewUser_margin"
         android:layout_marginTop="@dimen/m_imageViewUser_margin"
         android:layout_weight="1"
-        android:src="@drawable/rectangle_6"
+        android:src="@drawable/img_rectangle_6"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
@@ -108,7 +108,7 @@
         android:layout_marginStart="@dimen/m_margin_strart_end"
         android:layout_marginTop="@dimen/m_payment_margin_top"
         android:layout_marginEnd="@dimen/m_margin_strart_end"
-        android:text="@string/paymentmethod"
+        android:text="@string/payment_method"
         android:textAppearance="@style/Overlay.MyProfile.Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
         android:layout_marginStart="@dimen/m_margin_strart_end"
         android:layout_marginTop="@dimen/m_image_frame_margin_top"
         android:layout_marginEnd="@dimen/m_margin_strart_end"
-        android:src="@drawable/image01"
+        android:src="@drawable/shape_rectangle_while1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
