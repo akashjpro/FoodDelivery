@@ -72,5 +72,22 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">15dp</item>
     </style>
+    <style name="Overlay.MyProfile.Button_Update" parent="Overlay">
+        <item name="fontFamily">@font/exo_semi_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20dp</item>
+    </style>
 
+
+    <!--    Food Information-->
+    <style name="Overlay.FoodInformation.Title" parent="Overlay">
+        <item name="fontFamily">@font/zen_dots_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+    <style name="Overlay.FoodInformation.Title1" parent="Overlay">
+        <item name="fontFamily">@font/zen_dots_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorHomeBackground"
+    android:background="@color/Background"
     tools:context=".ui.loginandsignup.LoginAndSignUpActivity">
 
     <ImageView
@@ -125,17 +125,17 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
-        android:onClick="onClickLogin"
         android:layout_width="@dimen/button_login_width"
         android:layout_height="@dimen/button_login_height"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="@dimen/button_login_margin_bottom"
+        android:onClick="onClickLogin"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.LoginAndSignUp.ButtonText"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewForgotPasscode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

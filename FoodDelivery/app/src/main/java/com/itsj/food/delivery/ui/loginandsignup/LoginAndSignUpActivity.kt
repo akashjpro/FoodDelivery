@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.itsj.food.delivery.R
+import com.itsj.food.delivery.ui.foodinformation.FoodInformation
 import com.itsj.food.delivery.ui.home.Home
 
 class LoginAndSignUpActivity : AppCompatActivity() {
@@ -14,7 +15,7 @@ class LoginAndSignUpActivity : AppCompatActivity() {
 	}
 
 	fun onClickLogin(view: View) {
-		val intent = Intent(this@LoginAndSignUpActivity, Home::class.java)
+		val intent = Intent(this@LoginAndSignUpActivity, FoodInformation::class.java)
 		startActivity(intent)
 		finish()
 	}

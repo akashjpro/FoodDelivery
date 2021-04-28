@@ -27,8 +27,10 @@
     <string name="spicy_chiecrns_screen_title">Tìm thấy 6 kết quả</string>
 
     <!--    My profile-->
-    <string name="information">Thông tin</string>
-    <string name="payment_method">Phương thức thanh toán</string>
+    <string name="my_profile_information">Thông tin</string>
+    <string name="my_profile_payment_method">Phương thức thanh toán</string>
+    <string name="my_profile_button_update">Updater</string>
+
     <string name="my_profile_name">Marvis Ighedosa</string>
 
      <!-- TODO -->
@@ -37,5 +39,12 @@
     <string name="my_profile_radioButton_card">Card</string>
     <string name="my_profile_radioButton_bankaccount">Bank account</string>
     <string name="my_profile_radioButton_paypal">Paypal</string>
+
+
+    <!--    Food Information-->
+    <string name="food_information_title">Veggie tomato mix</string>
+    <string name="food_information_title1">Delivery info</string>
+    <string name="food_information_title2">Return policy</string>
+    <string name="food_information_title3">Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</string>
 
 </resources>

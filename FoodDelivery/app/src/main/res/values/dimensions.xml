@@ -74,4 +74,16 @@
     <dimen name="m_radiobutton_margin">@dimen/margin_20</dimen>
     <dimen name="button_width">0dp</dimen>
     <dimen name="button_height">70dp</dimen>
+    
+    <!--Food Information-->
+    <dimen name="food_information_viewpager2_width">0dp</dimen>
+    <dimen name="food_information_viewpager2_height">300dp</dimen>
+    <dimen name="food_information_CircleIndicator3_width">0dp</dimen>
+    <dimen name="food_information_CircleIndicator3_height">10dp</dimen>
+    <dimen name="food_information_text_view_margin_40">40dp</dimen>
+    <dimen name="food_information_text_view_margin_50">50dp</dimen>
+    <dimen name="food_information_text_view_margin_10">10dp</dimen>
+    <dimen name="food_information_text_view_margin_30">30dp</dimen>
+
+
 </resources>

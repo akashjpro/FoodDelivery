@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorHomeBackground"
+    android:background="@color/Background"
     android:layout_height="match_parent"
     tools:context=".ui.home.Home">
 
@@ -52,7 +52,7 @@
         android:layout_marginLeft="@dimen/home_tabLayout_margin_left"
         android:layout_marginTop="@dimen/home_tabLayout_margin_top"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorHomeBackground"
+        android:background="@color/Background"
         app:tabGravity="start"
         app:tabMode="scrollable"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +101,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorHomeBackground"
+        android:background="@color/Background"
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent" />
 
