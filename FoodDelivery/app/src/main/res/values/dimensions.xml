@@ -106,6 +106,14 @@
     <dimen name="cart_button_height">70dp</dimen>
     <dimen name="cart_button_margin">@dimen/margin_50</dimen>
 
+    <!--History Screen-->
+    <dimen name="history_image_view_width">107dp</dimen>
+    <dimen name="history_image_view_height">118.6dp</dimen>
+    <dimen name="history_text_view_margin_50">@dimen/margin_70</dimen>
+    <dimen name="history_text_view_margin_20">@dimen/margin_20</dimen>
+    <dimen name="history_image_view_margin_200">200dp</dimen>
+    <dimen name="history_button_height">70dp</dimen>
+    <dimen name="history_button_margin">@dimen/margin_50</dimen>
 
 
 </resources>

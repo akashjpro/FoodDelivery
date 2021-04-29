@@ -21,6 +21,10 @@ ext {
 
     // Circle image view library
     circle_image_view = "1.2.1"
+
+    // circleindicator
+    circleindicator_version = "2.1.4"
+
 }
 
 buildscript {

@@ -68,4 +68,14 @@
     <string name="cart_delete">swipe on an item to delete</string>
     <string name="cart_button">Complete order</string>
 
+    <!--History Screen-->
+    <string name="history_tv_1">No history yet</string>
+    <string name="history_tv_2">Hit the orange button down below to Create an order</string>
+    <string name="history_button">Start ordering</string>
+
+    <!--    Orders-->
+    <string name="orders_tv_1">No orders yet</string>
+    <string name="orders_tv_2">Hit the orange button down below to Create an order</string>
+
+
 </resources>

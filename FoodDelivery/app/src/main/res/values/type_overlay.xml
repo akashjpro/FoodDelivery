@@ -140,4 +140,24 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">10dp</item>
     </style>
+
+    <!--History Screen-->
+    <style name="Overlay.history.button" parent="Overlay">
+        <item name="fontFamily">@font/exo_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+    <style name="Overlay.history.title" parent="Overlay">
+        <item name="fontFamily">@font/exo_extrabold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+    <style name="Overlay.history.text_view" parent="Overlay">
+        <item name="fontFamily">@font/exo_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+
+
 </resources>

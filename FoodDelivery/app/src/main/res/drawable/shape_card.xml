@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <solid android:color="#F47B0A" />
+            <corners android:radius="10dp" />
+            <size
+                android:width="40dp"
+                android:height="40dp" />
 
-</shape>
+        </shape>
+    </item>
+    <item
+        android:width="20dp"
+        android:height="15dp"
+        android:drawable="@drawable/ic_card"
+        android:gravity="center" />
+</layer-list>

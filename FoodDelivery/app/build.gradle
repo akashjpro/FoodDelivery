@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -67,7 +68,7 @@ dependencies {
     // ================================== CIRCLE IMAGE VIEW LIBRARY =========================================
 
     implementation "de.hdodenhof:circleimageview:$circle_image_view"
-
+    implementation "me.relex:circleindicator:$circleindicator_version"
 
 
 
@@ -80,6 +81,4 @@ dependencies {
 
 
     // =========================================================================================
-    implementation 'me.relex:circleindicator:2.1.4'
-    apply plugin: "kotlin-android-extensions"
 }

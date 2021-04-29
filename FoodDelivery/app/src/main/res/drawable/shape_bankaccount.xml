@@ -3,7 +3,7 @@
     <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
-            <solid android:color="#0038FF" />
+            <solid android:color="#EB4796" />
             <corners android:radius="10dp" />
             <size
                 android:width="40dp"
@@ -14,6 +14,6 @@
     <item
         android:width="20dp"
         android:height="20dp"
-        android:drawable="@drawable/ic_paypal"
+        android:drawable="@drawable/ic_bankaccount"
         android:gravity="center" />
 </layer-list>
