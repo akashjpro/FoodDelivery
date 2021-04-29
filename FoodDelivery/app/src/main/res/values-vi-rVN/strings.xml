@@ -37,7 +37,7 @@
     <string name="my_profile_email">dosamarvis@gmail.commy</string>
     <string name="my_profile_address">No 15 uti street of ovie palace road efurun delta state</string>
     <string name="my_profile_radioButton_card">Card</string>
-    <string name="my_profile_radioButton_bankaccount">Bank account</string>
+    <string name="my_profile_radioButton_bank_account">Bank account</string>
     <string name="my_profile_radioButton_paypal">Paypal</string>
 
 
@@ -56,5 +56,16 @@
     <string name="check_out_radiobutton1">Door delivery</string>
     <string name="check_out_radiobutton2">Pick up</string>
     <string name="check_out_total">Total</string>
+
+    <!--Check out payment Screen-->
+    <string name="check_out_payment_title">Payment</string>
+    <string name="check_out_payment_title1">Payment method</string>
+    <string name="check_out_payment_card">Card</string>
+    <string name="check_out_payment_bank_account">Bank account</string>
+
+
+    <!--    Cart Screen-->
+    <string name="cart_delete">swipe on an item to delete</string>
+    <string name="cart_button">Complete order</string>
 
 </resources>

@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
-        <activity android:name=".ui.checkout.Checkout"></activity>
-        <activity android:name=".ui.foodinformation.FoodInformation"></activity>
+        <activity android:name=".ui.cart.Cart"></activity>
+        <activity android:name=".ui.checkoutpayment.CheckOutPayment" />
+        <activity android:name=".ui.checkout.Checkout" />
+        <activity android:name=".ui.foodinformation.FoodInformation" />
         <activity android:name=".ui.myprofile.MyProfile" />
         <activity android:name=".ui.spicychiecrns.Spicy_chiecrns" />
         <activity android:name=".ui.home.Home" />

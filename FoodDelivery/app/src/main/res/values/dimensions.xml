@@ -90,9 +90,22 @@
     <dimen name="check_out_image_farm_height2">160dp</dimen>
     <dimen name="check_out_margin_50">@dimen/margin_50</dimen>
     <dimen name="check_out_margin_20">@dimen/margin_20</dimen>
+    <dimen name="check_out_margin_32">@dimen/margin_32</dimen>
     <dimen name="check_out_margin_10">@dimen/margin_10</dimen>
     <dimen name="check_out_margin_100">@dimen/margin_100</dimen>
     <dimen name="check_out_layout_width">0dp</dimen>
     <dimen name="check_out_button_height">70dp</dimen>
+
+    <!--    Cart Screen-->
+    <dimen name="cart_tv_delete_width">200dp</dimen>
+    <dimen name="cart_recyclerview_height_width">0dp</dimen>
+    <dimen name="cart_tv_margin_delete_start_end">@dimen/margin_50</dimen>
+    <dimen name="cart_tv_margin_delete_top">@dimen/margin_40</dimen>
+    <dimen name="cart_recyclerview_margin">@dimen/margin_20</dimen>
+    <dimen name="cart_button_width">0dp</dimen>
+    <dimen name="cart_button_height">70dp</dimen>
+    <dimen name="cart_button_margin">@dimen/margin_50</dimen>
+
+
 
 </resources>

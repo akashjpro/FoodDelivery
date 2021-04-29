@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.cart.Cart">
+
+    <TextView
+        android:id="@+id/tvSwipeOnAnItemToDelete"
+        android:layout_width="@dimen/cart_tv_delete_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/cart_tv_margin_delete_start_end"
+        android:layout_marginTop="@dimen/cart_tv_margin_delete_top"
+        android:layout_marginEnd="@dimen/cart_tv_margin_delete_start_end"
+        android:drawableLeft="@drawable/ic_iwwa_swipe"
+        android:text="@string/cart_delete"
+        android:textAppearance="@style/Overlay.cart.Title1"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewFoodsInCart"
+        android:layout_width="@dimen/cart_recyclerview_height_width"
+        android:layout_height="@dimen/cart_recyclerview_height_width"
+        android:layout_marginStart="@dimen/cart_recyclerview_margin"
+        android:layout_marginTop="@dimen/cart_recyclerview_margin"
+        android:layout_marginEnd="@dimen/cart_recyclerview_margin"
+        android:layout_marginBottom="@dimen/cart_recyclerview_margin"
+        app:layout_constraintBottom_toTopOf="@+id/btnCompleteOrder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSwipeOnAnItemToDelete" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCompleteOrder"
+        android:layout_width="@dimen/cart_button_width"
+        android:layout_height="@dimen/cart_button_height"
+        android:layout_marginStart="@dimen/cart_button_margin"
+        android:layout_marginEnd="@dimen/cart_button_margin"
+        android:layout_marginBottom="@dimen/cart_button_margin"
+        android:text="@string/cart_button"
+        android:textAppearance="@style/Overlay.cart.Title"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

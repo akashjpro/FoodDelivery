@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    tools:context=".ui.checkout.Checkout">
+    tools:context=".ui.checkoutpayment.CheckOutPayment">
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/check_out_margin_50"
-        android:layout_marginTop="@dimen/check_out_margin_20"
+        android:layout_marginTop="@dimen/check_out_margin_32"
         android:layout_marginEnd="@dimen/check_out_margin_50"
-        android:text="@string/check_out_title"
+        android:text="@string/check_out_payment_title"
         android:textAppearance="@style/Overlay.checkout.Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,23 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/check_out_margin_50"
         android:layout_marginLeft="@dimen/check_out_margin_50"
-        android:layout_marginTop="@dimen/check_out_margin_50"
-        android:text="@string/check_out_title1"
+        android:layout_marginTop="@dimen/check_out_margin_32"
+        android:text="@string/check_out_payment_title1"
         android:textAppearance="@style/Overlay.checkout.Title1"
         app:layout_constraintEnd_toStartOf="@+id/textView17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="@dimen/check_out_layout_width"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/check_out_margin_50"
-        android:layout_marginRight="@dimen/check_out_margin_50"
-        android:text="@string/check_out_change"
-        android:textAppearance="@style/Overlay.checkout.Title2"
-        app:layout_constraintBottom_toBottomOf="@+id/textView16"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -55,43 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
         app:srcCompat="@drawable/shape_rectangle_while6" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="@dimen/check_out_layout_width"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/check_out_margin_20"
-        android:layout_marginTop="@dimen/check_out_margin_20"
-        android:layout_marginEnd="@dimen/check_out_margin_20"
-        android:text="Marvis Kparobo"
-        android:textAppearance="@style/Overlay.checkout.Title3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="@dimen/check_out_layout_width"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/check_out_margin_20"
-        android:layout_marginTop="@dimen/check_out_margin_20"
-        android:layout_marginEnd="@dimen/check_out_margin_20"
-        android:text="Km 5 refinery road oppsite re public road, effurun, delta state"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="@dimen/check_out_layout_width"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/check_out_margin_20"
-        android:layout_marginTop="@dimen/check_out_margin_20"
-        android:layout_marginEnd="@dimen/check_out_margin_20"
-        android:text="+234 9011039271"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
         android:id="@+id/textView21"
@@ -117,7 +69,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
         app:srcCompat="@drawable/shape_rectangle_while6" />
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/m_radiobutton_margin"
+        android:layout_marginTop="@dimen/m_radiobutton_margin"
+        android:layout_marginEnd="@dimen/m_radiobutton_margin"
+        android:drawableLeft="@drawable/img_card"
+        android:text="@string/check_out_payment_card"
+        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/m_radiobutton_margin"
+        android:layout_marginTop="@dimen/m_radiobutton_margin"
+        android:layout_marginEnd="@dimen/m_radiobutton_margin"
+        android:drawableLeft="@drawable/img_bankaccount"
+        android:text="@string/check_out_payment_bank_account"
+        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
     <com.google.android.material.radiobutton.MaterialRadioButton
         android:id="@+id/radioButton4"
         android:layout_width="@dimen/check_out_layout_width"

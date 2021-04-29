@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Splash Screen -->
 
     <!-- Login and SignUp Screen -->
@@ -94,9 +94,9 @@
 
     <!--    Check out Screen-->
     <style name="Overlay.checkout.Title" parent="Overlay">
-        <item name="fontFamily">@font/zen_dots_regular</item>
+        <item name="fontFamily">@font/exo_extrabold</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">25dp</item>
+        <item name="android:textSize">30dp</item>
     </style>
     <style name="Overlay.checkout.Title1" parent="Overlay">
         <item name="fontFamily">@font/exo_semi_bold</item>
@@ -127,5 +127,17 @@
         <item name="fontFamily">@font/exo_bold</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">15dp</item>
+    </style>
+
+    <!--Cart Screen-->
+    <style name="Overlay.cart.Title" parent="Overlay">
+        <item name="fontFamily">@font/exo_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+    <style name="Overlay.cart.Title1" parent="Overlay">
+        <item name="fontFamily">@font/exo_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">10dp</item>
     </style>
 </resources>
