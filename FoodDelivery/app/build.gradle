@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -48,6 +49,11 @@ dependencies {
     // ================================== ANDROID X ================================================
 
     implementation "androidx.core:core-ktx:$ktx_core_version"
+    implementation "androidx.activity:activity-ktx:$ktx_activity_version"
+    implementation "androidx.collection:collection-ktx:$ktx_collection_version"
+    implementation "androidx.fragment:fragment-ktx:$ktx_fragment_version"
+    implementation "androidx.multidex:multidex:$multidex_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$ktx_navigation_version"
@@ -59,7 +65,19 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
-    implementation "androidx.vectordrawable:vectordrawable:$vector_drawable"
+    implementation "androidx.vectordrawable:vectordrawable:$vector_drawable_version"
+
+    // Recycler view
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:$recyclerview_selection_version"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
 
     // ================================== MATERIAL LIBRARY =========================================
 
@@ -67,9 +85,8 @@ dependencies {
 
     // ================================== CIRCLE IMAGE VIEW LIBRARY =========================================
 
-    implementation "de.hdodenhof:circleimageview:$circle_image_view"
+    implementation "de.hdodenhof:circleimageview:$circle_image_view_version"
     implementation "me.relex:circleindicator:$circleindicator_version"
-
 
 
 
