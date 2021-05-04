@@ -73,11 +73,11 @@
     <string name="history_tv_2">Hit the orange button down below to Create an order</string>
     <string name="history_button">Start ordering</string>
 
-    <!--    Orders-->
+    <!--Orders-->
     <string name="orders_tv_1">No orders yet</string>
     <string name="orders_tv_2">Hit the orange button down below to Create an order</string>
 
-    <!--    My Profile 2 Screen-->
+    <!--My Profile 2 Screen-->
     <string name="my_profile_2_title">My profile</string>
     <string name="my_profile_2_title1">Personal details</string>
     <string name="my_profile_2_orders">Orders</string>
@@ -85,5 +85,24 @@
     <string name="my_profile_2_Faq">Faq</string>
     <string name="my_profile_2_Help">Help</string>
     <string name="my_profile_2_change">change</string>
+
+    <!--Item not found Screen-->
+    <string name="item_not_found_title">Item not found</string>
+    <string name="item_not_found_title1">Try searching the item with a different keyword.</string>
+
+    <!--    No internet Screen-->
+    <string name="no_internet_title">No internet Connection</string>
+    <string name="no_internet_title1">Your internet connection is currently not available please check or try again.</string>
+    <string name="no_internet_btn_try_again">Try again</string>
+
+    <!--    No Offers Screen-->
+    <string name="no_offers_title">My offers</string>
+    <string name="no_offers_title1">ohh snap! No offers yet</string>
+    <string name="no_offers_title2">Bella dose’t have any offers yet please check again.</string>
+
+    <!--    Please note Screen-->
+    <string name="please_note_title">Please note</string>
+    <string name="please_note_cancel">Cancel</string>
+    <string name="please_note_proceed">Proceed</string>
 
 </resources>

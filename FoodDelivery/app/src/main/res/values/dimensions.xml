@@ -124,5 +124,28 @@
     <dimen name="m2_margin_30">30dp</dimen>
     <dimen name="m2_margin_15">15dp</dimen>
 
+    <!--    Item not found Screen-->
+    <dimen name="item_not_found_70">70dp</dimen>
+    <dimen name="item_not_found_20">@dimen/margin_20</dimen>
+
+    <!--    No internet Screen-->
+    <dimen name="no_internet_margin_70">70dp</dimen>
+    <dimen name="no_internet_margin_20">@dimen/margin_20</dimen>
+    <dimen name="no_internet_margin_50">@dimen/margin_50</dimen>
+
+    <!--    No Offers-->
+    <dimen name="no_offers_margin_30">30dp</dimen>
+    <dimen name="no_offers_margin_50">@dimen/margin_50</dimen>
+    <dimen name="no_offers_margin_200">200dp</dimen>
+    <dimen name="no_offers_margin_20">@dimen/margin_20</dimen>
+
+    <!--    Please note Screen-->
+    <dimen name="please_note_margin_20">@dimen/margin_20</dimen>
+    <dimen name="please_note_margin_10">@dimen/margin_10</dimen>
+    <dimen name="please_note_image_frame_height">80dp</dimen>
+    <dimen name="please_note_btn_height">60dp</dimen>
+    <dimen name="please_note_btn_cancel_width">120dp</dimen>
+
+
 
 </resources>

@@ -158,6 +158,28 @@
         <item name="android:textSize">15dp</item>
     </style>
 
+    <!--    No Offers-->
+    <style name="Overlay.no_offers.title" parent="Overlay">
+        <item name="fontFamily">@font/exo_extrabold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">30dp</item>
+    </style>
 
+    <style name="Overlay.no_offers.title1" parent="Overlay">
+    <item name="fontFamily">@font/exo_bold</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:textSize">30dp</item>
+    </style>
+
+    <!--Please note Screen-->
+    <style name="Overlay.please_note.title1" parent="Overlay">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="Overlay.please_note.title" parent="Overlay">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/exo_bold</item>
+        <item name="android:textSize">25dp</item>
+    </style>
 
 </resources>

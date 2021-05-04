@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
+        <activity android:name=".ui.no_offers.NoOffers"></activity>
+        <activity android:name=".ui.no_internet.NoInternet" />
+        <activity android:name=".ui.item_not_found.ItemNotFound" />
         <activity android:name=".ui.my_profile2.MyProfile2" />
         <activity android:name=".ui.orders.Orders" />
         <activity android:name=".ui.history.History" />

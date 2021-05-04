@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.item_not_found.ItemNotFound">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="@dimen/history_image_view_width"
+        android:layout_height="@dimen/history_image_view_height"
+        android:layout_marginTop="@dimen/history_image_view_margin_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_search_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/item_not_found_title"
+        android:gravity="center"
+        android:textAppearance="@style/Overlay.history.title"
+        android:layout_marginStart="@dimen/item_not_found_70"
+        android:layout_marginEnd="@dimen/item_not_found_70"
+        android:layout_marginTop="@dimen/item_not_found_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"/>
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/item_not_found_title1"
+        android:gravity="center"
+        android:textAppearance="@style/Overlay.history.text_view"
+        android:layout_marginStart="@dimen/item_not_found_70"
+        android:layout_marginEnd="@dimen/item_not_found_70"
+        android:layout_marginTop="@dimen/item_not_found_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
