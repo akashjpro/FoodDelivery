@@ -5,26 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    tools:context=".ui.myprofile.MyProfile">
-
+    tools:context=".ui.myjprofile2.MyProfile2">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView26"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/m_margin_start_end"
-        android:layout_marginTop="@dimen/m_information_margin_top"
-        android:layout_marginEnd="@dimen/m_margin_start_end"
-        android:text="@string/my_profile_information"
-        android:textAppearance="@style/Overlay.MyProfile.Title"
+        android:layout_marginStart="@dimen/check_out_margin_50"
+        android:layout_marginTop="@dimen/check_out_margin_32"
+        android:layout_marginEnd="@dimen/check_out_margin_50"
+        android:text="@string/my_profile_2_title"
+        android:textAppearance="@style/Overlay.checkout.Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/my_profile_2_title1"
+        app:layout_constraintEnd_toStartOf="@+id/textView28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:text="@string/my_profile_2_change"
+        app:layout_constraintBottom_toBottomOf="@+id/textView27"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
-        android:layout_height="@dimen/m_image_information_frame_height"
+        android:layout_height="@dimen/m2_image_information_frame_height"
         android:layout_marginStart="@dimen/m_margin_start_end"
         android:layout_marginTop="@dimen/m_image_frame_margin_top"
         android:layout_marginEnd="@dimen/m_margin_start_end"
@@ -32,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
     <ImageView
         android:id="@+id/imageViewUser"
@@ -60,18 +81,6 @@
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="@dimen/m_image_button"
-        android:layout_height="@dimen/m_image_button"
-        android:layout_marginTop="@dimen/m_imageViewUser_margin"
-        android:layout_marginEnd="@dimen/m_imageViewUser_margin"
-        android:layout_marginRight="@dimen/m_imageViewUser_margin"
-        android:background="@null"
-        android:scaleType="center"
-        android:src="@drawable/ic_baseline_create_24"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textView11"
@@ -96,78 +105,73 @@
         android:layout_marginTop="@dimen/m_tv_margin_10"
         android:layout_marginEnd="@dimen/m_tv_margin_20"
         android:layout_marginRight="@dimen/m_tv_margin_20"
-        android:text="@string/my_profile_address"
+        android:text="+234 9011039271"
         app:layout_constraintEnd_toEndOf="@id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView13"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/m_margin_start_end"
-        android:layout_marginTop="@dimen/m_payment_margin_top"
-        android:layout_marginEnd="@dimen/m_margin_start_end"
-        android:text="@string/my_profile_payment_method"
-        android:textAppearance="@style/Overlay.MyProfile.Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:layout_marginStart="@dimen/m_tv_margin_15"
+        android:layout_marginLeft="@dimen/m_tv_margin_15"
+        android:layout_marginTop="@dimen/m_tv_margin_10"
+        android:layout_marginEnd="@dimen/m_tv_margin_20"
+        android:layout_marginRight="@dimen/m_tv_margin_20"
+        android:text="@string/my_profile_address"
+        app:layout_constraintEnd_toEndOf="@id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageViewUser"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/m_image_payment_frame_height"
-        android:layout_marginStart="@dimen/m_margin_start_end"
-        android:layout_marginTop="@dimen/m_image_frame_margin_top"
-        android:layout_marginEnd="@dimen/m_margin_start_end"
-        android:src="@drawable/shape_rectangle_while1"
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/radioButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/shape_rectangle_while6"
+         />
+    <ImageView
+        android:id="@+id/imageView7"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/m_radiobutton_margin"
-        android:layout_marginTop="@dimen/m_radiobutton_margin"
-        android:layout_marginEnd="@dimen/m_radiobutton_margin"
-        android:drawableLeft="@drawable/shape_card"
-        android:text="@string/my_profile_radioButton_card"
-        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
-    <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/radioButton2"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/shape_rectangle_while6"
+        />
+    <ImageView
+        android:id="@+id/imageView8"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/m_radiobutton_margin"
-        android:layout_marginTop="@dimen/m_radiobutton_margin"
-        android:layout_marginEnd="@dimen/m_radiobutton_margin"
-        android:drawableLeft="@drawable/shape_bankaccount"
-        android:text="@string/my_profile_radioButton_bank_account"
-        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
-
-    <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/radioButton3"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/shape_rectangle_while6"
+        />
+    <ImageView
+        android:id="@+id/imageView9"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/m_radiobutton_margin"
-        android:layout_marginTop="@dimen/m_radiobutton_margin"
-        android:layout_marginEnd="@dimen/m_radiobutton_margin"
-        android:drawableLeft="@drawable/shape_paypal"
-        android:text="@string/my_profile_radioButton_paypal"
-        android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/shape_rectangle_while6"
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnUpdate"
@@ -182,6 +186,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

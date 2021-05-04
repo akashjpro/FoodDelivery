@@ -115,5 +115,8 @@
     <dimen name="history_button_height">70dp</dimen>
     <dimen name="history_button_margin">@dimen/margin_50</dimen>
 
+    <!--My Profile 2 Screen-->
+    <dimen name="m2_image_information_frame_height">170dp</dimen>
+
 
 </resources>

@@ -69,7 +69,17 @@
     <string name="history_tv_2">Hit the orange button down below to Create an order</string>
     <string name="history_button">Start ordering</string>
 
-<!--    Orders-->
+    <!--    Orders-->
     <string name="orders_tv_1">No orders yet</string>
     <string name="orders_tv_2">Hit the orange button down below to Create an order</string>
+
+    <!--    My Profile 2 Screen-->
+    <string name="my_profile_2_title">My profile</string>
+    <string name="my_profile_2_title1">Personal details</string>
+    <string name="my_profile_2_orders">Orders</string>
+    <string name="my_profile_2_Pending_reviews">Pending reviews</string>
+    <string name="my_profile_2_Faq">Faq</string>
+    <string name="my_profile_2_Help">Help</string>
+    <string name="my_profile_2_change">change</string>
+
 </resources>
