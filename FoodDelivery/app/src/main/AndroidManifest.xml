@@ -3,6 +3,7 @@
     package="com.itsj.food.delivery">
 
     <application
+        android:name=".ui.FoodDeliveryApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
