@@ -117,6 +117,12 @@
 
     <!--My Profile 2 Screen-->
     <dimen name="m2_image_information_frame_height">170dp</dimen>
+    <dimen name="m2_image_information_frame_1_height">60dp</dimen>
+    <dimen name="m2_margin_50">@dimen/margin_50</dimen>
+    <dimen name="m2_margin_40">@dimen/margin_40</dimen>
+    <dimen name="m2_margin_20">@dimen/margin_20</dimen>
+    <dimen name="m2_margin_30">30dp</dimen>
+    <dimen name="m2_margin_15">15dp</dimen>
 
 
 </resources>
