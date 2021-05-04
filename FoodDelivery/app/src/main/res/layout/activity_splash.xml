@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.itsj.food.delivery.ui.splash.SplashViewModel" />
+            type="com.its.food.delivery.ui.splash.SplashViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +34,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/img_logo_bella_olonje_new" />
+            app:srcCompat="@drawable/img_logo_bella_olo_new" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

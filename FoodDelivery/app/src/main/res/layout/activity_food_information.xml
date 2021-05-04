@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    tools:context=".ui.foodinformation.FoodInformation">
+    tools:context=".ui.food_in_formation.FoodInformation">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager2FoodInformation"

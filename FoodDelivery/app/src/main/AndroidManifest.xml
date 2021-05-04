@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.itsj.food.delivery">
+    package="com.its.food.delivery">
 
     <application
         android:name=".ui.FoodDeliveryApplication"
@@ -12,15 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
-        <activity android:name=".ui.myjprofile2.MyProfile2"></activity>
+        <activity android:name=".ui.my_profile2.MyProfile2" />
         <activity android:name=".ui.orders.Orders" />
         <activity android:name=".ui.history.History" />
         <activity android:name=".ui.cart.Cart" />
-        <activity android:name=".ui.checkoutpayment.CheckOutPayment" />
+        <activity android:name=".ui.checkout_payment.CheckOutPayment" />
         <activity android:name=".ui.checkout.Checkout" />
-        <activity android:name=".ui.foodinformation.FoodInformation" />
-        <activity android:name=".ui.myprofile.MyProfile" />
-        <activity android:name=".ui.spicychiecrns.Spicy_chiecrns" />
+        <activity android:name=".ui.food_in_formation.FoodInformation" />
+        <activity android:name=".ui.my_profile.MyProfile" />
+        <activity android:name=".ui.spicy.SpicyChi" />
         <activity android:name=".ui.home.Home" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.loginandsignup.LoginAndSignUpActivity" />
+        <activity android:name=".ui.login_and_sign_up.LoginAndSignUpActivity" />
     </application>
 
 </manifest>
