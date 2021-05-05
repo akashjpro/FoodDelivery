@@ -1,5 +1,6 @@
 package com.its.food.delivery.ui.checkout_payment
 
+import android.annotation.SuppressLint
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -30,6 +31,7 @@ class CheckOutPaymentViewModel @Inject constructor() : BaseViewModel() {
         _paymentPopupClose.postValue(true)
     }
 
+    @SuppressLint("WrongThread")
     @WorkerThread
     fun callPopupShow() {
         _paymentPopUp.value = SingleEvent(true)

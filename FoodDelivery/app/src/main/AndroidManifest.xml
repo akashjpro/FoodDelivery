@@ -19,7 +19,7 @@
         <activity android:name=".ui.orders.Orders" />
         <activity android:name=".ui.history.History" />
         <activity android:name=".ui.cart.Cart" />
-        <activity android:name=".ui.checkout_payment.CheckOutPayment" />
+        <activity android:name=".ui.checkout_payment.CheckOutPayment"></activity>
         <activity android:name=".ui.checkout.Checkout" />
         <activity android:name=".ui.food_in_formation.FoodInformation" />
         <activity android:name=".ui.my_profile.MyProfile" />
