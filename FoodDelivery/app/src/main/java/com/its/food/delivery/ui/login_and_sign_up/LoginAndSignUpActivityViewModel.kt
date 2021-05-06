@@ -14,13 +14,7 @@ import javax.inject.Inject
 
 class LoginAndSignUpActivityViewModel @Inject constructor() : BaseViewModel() {
 
-    private val _navigateToLogin by lazy { MutableStateFlow<Int?>(null) }
-    val navigateToLogin by lazy {
-        _navigateToLogin.mapNotNull { SingleEvent.createOrNull(it) }
-            .asLiveData(viewModelScope.coroutineContext)
-    }
-
-    private val _navigateToMain by lazy { MutableStateFlow<Int?>(null) }
+    private val _navigateToMain by lazy { MutableStateFlow<Boolean?>(null) }
     val navigateToMain by lazy {
         _navigateToMain.mapNotNull { SingleEvent.createOrNull(it) }
             .asLiveData(viewModelScope.coroutineContext)
@@ -31,17 +25,6 @@ class LoginAndSignUpActivityViewModel @Inject constructor() : BaseViewModel() {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        viewModelScope.launch {
-            val isLogin = true
-
-            when {
-
-                isLogin -> _navigateToLogin.valueNotDistinct(1)
-
-                // User not logged in
-                else -> _navigateToMain.valueNotDistinct(1)
-            }
-        }
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -67,6 +50,12 @@ class LoginAndSignUpActivityViewModel @Inject constructor() : BaseViewModel() {
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun onDestroy() {
         // TODO: 5/3/21
+    }
+
+    fun onClickLogin() {
+        viewModelScope.launch {
+            _navigateToMain.valueNotDistinct(true)
+        }
     }
 
 }

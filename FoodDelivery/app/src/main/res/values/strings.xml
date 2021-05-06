@@ -97,10 +97,12 @@
     <string name="no_offers_title1">ohh snap! No offers yet</string>
     <string name="no_offers_title2">Bella dose’t have any offers yet please check again.</string>
 
-<!--    Please note Screen-->
+    <!--    Please note Screen-->
     <string name="please_note_title">Please note</string>
     <string name="please_note_cancel">Cancel</string>
     <string name="please_note_proceed">Proceed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
