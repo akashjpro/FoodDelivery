@@ -1,4 +1,4 @@
-package com.its.food.delivery.ui.home
+package com.its.food.delivery.ui.main.home
 
 data class Food(
     var foodName: String,

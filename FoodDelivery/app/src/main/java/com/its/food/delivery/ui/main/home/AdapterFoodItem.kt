@@ -1,4 +1,4 @@
-package com.its.food.delivery.ui.home
+package com.its.food.delivery.ui.main.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +18,8 @@ class AdapterFoodItem(
     }
 
     override fun onBindViewHolder(holder: FoodItemViewHolder, position: Int) {
+
+
         holder.itemView.apply {
             tvItemFoodName.text = itemFood[position].foodName
             tvPrice.text= itemFood[position].foodPrice.toString()

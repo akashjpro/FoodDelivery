@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityMainBinding
 import com.its.food.delivery.ui.BaseActivity
-import com.its.food.delivery.ui.cart.Cart
+import com.its.food.delivery.ui.cart.CartActivity
 import com.its.food.delivery.ui.main.account.AccountFragment
 import com.its.food.delivery.ui.main.favorite.FavoriteFragment
 import com.its.food.delivery.ui.main.history.HistoryFragment
@@ -54,7 +54,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.btnCart -> {
-                val intent1 = Intent(this@MainActivity, Cart::class.java)
+                val intent1 = Intent(this@MainActivity, CartActivity::class.java)
                 startActivity(intent1)
                 finish()
                 true

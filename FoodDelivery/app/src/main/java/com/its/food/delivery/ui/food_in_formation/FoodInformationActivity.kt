@@ -7,7 +7,7 @@ import com.its.food.delivery.R
 import kotlinx.android.synthetic.main.activity_food_information.*
 import me.relex.circleindicator.CircleIndicator3
 
-class FoodInformation : AppCompatActivity() {
+class FoodInformationActivity : AppCompatActivity() {
     private  var imagesList = mutableListOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

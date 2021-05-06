@@ -4,12 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.its.food.delivery.R
-import com.its.food.delivery.ui.ListFood
-import com.its.food.delivery.ui.home.AdapterFoodItem
-import com.its.food.delivery.ui.home.Food
+import com.its.food.delivery.ui.main.home.AdapterFoodItem
+import com.its.food.delivery.ui.main.home.Food
 import kotlinx.android.synthetic.main.activity_spicy_chiecrns.*
 
-class SpicyChi() : AppCompatActivity(){
+class SpicyChi : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

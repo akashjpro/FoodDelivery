@@ -12,18 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
-        <activity android:name=".ui.no_offers.NoOffers"></activity>
-        <activity android:name=".ui.no_internet.NoInternet" />
-        <activity android:name=".ui.item_not_found.ItemNotFound" />
-        <activity android:name=".ui.my_profile2.MyProfile2" />
-        <activity android:name=".ui.orders.Orders" />
-        <activity android:name=".ui.history.History" />
-        <activity android:name=".ui.cart.Cart" />
+        <activity android:name=".ui.no_offers.NoOffersActivity"/>
+        <activity android:name=".ui.no_internet.NoInternetActivity" />
+        <activity android:name=".ui.item_not_found.ItemNotFoundActivity" />
+        <activity android:name=".ui.my_profile2.MyProfile2Activity" />
+        <activity android:name=".ui.orders.OrdersActivity" />
+        <activity android:name=".ui.history.HistoryActivity" />
+        <activity android:name=".ui.cart.CartActivity" />
         <activity android:name=".ui.checkout_payment.CheckOutPaymentActivity">
         </activity>
-        <activity android:name=".ui.checkout.Checkout" />
-        <activity android:name=".ui.food_in_formation.FoodInformation" />
-        <activity android:name=".ui.my_profile.MyProfile" />
+        <activity android:name=".ui.checkout.CheckoutActivity" />
+        <activity android:name=".ui.food_in_formation.FoodInformationActivity" />
+        <activity android:name=".ui.my_profile.MyProfileActivity" />
         <activity android:name=".ui.spicy.SpicyChi" />
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.splash.SplashActivity">
@@ -32,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.home.Home" />
         <activity android:name=".ui.login_and_sign_up.LoginAndSignUpActivity" />
     </application>
 

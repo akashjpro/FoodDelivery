@@ -57,5 +57,4 @@ class LoginAndSignUpActivityViewModel @Inject constructor() : BaseViewModel() {
             _navigateToMain.valueNotDistinct(true)
         }
     }
-
 }

@@ -6,9 +6,9 @@ import androidx.databinding.DataBindingUtil
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityCartBinding
 import com.its.food.delivery.ui.BaseActivity
-import com.its.food.delivery.ui.orders.Orders
+import com.its.food.delivery.ui.orders.OrdersActivity
 
-class Cart : BaseActivity<ActivityCartBinding, CartViewModel>() {
+class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,7 +26,7 @@ class Cart : BaseActivity<ActivityCartBinding, CartViewModel>() {
     private fun observe() {
         viewModel.navigateToMain.observe(this) { event ->
             event.getContentIfNotHandled()?.let {
-                val intent = Intent(this@Cart, Cart::class.java)
+                val intent = Intent(this@CartActivity, CartActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -35,7 +35,7 @@ class Cart : BaseActivity<ActivityCartBinding, CartViewModel>() {
 
         viewModel.navigateToOrders.observe(this) { event ->
             event.getContentIfNotHandled()?.let {
-                val intent = Intent(this@Cart, Orders::class.java)
+                val intent = Intent(this@CartActivity, OrdersActivity::class.java)
                 startActivity(intent)
                 finish()
             }
