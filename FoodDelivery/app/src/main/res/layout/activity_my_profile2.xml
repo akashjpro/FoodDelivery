@@ -78,7 +78,7 @@
         android:layout_marginTop="@dimen/m2_margin_20"
         android:text="@string/my_profile_name"
         android:textAppearance="@style/Overlay.MyProfile.Name"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnEditProfile"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 

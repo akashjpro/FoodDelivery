@@ -16,12 +16,14 @@ import com.its.food.delivery.ui.splash.SplashViewModel
 class LoginAndSignUpActivity : BaseActivity<ActivityLoginAndSignupBinding, LoginAndSignUpActivityViewModel>() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		// Data binding
-		binding = DataBindingUtil.setContentView(this, R.layout.activity_login_and_signup)
-		binding.lifecycleOwner = this
-		binding.viewModel = this.viewModel
-		init()
-		observe()
+		setContentView(R.layout.activity_login_and_signup)
+
+//		// Data binding
+//		binding = DataBindingUtil.setContentView(this, R.layout.activity_login_and_signup)
+//		binding.lifecycleOwner = this
+//		binding.viewModel = this.viewModel
+//		init()
+//		observe()
 	}
 
 	private fun init() {

@@ -32,11 +32,12 @@
             android:textAppearance="@style/Overlay.spicy_chiecrns_screen.Title"
             android:gravity="center_horizontal" />
 
-        <GridView
-            android:id="@+id/gridView_Spicy_Chiecrns"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_Spicy_Chiecrns"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:numColumns="2" />
+            android:numColumns="2"
+            />
     </LinearLayout>
 
 

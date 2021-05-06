@@ -55,12 +55,12 @@
         android:text="@string/my_profile_name"
         android:textAppearance="@style/Overlay.MyProfile.Name"
 
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnEditProfile"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imgbtnEditProfile"
         android:layout_width="@dimen/m_image_button"
         android:layout_height="@dimen/m_image_button"
         android:layout_marginTop="@dimen/m_imageViewUser_margin"
@@ -68,9 +68,11 @@
         android:layout_marginRight="@dimen/m_imageViewUser_margin"
         android:background="@null"
         android:scaleType="center"
+        android:onClick="onClickEditProfile"
         android:src="@drawable/ic_baseline_create_24"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        />
 
     <TextView
         android:id="@+id/textView11"

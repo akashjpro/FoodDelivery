@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="ViewModel"
-            type="com.its.food.delivery.ui.login_and_sign_up.LoginAndSignUpActivityViewModel" />
-    </data>
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="ViewModel"-->
+<!--            type="com.its.food.delivery.ui.login_and_sign_up.LoginAndSignUpActivityViewModel" />-->
+<!--    </data>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
