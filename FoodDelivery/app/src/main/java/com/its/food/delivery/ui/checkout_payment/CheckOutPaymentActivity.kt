@@ -9,7 +9,7 @@ import com.its.food.delivery.ui.popup.PaymentPopUp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CheckOutPayment : BaseActivity<ActivityCheckOutPaymentBinding, CheckOutPaymentViewModel>() {
+class CheckOutPaymentActivity : BaseActivity<ActivityCheckOutPaymentBinding, CheckOutPaymentViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

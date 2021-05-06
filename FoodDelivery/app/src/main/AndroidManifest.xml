@@ -19,32 +19,20 @@
         <activity android:name=".ui.orders.Orders" />
         <activity android:name=".ui.history.History" />
         <activity android:name=".ui.cart.Cart" />
-        <activity android:name=".ui.checkout_payment.CheckOutPayment">
-
+        <activity android:name=".ui.checkout_payment.CheckOutPaymentActivity">
         </activity>
         <activity android:name=".ui.checkout.Checkout" />
         <activity android:name=".ui.food_in_formation.FoodInformation" />
-<<<<<<< HEAD
-        <activity android:name=".ui.my_profile.MyProfile" >
-=======
         <activity android:name=".ui.my_profile.MyProfile" />
         <activity android:name=".ui.spicy.SpicyChi" />
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.splash.SplashActivity">
->>>>>>> 10739d2393e2e775a01204ac21d873b820f300f0
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.spicy.SpicyChi">
-
-        </activity>
         <activity android:name=".ui.home.Home" />
-        <activity android:name=".ui.splash.SplashActivity">
-
-        </activity>
         <activity android:name=".ui.login_and_sign_up.LoginAndSignUpActivity" />
     </application>
 
