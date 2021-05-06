@@ -29,17 +29,6 @@ class CartViewModel @Inject constructor() : BaseViewModel() {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        viewModelScope.launch {
-            val isEmpty = true
-
-            when {
-
-                isEmpty -> _navigateToOrders.valueNotDistinct(1)
-
-                // User not logged in
-                else -> _navigateToMain.valueNotDistinct(1)
-            }
-        }
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)

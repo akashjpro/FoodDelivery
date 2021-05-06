@@ -6,7 +6,11 @@
         android:id="@+id/btnCart"
         android:icon="@drawable/img_shopping_cart"
         android:title="Cart"
+<<<<<<< HEAD
         app:showAsAction="ifRoom"
         tools:ignore="HardcodedText" />
+=======
+        app:showAsAction="ifRoom" />
+>>>>>>> 10739d2393e2e775a01204ac21d873b820f300f0
 
 </menu>

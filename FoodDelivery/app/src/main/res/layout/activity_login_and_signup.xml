@@ -136,7 +136,7 @@
             android:layout_width="@dimen/button_login_width"
             android:layout_height="@dimen/button_login_height"
             android:layout_marginTop="@dimen/button_login_margin_bottom"
-            android:onClick="onClickLogin"
+            android:onClick="@{() -> ViewModel.onClickLogin()}"
             android:text="@string/login"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.LoginAndSignUp.ButtonText"

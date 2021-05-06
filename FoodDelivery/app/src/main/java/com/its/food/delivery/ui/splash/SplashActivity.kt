@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivitySplashBinding
 import com.its.food.delivery.ui.BaseActivity
-import com.its.food.delivery.ui.home.Home
+import com.its.food.delivery.ui.main.MainActivity
 import com.its.food.delivery.ui.login_and_sign_up.LoginAndSignUpActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -34,7 +34,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
     private fun observe() {
         viewModel.navigateToMain.observe(this) { event ->
             event.getContentIfNotHandled()?.let {
-                val intent = Intent(this@SplashActivity, Home::class.java)
+                val intent = Intent(this@SplashActivity, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }

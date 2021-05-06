@@ -24,7 +24,14 @@
         </activity>
         <activity android:name=".ui.checkout.Checkout" />
         <activity android:name=".ui.food_in_formation.FoodInformation" />
+<<<<<<< HEAD
         <activity android:name=".ui.my_profile.MyProfile" >
+=======
+        <activity android:name=".ui.my_profile.MyProfile" />
+        <activity android:name=".ui.spicy.SpicyChi" />
+        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.splash.SplashActivity">
+>>>>>>> 10739d2393e2e775a01204ac21d873b820f300f0
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
