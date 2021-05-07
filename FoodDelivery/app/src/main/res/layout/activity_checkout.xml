@@ -133,32 +133,40 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView21"
                 app:srcCompat="@drawable/shape_rectangle_while6" />
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_20"
-                android:layout_marginTop="@dimen/check_out_margin_20"
-                android:layout_marginEnd="@dimen/check_out_margin_20"
-                android:text="@string/check_out_radiobutton1"
-                android:textAppearance="@style/Overlay.checkout.Title4"
+            <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
                 app:layout_constraintEnd_toEndOf="@+id/imageView4"
                 app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView4" />
+                app:layout_constraintTop_toTopOf="@+id/imageView4">
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioButton5"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_20"
-                android:layout_marginTop="@dimen/check_out_margin_20"
-                android:layout_marginEnd="@dimen/check_out_margin_20"
-                android:text="@string/check_out_radiobutton2"
-                android:textAppearance="@style/Overlay.checkout.Title4"
-                app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/check_out_margin_20"
+                    android:layout_marginTop="@dimen/check_out_margin_20"
+                    android:layout_marginEnd="@dimen/check_out_margin_20"
+                    android:text="@string/check_out_radiobutton1"
+                    android:textAppearance="@style/Overlay.checkout.Title4"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/check_out_margin_20"
+                    android:layout_marginTop="@dimen/check_out_margin_20"
+                    android:layout_marginEnd="@dimen/check_out_margin_20"
+                    android:text="@string/check_out_radiobutton2"
+                    android:textAppearance="@style/Overlay.checkout.Title4"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="@+id/imageView4"
+                    app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+            </RadioGroup>
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
