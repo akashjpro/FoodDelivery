@@ -72,14 +72,6 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         )
 
 
-//        var tracker = SelectionTracker.Builder(
-//            "my-selection-id",
-//            recyclerView,
-//            StableIdKeyProvider(recyclerView),
-//            MyDetailsLookup(recyclerView),
-//            StorageStrategy.createLongStorage())
-//            .withOnItemActivatedListener(myItemActivatedListener)
-//            .build()
 
 
         // Data binding

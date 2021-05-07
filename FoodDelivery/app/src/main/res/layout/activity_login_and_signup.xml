@@ -11,6 +11,7 @@
     </data>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollviewLogin"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -20,15 +21,15 @@
             android:background="@color/Background"
             tools:context=".ui.login_and_sign_up.LoginAndSignUpActivity">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgTopFrame"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/image_TopFrame_height"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/img_frame_rectangle" />
+                app:srcCompat="@drawable/shape_rectangle_while7" />
 
             <ImageView
                 android:id="@+id/imgLogo"
@@ -44,7 +45,6 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/linearLayout_margin_bottom"
                 app:layout_constraintBottom_toBottomOf="@+id/imgTopFrame"
                 app:layout_constraintEnd_toEndOf="@id/imgTopFrame"
                 app:layout_constraintStart_toStartOf="@id/imgTopFrame">
@@ -80,6 +80,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+                android:layout_marginTop="@dimen/margin_40"
                 android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
                 android:text="@string/login_email"
                 android:textAppearance="@style/Overlay.Login.Title2"

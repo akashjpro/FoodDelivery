@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.its.food.delivery.R
-import com.its.food.delivery.ui.my_profile2.MyProfile2Activity
+import com.its.food.delivery.databinding.FragmentAccountBinding
+import com.its.food.delivery.ui.BaseFragment2
+import com.its.food.delivery.ui.main.MainViewModel
+import com.its.food.delivery.ui.my_profile2.MyProfileEditActivity
 
 
 /**
@@ -15,18 +17,33 @@ import com.its.food.delivery.ui.my_profile2.MyProfile2Activity
  * Use the [AccountFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class AccountFragment : Fragment() {
+class AccountFragment : BaseFragment2<FragmentAccountBinding,AccountViewModel,MainViewModel>() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false)
+
+        // Data binding
+        binding = FragmentAccountBinding.inflate(inflater,container,false)
+        binding.lifecycleOwner = this
+        binding.viewModel = this.viewModel
+        init()
+        observe()
+        return binding.root
     }
-//    fun onClickEditProfile(view: View) {
-//        val intent = Intent(this@AccountFragment, MyProfile2Activity::class.java)
-//        startActivity(intent)
-//        finish()
-//    }
+    private fun init() {
+        lifecycle.addObserver(viewModel)
+    }
+
+    private fun observe() {
+        viewModel.navigateToEditProfile.observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled()?.let {
+                val intent = Intent(this.context, MyProfileEditActivity::class.java)
+                startActivity(intent)
+            }
+
+        }
+    }
+
 }
