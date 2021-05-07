@@ -105,4 +105,7 @@
     <string name="please_note_cancel">Cancel</string>
     <string name="please_note_proceed">Proceed</string>
 
+    <string name="favorite_title">No Favorite Yet</string>
+
+
 </resources>

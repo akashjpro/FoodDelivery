@@ -101,8 +101,8 @@
     <string name="please_note_title">Please note</string>
     <string name="please_note_cancel">Cancel</string>
     <string name="please_note_proceed">Proceed</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+<!--    Favorite Screen-->
+    <string name="favorite_title">No Favorite Yet</string>
 
 </resources>
