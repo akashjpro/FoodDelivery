@@ -6,13 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.its.food.delivery.R
+import com.its.food.delivery.databinding.FragmentFavoriteBinding
+import com.its.food.delivery.ui.BaseActivity
+import com.its.food.delivery.ui.BaseFragment2
+import com.its.food.delivery.ui.main.MainViewModel
 
 /**
  * A simple [Fragment] subclass.
  * Use the [FavoriteFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FavoriteFragment : Fragment() {
+class FavoriteFragment : BaseFragment2<FragmentFavoriteBinding,FavoriteViewModel,MainViewModel>() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
