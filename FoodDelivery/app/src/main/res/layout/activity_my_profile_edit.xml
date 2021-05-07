@@ -58,7 +58,7 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageFramView1"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/m2_image_information_frame_height"
                 android:layout_marginStart="@dimen/m2_margin_40"
@@ -79,11 +79,11 @@
                 android:layout_marginTop="@dimen/m2_margin_20"
                 android:layout_weight="1"
                 android:src="@drawable/img_rectangle_6"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                app:layout_constraintStart_toStartOf="@+id/imageFramView1"
+                app:layout_constraintTop_toTopOf="@+id/imageFramView1" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tvProfileName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m2_margin_15"
@@ -93,11 +93,11 @@
                 android:textAppearance="@style/Overlay.MyProfile.Name"
                 app:layout_constraintEnd_toStartOf="@+id/imgbtnEditProfile"
                 app:layout_constraintStart_toEndOf="@+id/imageViewUser"
-                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                app:layout_constraintTop_toTopOf="@+id/imageFramView1" />
 
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tvProfileEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m2_margin_15"
@@ -106,12 +106,12 @@
                 android:layout_marginEnd="@dimen/m2_margin_20"
                 android:layout_marginRight="@dimen/m2_margin_20"
                 android:text="@string/my_profile_email"
-                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/imageFramView1"
                 app:layout_constraintStart_toEndOf="@+id/imageViewUser"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tvProfilePhoneNumber"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m2_margin_15"
@@ -120,12 +120,12 @@
                 android:layout_marginEnd="@dimen/m2_margin_20"
                 android:layout_marginRight="@dimen/m2_margin_20"
                 android:text="+234 9011039271"
-                app:layout_constraintEnd_toEndOf="@id/imageView2"
+                app:layout_constraintEnd_toEndOf="@id/imageFramView1"
                 app:layout_constraintStart_toEndOf="@+id/imageViewUser"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tvProfileAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m2_margin_15"
@@ -134,9 +134,9 @@
                 android:layout_marginEnd="@dimen/m2_margin_20"
                 android:layout_marginRight="@dimen/m2_margin_20"
                 android:text="@string/my_profile_address"
-                app:layout_constraintEnd_toEndOf="@id/imageView2"
+                app:layout_constraintEnd_toEndOf="@id/imageFramView1"
                 app:layout_constraintStart_toEndOf="@+id/imageViewUser"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                app:layout_constraintTop_toBottomOf="@+id/tvProfilePhoneNumber" />
 
             <ImageView
                 android:id="@+id/imgOrders"
@@ -147,17 +147,18 @@
                 android:layout_marginEnd="@dimen/m2_margin_40"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/imageFramView1"
                 app:srcCompat="@drawable/shape_rectangle_while6" />
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/tvOrders"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m2_margin_20"
                 android:layout_marginEnd="@dimen/m2_margin_20"
                 android:drawableRight="@drawable/ic_vector__1"
                 android:text="@string/my_profile_2_orders"
+                android:onClick="@{()->ViewModel.onClickimgOrders()}"
                 android:textAppearance="@style/Overlay.MyProfile.Title"
                 app:layout_constraintBottom_toBottomOf="@+id/imgOrders"
                 app:layout_constraintEnd_toEndOf="@+id/imgOrders"
@@ -165,7 +166,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imgOrders" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/imgPending"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/m2_image_information_frame_1_height"
                 android:layout_marginStart="@dimen/m2_margin_40"
@@ -177,7 +178,7 @@
                 app:srcCompat="@drawable/shape_rectangle_while6" />
 
             <TextView
-                android:id="@+id/textView30"
+                android:id="@+id/tvPending"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m2_margin_20"
@@ -185,10 +186,10 @@
                 android:drawableRight="@drawable/ic_vector__1"
                 android:text="@string/my_profile_2_Pending_reviews"
                 android:textAppearance="@style/Overlay.MyProfile.Title"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-                app:layout_constraintEnd_toEndOf="@+id/imageView7"
-                app:layout_constraintStart_toStartOf="@+id/imageView7"
-                app:layout_constraintTop_toTopOf="@+id/imageView7" />
+                app:layout_constraintBottom_toBottomOf="@+id/imgPending"
+                app:layout_constraintEnd_toEndOf="@+id/imgPending"
+                app:layout_constraintStart_toStartOf="@+id/imgPending"
+                app:layout_constraintTop_toTopOf="@+id/imgPending" />
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -199,7 +200,7 @@
                 android:layout_marginEnd="@dimen/m2_margin_40"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/imgPending"
                 app:srcCompat="@drawable/shape_rectangle_while6" />
 
             <TextView

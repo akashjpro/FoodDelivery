@@ -81,13 +81,8 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         binding.viewModel = this.viewModel
 
         binding.recyclerviewFoods.adapter = AdapterFoodItem(listFood)
-//        binding.editTextSearch.setOnClickListener{
-//            var intern = Intent(this.context,SpicyChi::class.java)
-//            startActivity(intern)
-//        }
-//        searchFood()
+
         init()
-//        observe()
         return binding.root
     }
 
@@ -95,30 +90,9 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         lifecycle.addObserver(viewModel)
     }
 
-//    fun searchFood() {
-//        editTextSearch.setOnEditorActionListener { v, actionId, event ->
-//            return@setOnEditorActionListener when (actionId) {
-//                EditorInfo.IME_ACTION_DONE -> {
-//                    nextPage()
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
-//    }
-
     private fun nextPage() {
         val intent = Intent(this.context, SpicyChi::class.java)
         startActivity(intent)
     }
-//    private fun observe() {
-//        viewModel.navigateToSpicy.observe(viewLifecycleOwner) { event ->
-//            event.getContentIfNotHandled()?.let {
-//                val intent = Intent(this.context, SpicyChi::class.java)
-//                startActivity(intent)
-//            }
-//
-//        }
-//    }
 
 }

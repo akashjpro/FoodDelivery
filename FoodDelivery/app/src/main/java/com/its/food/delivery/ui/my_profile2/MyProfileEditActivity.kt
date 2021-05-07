@@ -22,21 +22,20 @@ class MyProfileEditActivity : BaseActivity<ActivityMyProfileEditBinding, MyProfi
 
 
         init()
-//        observe()
+        observe()
     }
 
     private fun init() {
         lifecycle.addObserver(viewModel)
     }
 
-//    private fun observe() {
-//        viewModel.navigateToOrders.observe(this) { event ->
-//            event.getContentIfNotHandled()?.let {
-//                val intent = Intent(this@MyProfileEditActivity, OrdersActivity::class.java)
-//                startActivity(intent)
-//                finish()
-//            }
-//
-//        }
-//    }
+    private fun observe() {
+        viewModel.navigateToOrders.observe(this) { event ->
+            event.getContentIfNotHandled()?.let {
+                val intent = Intent(this@MyProfileEditActivity, OrdersActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+    }
 }

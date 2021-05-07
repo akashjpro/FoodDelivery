@@ -34,7 +34,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageFramView1"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/m_image_information_frame_height"
                     android:layout_marginStart="@dimen/m_margin_start_end"
@@ -55,11 +55,11 @@
                     android:layout_marginTop="@dimen/m_imageViewUser_margin"
                     android:layout_weight="1"
                     android:src="@drawable/img_rectangle_6"
-                    app:layout_constraintStart_toStartOf="@+id/imageView2"
-                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                    app:layout_constraintStart_toStartOf="@+id/imageFramView1"
+                    app:layout_constraintTop_toTopOf="@+id/imageFramView1" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/tvProfileName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/m_tv_margin_15"
@@ -70,7 +70,7 @@
 
                     app:layout_constraintEnd_toStartOf="@+id/imgbtnEditProfile"
                     app:layout_constraintStart_toEndOf="@+id/imageViewUser"
-                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                    app:layout_constraintTop_toTopOf="@+id/imageFramView1" />
 
                 <ImageButton
                     android:id="@+id/imgbtnEditProfile"
@@ -83,11 +83,11 @@
                     android:onClick="@{() -> ViewModel.onClickimgbtnEditProfile()}"
                     android:scaleType="center"
                     android:src="@drawable/ic_baseline_create_24"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                    app:layout_constraintEnd_toEndOf="@+id/imageFramView1"
+                    app:layout_constraintTop_toTopOf="@+id/imageFramView1" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/tvProfileEmail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/m_tv_margin_15"
@@ -96,12 +96,12 @@
                     android:layout_marginEnd="@dimen/m_tv_margin_20"
                     android:layout_marginRight="@dimen/m_tv_margin_20"
                     android:text="@string/my_profile_email"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                    app:layout_constraintEnd_toEndOf="@+id/imageFramView1"
                     app:layout_constraintStart_toEndOf="@+id/imageViewUser"
-                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/tvProfilePhoneNumber"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/m_tv_margin_15"
@@ -110,9 +110,9 @@
                     android:layout_marginEnd="@dimen/m_tv_margin_20"
                     android:layout_marginRight="@dimen/m_tv_margin_20"
                     android:text="@string/my_profile_address"
-                    app:layout_constraintEnd_toEndOf="@id/imageView2"
+                    app:layout_constraintEnd_toEndOf="@id/imageFramView1"
                     app:layout_constraintStart_toEndOf="@+id/imageViewUser"
-                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -125,7 +125,7 @@
                     android:textAppearance="@style/Overlay.MyProfile.Title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageFramView1" />
 
                 <ImageView
                     android:id="@+id/imageView3"

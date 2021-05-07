@@ -7,6 +7,7 @@ import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityOrdersBinding
 import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.ui.BaseViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 
 class OrdersActivity : BaseActivity<ActivityOrdersBinding,OrdersViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
