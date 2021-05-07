@@ -51,6 +51,7 @@
             android:layout_marginEnd="@dimen/cart_button_margin"
             android:layout_marginBottom="@dimen/cart_button_margin"
             android:text="@string/cart_button"
+            android:onClick="@{() -> ViewModel.onClickCompleteOrder()}"
             android:textAppearance="@style/Overlay.cart.Title"
             app:cornerRadius="30dp"
             app:layout_constraintBottom_toBottomOf="parent"

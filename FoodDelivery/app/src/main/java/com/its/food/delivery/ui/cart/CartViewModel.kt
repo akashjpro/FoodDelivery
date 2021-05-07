@@ -13,15 +13,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class CartViewModel @Inject constructor() : BaseViewModel() {
-    private val _navigateToOrders by lazy { MutableStateFlow<Int?>(null) }
-    val navigateToOrders by lazy {
-        _navigateToOrders.mapNotNull { SingleEvent.createOrNull(it) }
-            .asLiveData(viewModelScope.coroutineContext)
-    }
-
-    private val _navigateToMain by lazy { MutableStateFlow<Int?>(null) }
-    val navigateToMain by lazy {
-        _navigateToMain.mapNotNull { SingleEvent.createOrNull(it) }
+    private val _navigateToCheckOut by lazy { MutableStateFlow<Boolean?>(null) }
+    val navigateToCheckOut by lazy {
+        _navigateToCheckOut.mapNotNull { SingleEvent.createOrNull(it) }
             .asLiveData(viewModelScope.coroutineContext)
     }
 
@@ -54,5 +48,9 @@ class CartViewModel @Inject constructor() : BaseViewModel() {
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun onDestroy() {
         // TODO: 5/3/21
+    }
+
+    fun onClickCompleteOrder() {
+        viewModelScope.launch { _navigateToCheckOut.valueNotDistinct(true) }
     }
 }

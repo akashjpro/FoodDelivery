@@ -1,17 +1,19 @@
 package com.its.food.delivery.ui.main.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import android.view.inputmethod.EditorInfo
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.FragmentHomeBinding
 import com.its.food.delivery.ui.BaseFragment2
 import com.its.food.delivery.ui.main.MainViewModel
+import com.its.food.delivery.ui.my_profile2.MyProfileEditActivity
+import com.its.food.delivery.ui.spicy.SpicyChi
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -26,6 +28,7 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val listFood: MutableList<Food> = mutableListOf(
             Food(
                 "Veggie tomato mix1",
@@ -71,9 +74,6 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
             ),
         )
 
-
-
-
         // Data binding
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -81,7 +81,44 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         binding.viewModel = this.viewModel
 
         binding.recyclerviewFoods.adapter = AdapterFoodItem(listFood)
-
+//        binding.editTextSearch.setOnClickListener{
+//            var intern = Intent(this.context,SpicyChi::class.java)
+//            startActivity(intern)
+//        }
+//        searchFood()
+        init()
+//        observe()
         return binding.root
     }
+
+    private fun init() {
+        lifecycle.addObserver(viewModel)
+    }
+
+//    fun searchFood() {
+//        editTextSearch.setOnEditorActionListener { v, actionId, event ->
+//            return@setOnEditorActionListener when (actionId) {
+//                EditorInfo.IME_ACTION_DONE -> {
+//                    nextPage()
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
+//    }
+
+    private fun nextPage() {
+        val intent = Intent(this.context, SpicyChi::class.java)
+        startActivity(intent)
+    }
+//    private fun observe() {
+//        viewModel.navigateToSpicy.observe(viewLifecycleOwner) { event ->
+//            event.getContentIfNotHandled()?.let {
+//                val intent = Intent(this.context, SpicyChi::class.java)
+//                startActivity(intent)
+//            }
+//
+//        }
+//    }
+
 }

@@ -1,4 +1,5 @@
-package com.its.food.delivery.ui.main.home
+package com.its.food.delivery.ui.checkout
+
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
@@ -7,25 +8,24 @@ import androidx.lifecycle.viewModelScope
 import com.its.food.delivery.ui.BaseViewModel
 import com.its.food.delivery.util.extensions.valueNotDistinct
 import com.its.food.delivery.util.livedata.SingleEvent
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.launch
+
 import javax.inject.Inject
 
-@HiltViewModel
-class HomeViewModel @Inject constructor() : BaseViewModel() {
-    private val _navigateToSpicy by lazy { MutableStateFlow<Boolean?>(null) }
-    val navigateToSpicy by lazy {
-        _navigateToSpicy.mapNotNull { SingleEvent.createOrNull(it) }
+class CheckOutViewModel @Inject constructor(): BaseViewModel() {
+    private val _navigateToCheckOutPayment by lazy { MutableStateFlow<Boolean?>(null) }
+    val navigateToCheckOutPayment by lazy {
+        _navigateToCheckOutPayment.mapNotNull { SingleEvent.createOrNull(it) }
             .asLiveData(viewModelScope.coroutineContext)
     }
+
 
     // Life cycle
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -51,5 +51,11 @@ class HomeViewModel @Inject constructor() : BaseViewModel() {
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun onDestroy() {
         // TODO: 5/3/21
+    }
+
+    fun onClickChange() {
+        viewModelScope.launch {
+            _navigateToCheckOutPayment.valueNotDistinct(true)
+        }
     }
 }

@@ -6,6 +6,9 @@ import androidx.databinding.DataBindingUtil
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityCartBinding
 import com.its.food.delivery.ui.BaseActivity
+import com.its.food.delivery.ui.checkout.CheckoutActivity
+import com.its.food.delivery.ui.checkout_payment.CheckOutPaymentActivity
+import com.its.food.delivery.ui.main.MainActivity
 import com.its.food.delivery.ui.orders.OrdersActivity
 
 class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
@@ -24,21 +27,13 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
     }
 
     private fun observe() {
-        viewModel.navigateToMain.observe(this) { event ->
+        viewModel.navigateToCheckOut.observe(this) { event ->
             event.getContentIfNotHandled()?.let {
-                val intent = Intent(this@CartActivity, CartActivity::class.java)
+                val intent = Intent(this@CartActivity, CheckoutActivity::class.java)
                 startActivity(intent)
                 finish()
             }
 
-        }
-
-        viewModel.navigateToOrders.observe(this) { event ->
-            event.getContentIfNotHandled()?.let {
-                val intent = Intent(this@CartActivity, OrdersActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
         }
     }
 }

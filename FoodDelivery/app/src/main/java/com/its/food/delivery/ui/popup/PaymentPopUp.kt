@@ -9,6 +9,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.PopupPaymentBinding
 import com.its.food.delivery.ui.ActivityBaseDialogFragment
+import com.its.food.delivery.ui.checkout.CheckOutViewModel
 import com.its.food.delivery.ui.checkout_payment.CheckOutPaymentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
