@@ -49,7 +49,7 @@ class AccountViewModel @Inject constructor() : BaseViewModel() {
         // TODO: 5/3/21
     }
 
-    fun onClickimgbtnEditProfile() {
+    fun onClickEditProfile() {
         viewModelScope.launch { _navigateToEditProfile.valueNotDistinct(true) }
     }
 }

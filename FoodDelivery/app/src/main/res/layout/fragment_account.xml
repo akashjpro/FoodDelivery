@@ -80,7 +80,7 @@
                 android:layout_marginEnd="@dimen/m_imageViewUser_margin"
                 android:layout_marginRight="@dimen/m_imageViewUser_margin"
                 android:background="@null"
-                android:onClick="@{() -> ViewModel.onClickimgbtnEditProfile()}"
+                android:onClick="@{() -> ViewModel.onClickEditProfile()}"
                 android:scaleType="center"
                 android:src="@drawable/ic_baseline_create_24"
                 app:layout_constraintEnd_toEndOf="@+id/imageFramView1"

@@ -4,64 +4,25 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.its.food.delivery.R
+import com.its.food.delivery.ui.ExampleListFood
+import com.its.food.delivery.ui.OnItemClickListener
 import com.its.food.delivery.ui.main.home.AdapterFoodItem
 import com.its.food.delivery.ui.main.home.Food
 import kotlinx.android.synthetic.main.activity_spicy_chiecrns.*
 
-class SpicyChi : AppCompatActivity(){
+class SpicyChi : AppCompatActivity(), ExampleListFood, OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        var listFood: List<Food>
-        listFood = mutableListOf(
-            Food(
-                "Veggie tomato mix1",
-                "19000",
-                R.drawable.img_image,
-                "Food",
-                "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
-            ),
-            Food(
-                "Veggie tomato mix1",
-                "19000",
-                R.drawable.img_image,
-                "Food",
-                "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
-            ),
-            Food(
-                "Veggie tomato mix1",
-                "19000",
-                R.drawable.img_image,
-                "Drink",
-                "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
-            ),
-            Food(
-                "Veggie tomato mix1",
-                "19000",
-                R.drawable.img_image,
-                "Food",
-                "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
-            ),
-            Food(
-                "Veggie tomato mix1",
-                "19000",
-                R.drawable.img_image,
-                "Drink",
-                "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
-            ),
-            Food(
-                "Veggie tomato mix1",
-                "19000",
-                R.drawable.img_image,
-                "Food",
-                "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
-            ),
-        )
-
+        val exampleListFood = exampleLis()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_spicy_chiecrns)
-        val adapterFood = AdapterFoodItem(listFood)
+        val adapterFood = AdapterFoodItem(exampleListFood, this)
         recycler_Spicy_Chiecrns.adapter = adapterFood
-        recycler_Spicy_Chiecrns.layoutManager = GridLayoutManager(this,2)
+        recycler_Spicy_Chiecrns.layoutManager = GridLayoutManager(this, 2)
+    }
+
+    override fun onItemClick(position: Int) {
+        TODO("Not yet implemented")
     }
 }
