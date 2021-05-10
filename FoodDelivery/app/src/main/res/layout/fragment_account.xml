@@ -20,18 +20,27 @@
             android:layout_height="match_parent"
             tools:context=".ui.main.account.AccountFragment">
 
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbarMyProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_vector_back"/>
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m_margin_start_end"
-                android:layout_marginTop="@dimen/m_information_margin_top"
                 android:layout_marginEnd="@dimen/m_margin_start_end"
+                android:layout_marginTop="@dimen/m_information_margin_top"
                 android:text="@string/my_profile_information"
                 android:textAppearance="@style/Overlay.MyProfile.Title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/toolbarMyProfile" />
 
             <ImageView
                 android:id="@+id/imageFramView1"

@@ -55,7 +55,9 @@
                     android:layout_marginStart="@dimen/taps_margin"
                     android:layout_marginEnd="@dimen/taps_margin"
                     android:layout_weight="1"
-                    app:tabIndicatorHeight="@dimen/tab_Indicator_Height">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:tabIndicatorHeight="@dimen/tab_Indicator_Height"
+                    tools:layout_editor_absoluteX="40dp">
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"

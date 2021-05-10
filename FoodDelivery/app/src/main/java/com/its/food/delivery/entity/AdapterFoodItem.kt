@@ -1,24 +1,22 @@
-package com.its.food.delivery.ui.main.home
+package com.its.food.delivery.entity
 
-import android.content.ContentResolver
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.its.food.delivery.R
-import com.its.food.delivery.ui.OnItemClickListener
-import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
-import kotlinx.android.synthetic.main.activity_food_information.*
 import kotlinx.android.synthetic.main.food_item.view.*
 
-class AdapterFoodItem(private var listitemFood: List<Food>, private val listener: OnItemClickListener) :
+class AdapterFoodItem(
+    private var listitemFood: List<Food>,
+    private val onItemClick: (position: Int) -> Unit
+) :
     RecyclerView.Adapter<AdapterFoodItem.FoodViewHolder>() {
 
-    inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         val imageView: ImageView = itemView.imgItemFood
         val tvName: TextView = itemView.tvItemFoodName
         val tvPrice: TextView = itemView.tvPrice
@@ -30,7 +28,7 @@ class AdapterFoodItem(private var listitemFood: List<Food>, private val listener
         override fun onClick(v: View?) {
             val position: Int = bindingAdapterPosition
             if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
+                onItemClick(position)
             }
         }
     }

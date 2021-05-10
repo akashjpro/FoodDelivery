@@ -1,7 +1,7 @@
-package com.its.food.delivery.ui
+package com.its.food.delivery.delivery_interface
 
 import com.its.food.delivery.R
-import com.its.food.delivery.ui.main.home.Food
+import com.its.food.delivery.entity.Food
 
 interface ExampleListFood {
 

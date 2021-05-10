@@ -17,7 +17,14 @@
         android:background="@color/Background"
         tools:context=".ui.orders.OrdersActivity">
 
-
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_vector_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView5"

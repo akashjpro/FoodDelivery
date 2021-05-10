@@ -33,7 +33,7 @@
     <dimen name="edit_text_and_text_view_margin">@dimen/margin_40</dimen>
     <dimen name="textViewPassword_margin_top">@dimen/margin_32</dimen>
     <dimen name="text_view_forgot_pass_code_margin_top">@dimen/margin_24</dimen>
-    <dimen name="taps_margin">@dimen/margin_24</dimen>
+    <dimen name="taps_margin">@dimen/margin_50</dimen>
 
     <!-- Home Screen-->
     <dimen name="home_title_width">250dp</dimen>
@@ -59,7 +59,7 @@
 
     <!-- My Profile Screen -->
     <dimen name="m_margin_start_end">@dimen/margin_40</dimen>
-    <dimen name="m_information_margin_top">@dimen/margin_100</dimen>
+    <dimen name="m_information_margin_top">@dimen/margin_32</dimen>
     <dimen name="m_payment_margin_top">@dimen/margin_50</dimen>
     <dimen name="m_image_frame_margin_top">15dp</dimen>
     <dimen name="m_image_information_frame_height">140dp</dimen>
@@ -100,7 +100,7 @@
     <dimen name="cart_tv_delete_width">200dp</dimen>
     <dimen name="cart_recyclerview_height_width">0dp</dimen>
     <dimen name="cart_tv_margin_delete_start_end">@dimen/margin_50</dimen>
-    <dimen name="cart_tv_margin_delete_top">@dimen/margin_40</dimen>
+    <dimen name="cart_tv_margin_delete_top">@dimen/margin_10</dimen>
     <dimen name="cart_recyclerview_margin">@dimen/margin_20</dimen>
     <dimen name="cart_button_width">0dp</dimen>
     <dimen name="cart_button_height">70dp</dimen>

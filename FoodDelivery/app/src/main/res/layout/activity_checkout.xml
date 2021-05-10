@@ -20,19 +20,27 @@
             android:background="@color/Background"
             tools:context=".ui.checkout.CheckoutActivity">
 
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbarCheckout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationIcon="@drawable/ic_vector_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_20"
                 android:layout_marginEnd="@dimen/check_out_margin_50"
+                android:layout_marginTop="@dimen/check_out_margin_10"
                 android:text="@string/check_out_title"
                 android:textAppearance="@style/Overlay.checkout.Title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/toolbarCheckout" />
 
             <TextView
                 android:id="@+id/textView16"

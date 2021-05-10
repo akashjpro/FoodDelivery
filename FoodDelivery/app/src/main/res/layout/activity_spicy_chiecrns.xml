@@ -7,15 +7,14 @@
     android:background="#f0ffff"
     tools:context=".ui.spicy.SpicyChi">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:navigationIcon="@drawable/ic_vector_back"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
@@ -44,5 +43,4 @@
                 android:numColumns="2" />
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

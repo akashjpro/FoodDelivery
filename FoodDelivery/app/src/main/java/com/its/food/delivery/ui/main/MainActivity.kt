@@ -13,7 +13,6 @@ import com.its.food.delivery.ui.cart.CartActivity
 import com.its.food.delivery.ui.main.account.AccountFragment
 import com.its.food.delivery.ui.main.favorite.FavoriteFragment
 import com.its.food.delivery.ui.main.history.HistoryFragment
-import com.its.food.delivery.ui.main.home.Food
 import com.its.food.delivery.ui.main.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*

@@ -1,4 +1,4 @@
-package com.its.food.delivery.ui.main.home
+package com.its.food.delivery.entity
 
 import java.io.Serializable
 

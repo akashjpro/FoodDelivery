@@ -1,6 +1,6 @@
 package com.its.food.delivery.provider
 
-import com.its.food.delivery.ui.main.home.Food
+import com.its.food.delivery.entity.Food
 
 class WorkoutInstance {
 

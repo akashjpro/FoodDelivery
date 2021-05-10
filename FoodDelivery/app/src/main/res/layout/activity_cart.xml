@@ -14,21 +14,30 @@
         android:layout_height="match_parent"
         tools:context=".ui.cart.CartActivity">
 
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_vector_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tvSwipeOnAnItemToDelete"
             android:layout_width="@dimen/cart_tv_delete_width"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/cart_tv_margin_delete_start_end"
-            android:layout_marginTop="@dimen/cart_tv_margin_delete_top"
             android:layout_marginEnd="@dimen/cart_tv_margin_delete_start_end"
+            android:layout_marginTop="@dimen/cart_tv_margin_delete_top"
             android:drawableLeft="@drawable/ic_iwwa_swipe"
+            android:gravity="center"
             android:text="@string/cart_delete"
-            android:textAppearance="@style/Overlay.cart.Title1"
             android:textAlignment="center"
+            android:textAppearance="@style/Overlay.cart.Title1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:gravity="center" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarCart" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerviewFoodsInCart"

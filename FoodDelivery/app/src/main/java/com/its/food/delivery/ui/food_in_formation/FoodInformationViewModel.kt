@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.its.food.delivery.ui.BaseViewModel
-import com.its.food.delivery.ui.main.home.Food
+import com.its.food.delivery.entity.Food
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
 import com.its.food.delivery.util.extensions.valueNotDistinct
