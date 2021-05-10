@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/food_information_text_view_margin_10"
-            android:text="@string/food_information_title"
+            android:text="@{ViewModel.food.foodName}"
             android:textAppearance="@style/Overlay.FoodInformation.Title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
             android:layout_marginStart="@dimen/food_information_text_view_margin_40"
             android:layout_marginTop="@dimen/food_information_text_view_margin_10"
             android:layout_marginEnd="@dimen/food_information_text_view_margin_40"
-            android:text="@string/food_information_title3"
+            android:text="@{ViewModel.food.foodInformation}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
