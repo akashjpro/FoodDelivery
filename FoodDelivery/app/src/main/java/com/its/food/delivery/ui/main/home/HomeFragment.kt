@@ -24,7 +24,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewModel>(), OnItemClickListener{
+class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewModel>(),
+    OnItemClickListener {
     @SuppressLint("LogNotTimber")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

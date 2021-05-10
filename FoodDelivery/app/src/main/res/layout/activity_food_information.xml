@@ -16,6 +16,13 @@
         android:background="@color/Background"
         tools:context=".ui.food_in_formation.FoodInformationActivity">
 
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbarFoodInfor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager2FoodInformation"
@@ -24,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbarFoodInfor" />
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/CircleIndicator3_Image_Food"
