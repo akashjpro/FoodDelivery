@@ -1,60 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="food"
+            type="com.its.food.delivery.entity.Food"/>
+    </data>
 
-    <View
-        android:id="@+id/viewItemFood"
-        android:layout_width="160dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/shape_rectangle_while5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgItemFood"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginBottom="140dp"
-        android:src="@drawable/img_image"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/viewItemFood"
-        app:layout_constraintEnd_toEndOf="@+id/viewItemFood"
-        app:layout_constraintStart_toStartOf="@+id/viewItemFood" />
-
-    <TextView
-        android:id="@+id/tvItemFoodName"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="120dp"
-        android:gravity="center_horizontal"
-        android:text="Veggie tomato mix"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:fontFamily="@font/exo_extrabold"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/viewItemFood"
-        app:layout_constraintStart_toStartOf="@+id/viewItemFood"
-        app:layout_constraintTop_toTopOf="@+id/viewItemFood" />
-
-    <TextView
-        android:id="@+id/tvPrice"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:onClick="@{clickListener}"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="N1,900"
-        android:textSize="15dp"
-        android:fontFamily="@font/exo_bold"
-        android:textColor="#ff4500"
-        app:layout_constraintEnd_toEndOf="@+id/viewItemFood"
-        app:layout_constraintStart_toStartOf="@+id/viewItemFood"
-        app:layout_constraintTop_toBottomOf="@+id/tvItemFoodName" />
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewItemFood"
+            android:layout_width="160dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/shape_rectangle_while5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgItemFood"
+            app:bindingImageResource="@{food.imgFood}"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginBottom="140dp"
+            android:src="@drawable/img_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/viewItemFood"
+            app:layout_constraintEnd_toEndOf="@+id/viewItemFood"
+            app:layout_constraintStart_toStartOf="@+id/viewItemFood" />
+
+        <TextView
+            android:id="@+id/tvItemFoodName"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="120dp"
+            android:gravity="center_horizontal"
+            android:text="@{food.foodName}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/exo_extrabold"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/viewItemFood"
+            app:layout_constraintStart_toStartOf="@+id/viewItemFood"
+            app:layout_constraintTop_toTopOf="@+id/viewItemFood" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{food.foodPrice}"
+            android:textSize="15dp"
+            android:fontFamily="@font/exo_bold"
+            android:textColor="#ff4500"
+            app:layout_constraintEnd_toEndOf="@+id/viewItemFood"
+            app:layout_constraintStart_toStartOf="@+id/viewItemFood"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemFoodName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

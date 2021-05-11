@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.its.food.delivery.adapters.FoodAdapter
 import com.its.food.delivery.databinding.FragmentHomeBinding
 import com.its.food.delivery.delivery_interface.ExampleListFood
 import com.its.food.delivery.entity.AdapterFoodItem
@@ -34,25 +35,30 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         savedInstanceState: Bundle?
     ): View? {
 
-        val exampleListFood = exampleLis()
-        // Data binding
+        init()
 
+        val exampleListFood = exampleLis()
+
+        // Data binding
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
 
-        binding.recyclerviewFoods.adapter = AdapterFoodItem(exampleListFood, onItemClick = {
-            val foodItemClick: Food = exampleLis()[it]
+        val foodAdapter = FoodAdapter(onItemClick = {
             Log.d("Show", "Here")
             val intent = Intent(this.context, FoodInformationActivity::class.java)
             val bundle = Bundle()
-            bundle.putSerializable(FOOD_ENTITY_KEY, foodItemClick)
+            bundle.putSerializable(FOOD_ENTITY_KEY, it)
             intent.putExtra(BUNDLE_KEY, bundle)
             startActivity(intent)
-            Log.d("Show", "Here ${foodItemClick.foodName}")
+            Log.d("Show", "Here ${it.foodName}")
         })
 
-        init()
+        binding.recyclerviewFoods.adapter = foodAdapter
+
+        //Update list food
+        foodAdapter.submitList(exampleListFood)
+
         return binding.root
     }
 

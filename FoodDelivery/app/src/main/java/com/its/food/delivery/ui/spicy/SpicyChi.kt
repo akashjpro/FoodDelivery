@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.its.food.delivery.R
+import com.its.food.delivery.adapters.FoodAdapter
 import com.its.food.delivery.delivery_interface.ExampleListFood
 import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
 import com.its.food.delivery.entity.AdapterFoodItem
@@ -20,15 +21,19 @@ class SpicyChi : AppCompatActivity(), ExampleListFood {
         val exampleListFood = exampleLis()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_spicy_chiecrns)
-        val adapterFood = AdapterFoodItem(exampleListFood,  onItemClick = {
-            val foodItemClick: Food = exampleLis()[it]
+
+        val foodAdapter = FoodAdapter(onItemClick = {
             val intent = Intent(this, FoodInformationActivity::class.java)
             val bundle = Bundle()
-            bundle.putSerializable(FOOD_ENTITY_KEY, foodItemClick)
+            bundle.putSerializable(FOOD_ENTITY_KEY, it)
             intent.putExtra(BUNDLE_KEY, bundle)
             startActivity(intent)
         })
-        recycler_Spicy_Chiecrns.adapter = adapterFood
+
+        recycler_Spicy_Chiecrns.adapter = foodAdapter
         recycler_Spicy_Chiecrns.layoutManager = GridLayoutManager(this, 2)
+
+        //Update list food
+        foodAdapter.submitList(exampleListFood)
     }
 }

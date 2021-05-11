@@ -14,6 +14,7 @@ interface ExampleListFood {
         for (i in 0 until size){
 //            val drawable = R.drawable.img_image
             val item = Food(
+                "1",
                 "Veggie mix $i",
                 "19000",
                 R.drawable.img_image,
