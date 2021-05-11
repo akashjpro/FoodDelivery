@@ -35,7 +35,7 @@
     <string name="my_profile_radioButton_card">Card</string>
     <string name="my_profile_radioButton_bank_account">Bank account</string>
     <string name="my_profile_radioButton_paypal">Paypal</string>
-    <string name="my_profile_button_update">Updatet</string>
+    <string name="my_profile_button_update">Update</string>
 
     <!--    Food Information-->
     <string name="food_information_title">Veggie tomato mix</string>
@@ -104,5 +104,6 @@
 
 <!--    Favorite Screen-->
     <string name="favorite_title">No Favorite Yet</string>
+    <string name="favorite">favorite</string>
 
 </resources>

@@ -7,6 +7,7 @@ import com.its.food.delivery.databinding.ActivityCheckOutPaymentBinding
 import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.ui.popup.PaymentPopUp
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_check_out_payment.*
 
 @AndroidEntryPoint
 class CheckOutPaymentActivity : BaseActivity<ActivityCheckOutPaymentBinding, CheckOutPaymentViewModel>() {
@@ -20,7 +21,14 @@ class CheckOutPaymentActivity : BaseActivity<ActivityCheckOutPaymentBinding, Che
 
         init()
         observe()
+        setSupportActionBar(toolbarCheckoutPayment)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
 
     private fun init() {
         lifecycle.addObserver(viewModel)

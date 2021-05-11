@@ -12,6 +12,7 @@ import com.its.food.delivery.ui.checkout_payment.CheckOutPaymentActivity
 import com.its.food.delivery.ui.main.MainActivity
 import com.its.food.delivery.ui.my_profile2.MyProfileEditActivity
 import com.its.food.delivery.ui.popup.PaymentPopUp
+import kotlinx.android.synthetic.main.activity_checkout.*
 
 class CheckoutActivity : BaseActivity<ActivityCheckoutBinding,CheckOutViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,12 @@ class CheckoutActivity : BaseActivity<ActivityCheckoutBinding,CheckOutViewModel>
 
         init()
         observe()
+        setSupportActionBar(toolbarCheckout)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun init() {

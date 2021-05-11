@@ -10,9 +10,7 @@
             type="com.its.food.delivery.ui.checkout.CheckOutViewModel" />
     </data>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -29,188 +27,201 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginEnd="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_10"
-                android:text="@string/check_out_title"
-                android:textAppearance="@style/Overlay.checkout.Title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbarCheckout" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginLeft="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_50"
-                android:text="@string/check_out_title1"
-                android:textAppearance="@style/Overlay.checkout.Title1"
-                app:layout_constraintEnd_toStartOf="@+id/textView17"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/check_out_margin_50"
-                android:layout_marginRight="@dimen/check_out_margin_50"
-                android:onClick="@{()->ViewModel.onClickChange()}"
-                android:text="@string/check_out_change"
-                android:textAppearance="@style/Overlay.checkout.Title2"
-                app:layout_constraintBottom_toBottomOf="@+id/textView16"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="@dimen/check_out_image_farm_height1"
-                android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_10"
-                android:layout_marginEnd="@dimen/check_out_margin_50"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16"
-                app:srcCompat="@drawable/shape_rectangle_while6" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_20"
-                android:layout_marginTop="@dimen/check_out_margin_20"
-                android:layout_marginEnd="@dimen/check_out_margin_20"
-                android:text="Marvis Kparobo"
-                android:textAppearance="@style/Overlay.checkout.Title3"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_20"
-                android:layout_marginTop="@dimen/check_out_margin_20"
-                android:layout_marginEnd="@dimen/check_out_margin_20"
-                android:text="Km 5 refinery road oppsite re public road, effurun, delta state"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_20"
-                android:layout_marginTop="@dimen/check_out_margin_20"
-                android:layout_marginEnd="@dimen/check_out_margin_20"
-                android:text="+234 9011039271"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_50"
-                android:layout_marginEnd="@dimen/check_out_margin_50"
-                android:text="@string/check_out_title2"
-                android:textAppearance="@style/Overlay.checkout.Title1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="@dimen/check_out_image_farm_height2"
-                android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_10"
-                android:layout_marginEnd="@dimen/check_out_margin_50"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView21"
-                app:srcCompat="@drawable/shape_rectangle_while6" />
-
-            <RadioGroup
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView4">
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/radioButton4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/check_out_margin_20"
-                    android:layout_marginTop="@dimen/check_out_margin_20"
-                    android:layout_marginEnd="@dimen/check_out_margin_20"
-                    android:text="@string/check_out_radiobutton1"
-                    android:textAppearance="@style/Overlay.checkout.Title4"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                    app:layout_constraintStart_toStartOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/radioButton5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/check_out_margin_20"
-                    android:layout_marginTop="@dimen/check_out_margin_20"
-                    android:layout_marginEnd="@dimen/check_out_margin_20"
-                    android:text="@string/check_out_radiobutton2"
-                    android:textAppearance="@style/Overlay.checkout.Title4"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                    app:layout_constraintStart_toStartOf="@+id/imageView4"
-                    app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
-            </RadioGroup>
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginLeft="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_100"
-                android:text="@string/check_out_total"
-                android:textAppearance="@style/Overlay.checkout.Title4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/check_out_margin_100"
-                android:layout_marginEnd="@dimen/check_out_margin_50"
-                android:layout_marginRight="@dimen/check_out_margin_50"
-                android:text="23,000"
-                android:textAppearance="@style/Overlay.checkout.Title5"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintStart_toStartOf="@id/toolbarCheckout"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarCheckout">
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="@dimen/check_out_layout_width"
-                android:layout_height="@dimen/check_out_button_height"
-                android:layout_marginStart="@dimen/check_out_margin_50"
-                android:layout_marginTop="@dimen/check_out_margin_20"
-                android:layout_marginEnd="@dimen/check_out_margin_50"
-                android:text="@string/check_out_button"
-                android:textAppearance="@style/Overlay.checkout.Title6"
-                app:cornerRadius="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView22" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/check_out_margin_50"
+                        android:layout_marginEnd="@dimen/check_out_margin_50"
+                        android:text="@string/check_out_title"
+                        android:textAppearance="@style/Overlay.checkout.Title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/check_out_margin_50"
+                        android:layout_marginLeft="@dimen/check_out_margin_50"
+                        android:layout_marginTop="@dimen/check_out_margin_50"
+                        android:text="@string/check_out_title1"
+                        android:textAppearance="@style/Overlay.checkout.Title1"
+                        app:layout_constraintEnd_toStartOf="@+id/textView17"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/check_out_margin_50"
+                        android:layout_marginRight="@dimen/check_out_margin_50"
+                        android:onClick="@{()->ViewModel.onClickChange()}"
+                        android:text="@string/check_out_change"
+                        android:textAppearance="@style/Overlay.checkout.Title2"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="@dimen/check_out_image_farm_height1"
+                        android:layout_marginStart="@dimen/check_out_margin_50"
+                        android:layout_marginTop="@dimen/check_out_margin_10"
+                        android:layout_marginEnd="@dimen/check_out_margin_50"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16"
+                        app:srcCompat="@drawable/shape_rectangle_while6" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/check_out_margin_20"
+                        android:layout_marginTop="@dimen/check_out_margin_20"
+                        android:layout_marginEnd="@dimen/check_out_margin_20"
+                        android:text="Marvis Kparobo"
+                        android:textAppearance="@style/Overlay.checkout.Title3"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/check_out_margin_20"
+                        android:layout_marginTop="@dimen/check_out_margin_20"
+                        android:layout_marginEnd="@dimen/check_out_margin_20"
+                        android:text="Km 5 refinery road oppsite re public road, effurun, delta state"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/check_out_margin_20"
+                        android:layout_marginTop="@dimen/check_out_margin_20"
+                        android:layout_marginEnd="@dimen/check_out_margin_20"
+                        android:text="+234 9011039271"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/check_out_margin_50"
+                        android:layout_marginTop="@dimen/check_out_margin_50"
+                        android:layout_marginEnd="@dimen/check_out_margin_50"
+                        android:text="@string/check_out_title2"
+                        android:textAppearance="@style/Overlay.checkout.Title1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="@dimen/check_out_image_farm_height2"
+                        android:layout_marginStart="@dimen/check_out_margin_50"
+                        android:layout_marginTop="@dimen/check_out_margin_10"
+                        android:layout_marginEnd="@dimen/check_out_margin_50"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:srcCompat="@drawable/shape_rectangle_while6" />
+
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                        app:layout_constraintStart_toStartOf="@+id/imageView4"
+                        app:layout_constraintTop_toTopOf="@+id/imageView4">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioButton4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/check_out_margin_20"
+                            android:layout_marginTop="@dimen/check_out_margin_20"
+                            android:layout_marginEnd="@dimen/check_out_margin_20"
+                            android:text="@string/check_out_radiobutton1"
+                            android:textAppearance="@style/Overlay.checkout.Title4"
+                            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                            app:layout_constraintStart_toStartOf="@+id/imageView4"
+                            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioButton5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/check_out_margin_20"
+                            android:layout_marginTop="@dimen/check_out_margin_20"
+                            android:layout_marginEnd="@dimen/check_out_margin_20"
+                            android:text="@string/check_out_radiobutton2"
+                            android:textAppearance="@style/Overlay.checkout.Title4"
+                            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                            app:layout_constraintStart_toStartOf="@+id/imageView4"
+                            app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/check_out_margin_50"
+                        android:layout_marginLeft="@dimen/check_out_margin_50"
+                        android:layout_marginTop="@dimen/check_out_margin_100"
+                        android:text="@string/check_out_total"
+                        android:textAppearance="@style/Overlay.checkout.Title4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/check_out_margin_100"
+                        android:layout_marginEnd="@dimen/check_out_margin_50"
+                        android:layout_marginRight="@dimen/check_out_margin_50"
+                        android:text="23,000"
+                        android:textAppearance="@style/Overlay.checkout.Title5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="@dimen/check_out_layout_width"
+                        android:layout_height="@dimen/check_out_button_height"
+                        android:layout_marginStart="@dimen/check_out_margin_50"
+                        android:layout_marginTop="@dimen/check_out_margin_20"
+                        android:layout_marginEnd="@dimen/check_out_margin_50"
+                        android:text="@string/check_out_button"
+                        android:textAppearance="@style/Overlay.checkout.Title6"
+                        app:cornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f0ffff"
-    tools:context=".ui.spicy.SpicyChi">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+<variable
+    name="ViewModel"
+    type="com.its.food.delivery.ui.spicy.SpicyChiViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0ffff"
+        tools:context=".ui.spicy.SpicyChiActivity">
 
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -43,4 +50,5 @@
                 android:numColumns="2" />
         </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

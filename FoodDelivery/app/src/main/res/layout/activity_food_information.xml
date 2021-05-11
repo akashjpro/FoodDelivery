@@ -16,75 +16,93 @@
         android:background="@color/Background"
         tools:context=".ui.food_in_formation.FoodInformationActivity">
 
-        <include
-            android:id="@+id/include"
-            layout="@layout/toolbar_food_information" />
-
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewpager2FoodInformation"
-            android:layout_width="@dimen/food_information_viewpager2_width"
-            android:layout_height="@dimen/food_information_viewpager2_height"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include" />
-
-        <me.relex.circleindicator.CircleIndicator3
-            android:id="@+id/CircleIndicator3_Image_Food"
-            android:layout_width="@dimen/food_information_CircleIndicator3_width"
-            android:layout_height="@dimen/food_information_CircleIndicator3_height"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager2FoodInformation" />
-
-        <TextView
-            android:id="@+id/tvNameFood"
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarFoodInformation"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/food_information_text_view_margin_10"
-            android:text="@{ViewModel.food.foodName}"
-            android:textAppearance="@style/Overlay.FoodInformation.Title"
+            app:menu="@menu/menu_food_information"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CircleIndicator3_Image_Food" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_vector_back" />
 
-        <TextView
-            android:id="@+id/textView9"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/food_information_text_view_margin_40"
-            android:layout_marginTop="@dimen/food_information_text_view_margin_50"
-            android:layout_marginEnd="@dimen/food_information_text_view_margin_40"
-            android:text="@string/food_information_title1"
-            android:textAppearance="@style/Overlay.FoodInformation.Title1"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameFood" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarFoodInformation">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvProfileAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/food_information_text_view_margin_40"
-            android:layout_marginTop="@dimen/food_information_text_view_margin_10"
-            android:layout_marginEnd="@dimen/food_information_text_view_margin_40"
-            android:text="@{ViewModel.food.foodInformation}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager2FoodInformation"
+                    android:layout_width="@dimen/food_information_viewpager2_width"
+                    android:layout_height="@dimen/food_information_viewpager2_height"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/food_information_text_view_margin_40"
-            android:layout_marginTop="@dimen/food_information_text_view_margin_30"
-            android:layout_marginEnd="@dimen/food_information_text_view_margin_40"
-            android:text="@string/food_information_title2"
-            android:textAppearance="@style/Overlay.FoodInformation.Title1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProfileAddress" />
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/CircleIndicator3_Image_Food"
+                android:layout_width="@dimen/food_information_CircleIndicator3_width"
+                android:layout_height="@dimen/food_information_CircleIndicator3_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewpager2FoodInformation" />
+
+            <TextView
+                android:id="@+id/tvNameFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/food_information_text_view_margin_10"
+                android:text="@{ViewModel.food.foodName}"
+                android:textAppearance="@style/Overlay.FoodInformation.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CircleIndicator3_Image_Food" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/food_information_text_view_margin_40"
+                android:layout_marginTop="@dimen/food_information_text_view_margin_50"
+                android:layout_marginEnd="@dimen/food_information_text_view_margin_40"
+                android:text="@string/food_information_title1"
+                android:textAppearance="@style/Overlay.FoodInformation.Title1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNameFood" />
+
+            <TextView
+                android:id="@+id/tvProfileAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/food_information_text_view_margin_40"
+                android:layout_marginTop="@dimen/food_information_text_view_margin_10"
+                android:layout_marginEnd="@dimen/food_information_text_view_margin_40"
+                android:text="@{ViewModel.food.foodInformation}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/food_information_text_view_margin_40"
+                android:layout_marginTop="@dimen/food_information_text_view_margin_30"
+                android:layout_marginEnd="@dimen/food_information_text_view_margin_40"
+                android:text="@string/food_information_title2"
+                android:textAppearance="@style/Overlay.FoodInformation.Title1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileAddress" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

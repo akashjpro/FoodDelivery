@@ -7,46 +7,55 @@
     tools:context=".ui.item_not_found.ItemNotFoundActivity">
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="@dimen/history_image_view_width"
-            android:layout_height="@dimen/history_image_view_height"
-            android:layout_marginTop="@dimen/history_image_view_margin_200"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_search_24"
-            tools:ignore="VectorDrawableCompat" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/item_not_found_70"
-            android:layout_marginTop="@dimen/item_not_found_20"
-            android:layout_marginEnd="@dimen/item_not_found_70"
-            android:gravity="center"
-            android:text="@string/item_not_found_title"
-            android:textAppearance="@style/Overlay.history.title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="@dimen/history_image_view_width"
+                android:layout_height="@dimen/history_image_view_height"
+                android:layout_marginTop="@dimen/history_image_view_margin_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_search_24"
+                tools:ignore="VectorDrawableCompat" />
 
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/item_not_found_70"
-            android:layout_marginTop="@dimen/item_not_found_20"
-            android:layout_marginEnd="@dimen/item_not_found_70"
-            android:gravity="center"
-            android:text="@string/item_not_found_title1"
-            android:textAppearance="@style/Overlay.history.text_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_not_found_70"
+                android:layout_marginTop="@dimen/item_not_found_20"
+                android:layout_marginEnd="@dimen/item_not_found_70"
+                android:gravity="center"
+                android:text="@string/item_not_found_title"
+                android:textAppearance="@style/Overlay.history.title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_not_found_70"
+                android:layout_marginTop="@dimen/item_not_found_20"
+                android:layout_marginEnd="@dimen/item_not_found_70"
+                android:gravity="center"
+                android:text="@string/item_not_found_title1"
+                android:textAppearance="@style/Overlay.history.text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

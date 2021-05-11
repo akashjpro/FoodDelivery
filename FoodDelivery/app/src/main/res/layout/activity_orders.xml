@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="ViewModel"
-    type="com.its.food.delivery.ui.orders.OrdersViewModel" />
+
+        <variable
+            name="ViewModel"
+            type="com.its.food.delivery.ui.orders.OrdersViewModel" />
     </data>
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,66 +20,79 @@
             android:id="@+id/toolbarOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:navigationIcon="@drawable/ic_vector_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_vector_back" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="@dimen/history_image_view_width"
-                android:layout_height="@dimen/history_image_view_height"
-                android:layout_marginTop="@dimen/history_image_view_margin_200"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/img_cart"
-                tools:ignore="VectorDrawableCompat" />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/history_text_view_margin_50"
-                android:layout_marginTop="@dimen/history_text_view_margin_20"
-                android:layout_marginEnd="@dimen/history_text_view_margin_50"
-                android:gravity="center"
-                android:text="@string/orders_tv_1"
-                android:textAppearance="@style/Overlay.history.title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/history_text_view_margin_50"
-                android:layout_marginTop="@dimen/history_text_view_margin_20"
-                android:layout_marginEnd="@dimen/history_text_view_margin_50"
-                android:gravity="center"
-                android:text="@string/orders_tv_2"
-                android:textAppearance="@style/Overlay.history.text_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView24" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnStartOrdering"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/history_button_height"
-            android:layout_marginStart="@dimen/history_button_margin"
-            android:layout_marginEnd="@dimen/history_button_margin"
-            android:layout_marginBottom="@dimen/history_button_margin"
-            android:layout_marginTop="@dimen/margin_40"
-            android:text="@string/history_button"
-            android:textAppearance="@style/Overlay.history.button"
-            app:cornerRadius="30dp"
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView25" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarOrder">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="@dimen/history_image_view_width"
+                    android:layout_height="@dimen/history_image_view_height"
+                    android:layout_marginTop="@dimen/history_image_view_margin_200"
+                    android:src="@drawable/img_cart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/history_text_view_margin_50"
+                    android:layout_marginTop="@dimen/history_text_view_margin_20"
+                    android:layout_marginEnd="@dimen/history_text_view_margin_50"
+                    android:gravity="center"
+                    android:text="@string/orders_tv_1"
+                    android:textAppearance="@style/Overlay.history.title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/history_text_view_margin_50"
+                    android:layout_marginTop="@dimen/history_text_view_margin_20"
+                    android:layout_marginEnd="@dimen/history_text_view_margin_50"
+                    android:gravity="center"
+                    android:text="@string/orders_tv_2"
+                    android:textAppearance="@style/Overlay.history.text_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartOrdering"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/history_button_height"
+                    android:layout_marginStart="@dimen/history_button_margin"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:layout_marginEnd="@dimen/history_button_margin"
+                    android:layout_marginBottom="@dimen/history_button_margin"
+                    android:text="@string/history_button"
+                    android:textAppearance="@style/Overlay.history.button"
+                    app:cornerRadius="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView25" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
 
 </layout>

@@ -19,28 +19,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".ui.main.account.AccountFragment">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbarMyProfile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/ic_vector_back"/>
-
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/m_margin_start_end"
-                android:layout_marginEnd="@dimen/m_margin_start_end"
                 android:layout_marginTop="@dimen/m_information_margin_top"
+                android:layout_marginEnd="@dimen/m_margin_start_end"
                 android:text="@string/my_profile_information"
                 android:textAppearance="@style/Overlay.MyProfile.Title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbarMyProfile" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageFramView1"
@@ -165,6 +155,7 @@
                     android:layout_marginTop="@dimen/m_radiobutton_margin"
                     android:layout_marginEnd="@dimen/m_radiobutton_margin"
                     android:drawableLeft="@drawable/shape_card"
+                    android:drawablePadding="10dp"
                     android:text="@string/my_profile_radioButton_card"
                     android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
                     app:layout_constraintEnd_toEndOf="@+id/imageView3"
@@ -179,6 +170,7 @@
                     android:layout_marginTop="@dimen/m_radiobutton_margin"
                     android:layout_marginEnd="@dimen/m_radiobutton_margin"
                     android:drawableLeft="@drawable/shape_bankaccount"
+                    android:drawablePadding="10dp"
                     android:text="@string/my_profile_radioButton_bank_account"
                     android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
                     app:layout_constraintEnd_toEndOf="@+id/imageView3"
@@ -194,6 +186,7 @@
                     android:layout_marginTop="@dimen/m_radiobutton_margin"
                     android:layout_marginEnd="@dimen/m_radiobutton_margin"
                     android:drawableLeft="@drawable/shape_paypal"
+                    android:drawablePadding="10dp"
                     android:text="@string/my_profile_radioButton_paypal"
                     android:textAppearance="@style/Overlay.MyProfile.PaymentMethod"
                     app:layout_constraintEnd_toEndOf="@+id/imageView3"

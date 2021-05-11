@@ -11,6 +11,7 @@ import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.ui.main.MainActivity
 import com.its.food.delivery.ui.orders.OrdersActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_my_profile_edit.*
 import java.util.zip.Inflater
 
 class MyProfileEditActivity : BaseActivity<ActivityMyProfileEditBinding, MyProfileEditViewModel>() {
@@ -23,7 +24,14 @@ class MyProfileEditActivity : BaseActivity<ActivityMyProfileEditBinding, MyProfi
 
         init()
         observe()
+        setSupportActionBar(toolbarMyProfileEdit)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
 
     private fun init() {
         lifecycle.addObserver(viewModel)

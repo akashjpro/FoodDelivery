@@ -21,11 +21,6 @@ class FoodInformationViewModel @Inject constructor() : BaseViewModel() {
     val food by lazy {
         _food.filterNotNull().asLiveData(viewModelScope.coroutineContext)
     }
-//    private val _navigateToHome by lazy { MutableStateFlow<Boolean?>(null) }
-//    val navigateToHomeFragment by lazy {
-//        _navigateToHome.mapNotNull { SingleEvent.createOrNull(it) }
-//            .asLiveData(viewModelScope.coroutineContext)
-//    }
 
     fun processIntentData(intent: Intent?) {
         val food = intent?.getBundleExtra(BUNDLE_KEY)?.get(FOOD_ENTITY_KEY)  as Food

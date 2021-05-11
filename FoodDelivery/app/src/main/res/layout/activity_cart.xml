@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="ViewModel"
             type="com.its.food.delivery.ui.cart.CartViewModel" />
@@ -18,18 +19,18 @@
             android:id="@+id/toolbarCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:navigationIcon="@drawable/ic_vector_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_vector_back" />
 
         <TextView
             android:id="@+id/tvSwipeOnAnItemToDelete"
             android:layout_width="@dimen/cart_tv_delete_width"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/cart_tv_margin_delete_start_end"
-            android:layout_marginEnd="@dimen/cart_tv_margin_delete_start_end"
             android:layout_marginTop="@dimen/cart_tv_margin_delete_top"
+            android:layout_marginEnd="@dimen/cart_tv_margin_delete_start_end"
             android:drawableLeft="@drawable/ic_iwwa_swipe"
             android:gravity="center"
             android:text="@string/cart_delete"
@@ -59,8 +60,8 @@
             android:layout_marginStart="@dimen/cart_button_margin"
             android:layout_marginEnd="@dimen/cart_button_margin"
             android:layout_marginBottom="@dimen/cart_button_margin"
-            android:text="@string/cart_button"
             android:onClick="@{() -> ViewModel.onClickCompleteOrder()}"
+            android:text="@string/cart_button"
             android:textAppearance="@style/Overlay.cart.Title"
             app:cornerRadius="30dp"
             app:layout_constraintBottom_toBottomOf="parent"

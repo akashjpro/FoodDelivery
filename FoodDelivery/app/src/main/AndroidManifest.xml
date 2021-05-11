@@ -21,7 +21,7 @@
         <activity android:name=".ui.checkout_payment.CheckOutPaymentActivity"/>
         <activity android:name=".ui.checkout.CheckoutActivity" />
         <activity android:name=".ui.food_in_formation.FoodInformationActivity" />
-        <activity android:name=".ui.spicy.SpicyChi" />
+        <activity android:name=".ui.spicy.SpicyChiActivity" />
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>

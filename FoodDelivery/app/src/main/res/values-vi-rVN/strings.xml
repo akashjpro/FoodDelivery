@@ -29,7 +29,7 @@
     <!--    My profile-->
     <string name="my_profile_information">Thông tin</string>
     <string name="my_profile_payment_method">Phương thức thanh toán</string>
-    <string name="my_profile_button_update">Updater</string>
+    <string name="my_profile_button_update">Update</string>
 
     <string name="my_profile_name">Marvis Ighedosa</string>
 
@@ -107,5 +107,5 @@
 
     <string name="favorite_title">No Favorite Yet</string>
 
-
+    <string name="favorite">favorite</string>
 </resources>

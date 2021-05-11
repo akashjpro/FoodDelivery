@@ -10,6 +10,7 @@ import com.its.food.delivery.ui.checkout.CheckoutActivity
 import com.its.food.delivery.ui.checkout_payment.CheckOutPaymentActivity
 import com.its.food.delivery.ui.main.MainActivity
 import com.its.food.delivery.ui.orders.OrdersActivity
+import kotlinx.android.synthetic.main.activity_cart.*
 
 class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,10 +19,18 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_cart)
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
-
+        setSupportActionBar(toolbarCart)
         init()
         observe()
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val intent = Intent(this@CartActivity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+        return true
+    }
+
     private fun init() {
         lifecycle.addObserver(viewModel)
     }
@@ -33,7 +42,6 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
                 startActivity(intent)
                 finish()
             }
-
         }
     }
 }
