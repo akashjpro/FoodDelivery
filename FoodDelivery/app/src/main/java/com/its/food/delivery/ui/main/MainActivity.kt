@@ -2,8 +2,11 @@ package com.its.food.delivery.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.its.food.delivery.R
@@ -16,6 +19,7 @@ import com.its.food.delivery.ui.main.history.HistoryFragment
 import com.its.food.delivery.ui.main.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
@@ -31,6 +35,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     private val fragmentManager = supportFragmentManager
     private var activeFragment: Fragment = HOME_SCREEN
 
+    private val bottomSheetViewModel: BottomSheetViewModel by viewModels()
+
+    // Access view
+    private lateinit var toggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,6 +47,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
+        binding.bottomSheetVM = this.bottomSheetViewModel
+
+        init()
 
         setSupportActionBar(toolbarHome)
 
@@ -52,25 +64,35 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
+        return when (item.itemId) {
             R.id.btnCart -> {
                 val intent1 = Intent(this@MainActivity, CartActivity::class.java)
                 startActivity(intent1)
-                finish()
                 true
+            }
+            android.R.id.home -> {
+                drawer_layout.openDrawer(Gravity.LEFT)
+                    true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
+    private fun init() {
+
+    }
+
     private fun navigateBottomEvent() {
         fragmentManager.beginTransaction().apply {
             add(R.id.container, HISTORY_SCREEN, "History").hide(
-                HISTORY_SCREEN)
+                HISTORY_SCREEN
+            )
             add(R.id.container, ACCOUNT_SCREEN, "Account").hide(
-                ACCOUNT_SCREEN)
+                ACCOUNT_SCREEN
+            )
             add(R.id.container, FAVORITE_SCREEN, "Favorite").hide(
-                FAVORITE_SCREEN)
+                FAVORITE_SCREEN
+            )
             add(R.id.container, HOME_SCREEN, getString(R.string.title_home))
         }.commit()
 
