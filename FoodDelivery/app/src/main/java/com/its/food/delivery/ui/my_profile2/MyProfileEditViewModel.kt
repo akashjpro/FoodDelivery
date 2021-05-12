@@ -51,7 +51,7 @@ class MyProfileEditViewModel @Inject constructor():BaseViewModel() {
         // TODO: 5/3/21
     }
 
-    fun onClickimgOrders() {
+    fun onClickOrders() {
         viewModelScope.launch {
             _navigateToOrders.valueNotDistinct(true)
         }

@@ -27,7 +27,6 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
     override fun onSupportNavigateUp(): Boolean {
         val intent = Intent(this@CartActivity, MainActivity::class.java)
         startActivity(intent)
-        finish()
         return true
     }
 
@@ -40,7 +39,6 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
             event.getContentIfNotHandled()?.let {
                 val intent = Intent(this@CartActivity, CheckoutActivity::class.java)
                 startActivity(intent)
-                finish()
             }
         }
     }

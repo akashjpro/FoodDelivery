@@ -19,6 +19,7 @@ import com.its.food.delivery.ui.main.MainViewModel
 import com.its.food.delivery.ui.spicy.SpicyChiActivity
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
+import com.its.food.delivery.util.SEARCH_KEY
 import kotlinx.android.synthetic.main.activity_food_information.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -79,70 +80,17 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
             }
         })
 
-//        binding.editTextSearch.setOnEditorActionListener { v, actionId, event ->
-//            var handled = false
-//            if (event.action == 13) {
-//                Log.d("aaa", "Sow Here1 $v")
-//                for (i in exampleListFood) {
-//                    if (i.foodName.equals(v)) {
-//                        Log.d("aaa", "Sow Here $v")
-//                        val intent = Intent(this.context, SpicyChiActivity::class.java)
-//                        val bundle = Bundle()
-//                        bundle.putSerializable(FOOD_ENTITY_KEY, i)
-//                        intent.putExtra(BUNDLE_KEY, bundle)
-//                        startActivity(intent)
-//                    }
-//                }
-//                val intent1 = Intent(this.context, ItemNotFoundActivity::class.java)
-//                startActivity(intent1)
-//                handled = true
-//            }
-//            handled
-//        }
-//        binding.editTextSearch.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
-//            if (actionId == EditorInfo.IME_ACTION_SEND) {
-//                if (event.action == KeyEvent.KEYCODE_ENTER) {
-//                    for (i in exampleListFood) {
-//                        if (i.foodName.equals(v)) {
-//                            Log.d("aaa", "Sow Here $v")
-//                            val intent = Intent(this.context, SpicyChiActivity::class.java)
-//                            val bundle = Bundle()
-//                            bundle.putSerializable(FOOD_ENTITY_KEY, i)
-//                            intent.putExtra(BUNDLE_KEY, bundle)
-//                            startActivity(intent)
-//                        }
-//                    }
-//                    val intent1 = Intent(this.context, ItemNotFoundActivity::class.java)
-//                    startActivity(intent1)
-//                }
-//
-//            }
-//            false
-//        })
-
-
         return binding.root
     }
 
     @SuppressLint("LogNotTimber")
     fun searchFood() {
         val intent = Intent(this.context, SpicyChiActivity::class.java)
-        intent.putExtra("SEARCH_KEY", binding.editTextSearch.text)
+        val i = binding.editTextSearch.text
+        intent.putExtra(SEARCH_KEY, i)
+        Log.d("aaa", "Từ khóa tìm kiếm --- $i ---")
         startActivity(intent)
 
-//        for (i in exampleListFood){
-//           if (i.foodName.equals(binding.editTextSearch.text.trim())){
-//               val intent = Intent(this.context, SpicyChiActivity::class.java)
-//               val bundle = Bundle()
-//               bundle.putSerializable(FOOD_ENTITY_KEY, i)
-//               intent.putExtra(BUNDLE_KEY, bundle)
-//               startActivity(intent)
-//               Log.d("aaa","Here")
-//               return
-//           }
-//        }
-//        val intent1 = Intent(this.context, ItemNotFoundActivity::class.java)
-//        startActivity(intent1)
     }
 
     private fun init() {

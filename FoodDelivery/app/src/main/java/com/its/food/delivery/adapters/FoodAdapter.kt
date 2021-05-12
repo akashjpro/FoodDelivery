@@ -8,9 +8,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.its.food.delivery.databinding.FoodItemBinding
 import com.its.food.delivery.entity.Food
+import java.util.*
+import kotlin.collections.ArrayList
 
 class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallback()) {
+//    var foodListFilterde = ArrayList<Food>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
             FoodItemBinding.inflate(
@@ -46,10 +50,38 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
         }
     }
 
+    fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                val foodList = ArrayList<Food>()
+                if (charSearch.isEmpty()) {
+//                    foodListFilterde = currentList as ArrayList<Food>
+                } else {
 
+                    for (item in currentList) {
+                        if (item.foodName.toLowerCase(Locale.ROOT)
+                                .contains(charSearch.toLowerCase(Locale.ROOT))
+                        ) {
+                            foodList.add(item)
+                        }
+                    }
+//                    foodListFilterde = foodList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = foodList
+                return filterResults
+            }
 
-
-
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                submitList(
+                    results?.values as ArrayList<Food>
+                )
+                notifyDataSetChanged()
+            }
+        }
+    }
 }
 
 private class FoodDiffCallback : DiffUtil.ItemCallback<Food>() {

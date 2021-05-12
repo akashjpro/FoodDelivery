@@ -175,7 +175,7 @@
                     android:layout_marginStart="@dimen/m2_margin_20"
                     android:layout_marginEnd="@dimen/m2_margin_20"
                     android:drawableRight="@drawable/ic_vector__1"
-                    android:onClick="@{()->ViewModel.onClickimgOrders()}"
+                    android:onClick="@{()->ViewModel.onClickOrders()}"
                     android:text="@string/my_profile_2_orders"
                     android:textAppearance="@style/Overlay.MyProfile.Title"
                     app:layout_constraintBottom_toBottomOf="@+id/imgOrders"
