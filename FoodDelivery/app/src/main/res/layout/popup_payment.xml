@@ -10,23 +10,13 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView33"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Payment PopUp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
+        android:background="@drawable/shape_rectangle_while7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imageView10"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/please_note_image_frame_height"
             android:background="@color/Background"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,15 +40,14 @@
             android:id="@+id/recyclerviewNoteFood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/please_note_margin_20"
             android:layout_marginTop="@dimen/please_note_margin_10"
-            android:layout_marginEnd="@dimen/please_note_margin_20"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnProceed"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/please_note_btn_height"
             android:layout_marginStart="@dimen/please_note_margin_20"
             android:layout_marginTop="@dimen/please_note_margin_20"
@@ -72,12 +61,12 @@
 
         <TextView
             android:id="@+id/textView34"
-            android:layout_width="@dimen/please_note_btn_cancel_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/please_note_btn_height"
             android:layout_marginStart="@dimen/please_note_margin_20"
             android:layout_marginLeft="@dimen/please_note_margin_20"
             android:layout_marginTop="@dimen/please_note_margin_20"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="@string/please_note_cancel"
             android:textAppearance="@style/Overlay.please_note.title1"
             app:layout_constraintStart_toStartOf="parent"

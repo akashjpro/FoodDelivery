@@ -2,6 +2,7 @@ package com.its.food.delivery.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,6 @@ import com.its.food.delivery.entity.Food
 
 class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallback()) {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
             FoodItemBinding.inflate(
@@ -45,6 +45,11 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
             }
         }
     }
+
+
+
+
+
 }
 
 private class FoodDiffCallback : DiffUtil.ItemCallback<Food>() {

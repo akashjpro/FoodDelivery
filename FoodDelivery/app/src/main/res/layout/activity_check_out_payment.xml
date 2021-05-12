@@ -32,7 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarCheckout">
+            app:layout_constraintTop_toBottomOf="@+id/toolbarCheckoutPayment">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -55,12 +55,12 @@
                     android:id="@+id/textView16"
                     android:layout_width="@dimen/check_out_layout_width"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/check_out_margin_50"
-                    android:layout_marginLeft="@dimen/check_out_margin_50"
+                    android:layout_marginStart="@dimen/margin_50"
                     android:layout_marginTop="@dimen/check_out_margin_32"
+                    android:layout_marginEnd="@dimen/margin_50"
                     android:text="@string/check_out_payment_title1"
                     android:textAppearance="@style/Overlay.checkout.Title1"
-                    app:layout_constraintEnd_toStartOf="@+id/textView17"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView15" />
 

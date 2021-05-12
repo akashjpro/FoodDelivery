@@ -37,7 +37,7 @@
 
     <!-- Home Screen-->
     <dimen name="home_title_width">250dp</dimen>
-    <dimen name="home_title_margin_top">@dimen/margin_100</dimen>
+    <dimen name="home_title_margin_top">@dimen/margin_50</dimen>
     <dimen name="home_title_margin_left">@dimen/margin_50</dimen>
     <dimen name="home_editTextSearch_height">50dp</dimen>
     <dimen name="home_editTextSearch_margin">@dimen/margin_50</dimen>

@@ -182,4 +182,15 @@
         <item name="android:textSize">25dp</item>
     </style>
 
+    <!--Item Food Screen-->
+    <style name="Overlay.item.FoodName" parent="Overlay">
+        <item name="fontFamily">@font/exo_extrabold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="Overlay.item.FoodPrice" parent="Overlay">
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="fontFamily">@font/exo_bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
 </resources>

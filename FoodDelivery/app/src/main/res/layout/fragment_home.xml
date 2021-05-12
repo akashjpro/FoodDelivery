@@ -18,7 +18,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.main.home.HomeFragment">
+            tools:context=".ui.main.home.HomeFragment"
+            android:background="@color/Background">
 
             <TextView
                 android:id="@+id/textView4"
@@ -43,6 +44,8 @@
                 android:layout_marginRight="@dimen/home_editTextSearch_margin"
                 android:background="@drawable/shape_rectangle_while3"
                 android:drawableLeft="@drawable/ic_baseline_search_24"
+                android:drawablePadding="20dp"
+                android:imeOptions="actionSend"
                 android:hint="@string/search"
                 android:inputType="text"
                 android:padding="@dimen/home_editTextSearch_padding"
@@ -99,6 +102,8 @@
                 android:layout_marginLeft="@dimen/home_RecyclerView_margin_left"
                 android:layout_marginTop="@dimen/home_RecyclerView_margin_top"
                 android:orientation="horizontal"
+                android:padding="20dp"
+                tools:listitem="@layout/food_item"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
