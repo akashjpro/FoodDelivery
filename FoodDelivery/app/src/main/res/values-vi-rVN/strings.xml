@@ -108,4 +108,12 @@
     <string name="favorite_title">No Favorite Yet</string>
 
     <string name="favorite">favorite</string>
+
+    <!--    Drawer menu -->
+    <string name="profile">Profile</string>
+    <string name="orders">Orders</string>
+    <string name="offer_and_promo">Offer and promo</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="security">Security</string>
+
 </resources>

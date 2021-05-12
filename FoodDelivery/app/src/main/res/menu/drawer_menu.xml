@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/navProfile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/navOrder"
+        android:icon="@drawable/ic_order"
+        android:title="@string/orders" />
+
+    <item
+        android:id="@+id/navOffer"
+        android:icon="@drawable/ic_offer"
+        android:title="@string/offer_and_promo" />
+
+    <item
+        android:id="@+id/navPrivacyPolicy"
+        android:icon="@drawable/ic_privacy_policy"
+        android:title="@string/privacy_policy" />
+
+    <item
+        android:id="@+id/navSecurity"
+        android:icon="@drawable/ic_security"
+        android:title="@string/security" />
+
+</menu>
