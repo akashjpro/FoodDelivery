@@ -25,10 +25,15 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val intent = Intent(this@CartActivity, MainActivity::class.java)
-        startActivity(intent)
+        onBackPressed()
         return true
     }
+//    override fun onSupportNavigateUp(): Boolean {
+//
+//        val intent = Intent(this@CartActivity, MainActivity::class.java)
+//        startActivity(intent)
+//        return true
+//    }
 
     private fun init() {
         lifecycle.addObserver(viewModel)

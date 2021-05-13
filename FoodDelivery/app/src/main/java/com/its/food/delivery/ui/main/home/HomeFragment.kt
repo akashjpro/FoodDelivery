@@ -23,7 +23,6 @@ import com.its.food.delivery.util.SEARCH_KEY
 import kotlinx.android.synthetic.main.activity_food_information.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
-
 /**
  * A simple [Fragment] subclass.
  * Use the [HomeFragment.newInstance] factory method to
@@ -86,8 +85,11 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
     @SuppressLint("LogNotTimber")
     fun searchFood() {
         val intent = Intent(this.context, SpicyChiActivity::class.java)
-        val i = binding.editTextSearch.text
-        intent.putExtra(SEARCH_KEY, i)
+        val i = binding.editTextSearch.text.toString()
+        var bundle = Bundle()
+        bundle.putString("KEY", i)
+        intent.putExtra(SEARCH_KEY, bundle)
+//        intent.putExtra(SEARCH_KEY, i.toString())
         Log.d("aaa", "Từ khóa tìm kiếm --- $i ---")
         startActivity(intent)
 

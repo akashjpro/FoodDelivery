@@ -43,10 +43,10 @@ class SpicyChiActivity : BaseActivity<ActivitySpicyChiecrnsBinding, SpicyChiView
             startActivity(intent)
         })
 
-        val foodName = intent?.getStringExtra(SEARCH_KEY)
+        val foodName = intent?.getBundleExtra(SEARCH_KEY)?.get("KEY")
         Log.d("aaaa","Từ truyền sang -- $foodName --")
         for (i in exampleListFood) {
-            if (i.foodName.equals(foodName)) {
+            if (i.foodName == foodName) {
                 foodAdapter.getFilter().filter(foodName.toString())
             }
         }
@@ -63,5 +63,4 @@ class SpicyChiActivity : BaseActivity<ActivitySpicyChiecrnsBinding, SpicyChiView
         onBackPressed()
         return true
     }
-
 }
