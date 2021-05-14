@@ -78,21 +78,19 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
                 return false
             }
         })
-
         return binding.root
     }
 
     @SuppressLint("LogNotTimber")
     fun searchFood() {
         val intent = Intent(this.context, SpicyChiActivity::class.java)
-        val i = binding.editTextSearch.text.toString()
+        val i = binding.editTextSearch.text.toString().trim()
         var bundle = Bundle()
         bundle.putString("KEY", i)
         intent.putExtra(SEARCH_KEY, bundle)
 //        intent.putExtra(SEARCH_KEY, i.toString())
         Log.d("aaa", "Từ khóa tìm kiếm --- $i ---")
         startActivity(intent)
-
     }
 
     private fun init() {

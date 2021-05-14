@@ -52,6 +52,4 @@ class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodI
             addToList(R.drawable.img_image1)
         }
     }
-
-
 }

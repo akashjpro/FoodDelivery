@@ -1,111 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="102dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shape_rectangle_while6" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView2"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/img_image"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Veggie tomato mix"
-        android:textAppearance="@style/Overlay.item.FoodName"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/circleImageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView2"
+                android:layout_width="69.21dp"
+                android:layout_height="69.21dp"
+                android:layout_marginLeft="23.6dp"
+                android:src="@drawable/img_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:text="#1,900"
-        android:textAppearance="@style/Overlay.item.FoodPrice"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toStartOf="@+id/shapeableImageView"
-        app:layout_constraintStart_toEndOf="@+id/circleImageView2" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                android:text="Veggie tomato mix"
+                android:textAppearance="@style/Overlay.item.FoodName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView2"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/shapeableImageView"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/shape_number_food_in_cart"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="#1,900"
+                android:textAppearance="@style/Overlay.item.FoodPrice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/shapeableImageView"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView2" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
-        app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
-        app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
-        app:srcCompat="@drawable/ic_baseline_remove_24"
-        tools:ignore="VectorDrawableCompat" />
+            <ImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_number_food_in_cart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
-        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
-        app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
-        app:srcCompat="@drawable/ic_baseline_add_24"
-        tools:ignore="VectorDrawableCompat" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+                app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
+                app:srcCompat="@drawable/ic_baseline_remove_24"
+                tools:ignore="VectorDrawableCompat" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="20dp"
-        android:layout_height="wrap_content"
-        android:text="2"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton1"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+                app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
+                app:srcCompat="@drawable/ic_baseline_add_24"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton1"
+                app:layout_constraintStart_toEndOf="@+id/imageButton"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

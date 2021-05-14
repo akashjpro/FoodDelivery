@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.shape.Shapeable
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.PopupPaymentBinding
 import com.its.food.delivery.ui.ActivityBaseDialogFragment
@@ -51,7 +52,6 @@ class PaymentPopUp :
                 false
             }
         }
-
         return dialog
     }
 

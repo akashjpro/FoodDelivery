@@ -13,7 +13,10 @@ import kotlin.collections.ArrayList
 
 class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallback()) {
-//    var foodListFilterde = ArrayList<Food>()
+    //    var foodListFilterde = ArrayList<Food>()
+    override fun getItemCount(): Int {
+        return super.getItemCount()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
@@ -50,13 +53,12 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
         }
     }
 
-    fun getFilter(): Filter {
+    fun getFilter(onCount: (count: Int) -> Unit): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val charSearch = constraint.toString()
                 val foodList = ArrayList<Food>()
                 if (charSearch.isEmpty()) {
-//                    foodListFilterde = currentList as ArrayList<Food>
                 } else {
 
                     for (item in currentList) {
@@ -66,10 +68,10 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
                             foodList.add(item)
                         }
                     }
-//                    foodListFilterde = foodList
                 }
                 val filterResults = FilterResults()
                 filterResults.values = foodList
+//                filterResults.count
                 return filterResults
             }
 
@@ -78,6 +80,8 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
                 submitList(
                     results?.values as ArrayList<Food>
                 )
+                val exampleList : ArrayList<Food> = results?.values as ArrayList<Food>
+                onCount(exampleList.count())
                 notifyDataSetChanged()
             }
         }

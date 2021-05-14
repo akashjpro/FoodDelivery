@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -10,9 +11,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/shape_rectangle_while7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_rectangle_while7">
+
 
         <ImageView
             android:id="@+id/imageView10"
@@ -47,28 +49,31 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnProceed"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/please_note_btn_height"
-            android:layout_marginStart="@dimen/please_note_margin_20"
             android:layout_marginTop="@dimen/please_note_margin_20"
-            android:layout_marginEnd="@dimen/please_note_margin_20"
+            android:layout_marginRight="@dimen/please_note_margin_10"
             android:text="@string/please_note_proceed"
             android:textAppearance="@style/Overlay.please_note.title1"
             app:cornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView34"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnCancel"
             app:layout_constraintTop_toBottomOf="@+id/recyclerviewNoteFood" />
 
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
             android:layout_height="@dimen/please_note_btn_height"
-            android:layout_marginStart="@dimen/please_note_margin_20"
-            android:layout_marginLeft="@dimen/please_note_margin_20"
+            android:layout_marginLeft="@dimen/please_note_margin_10"
             android:layout_marginTop="@dimen/please_note_margin_20"
+            android:background="@android:color/transparent"
             android:gravity="center"
             android:text="@string/please_note_cancel"
             android:textAppearance="@style/Overlay.please_note.title1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/btnProceed"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerviewNoteFood" />
     </androidx.constraintlayout.widget.ConstraintLayout>

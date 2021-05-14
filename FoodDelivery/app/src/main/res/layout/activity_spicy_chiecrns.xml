@@ -20,6 +20,7 @@
             android:id="@+id/toolbarResults"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:title="results"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:navigationIcon="@drawable/ic_vector_back"
@@ -38,9 +39,9 @@
                 android:layout_width="@dimen/textView_Spicy_Chiecrns_Title_width"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:text="@{ViewModel.count}"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/textView_Spicy_Chiecrns_Title_padding"
-                android:text="@string/spicy_chiecrns_screen_title"
                 android:textAlignment="center"
                 android:textAppearance="@style/Overlay.spicy_chiecrns_screen.Title" />
 
@@ -48,6 +49,7 @@
                 android:id="@+id/recycler_Spicy_Chiecrns"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                tools:listitem="@layout/food_item"
                 android:numColumns="2" />
         </LinearLayout>
 

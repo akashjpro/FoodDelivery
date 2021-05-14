@@ -24,7 +24,8 @@
     <string name="see_more">Xem thêm</string>
 
     <!--Spicy Chiecrns Screen-->
-    <string name="spicy_chiecrns_screen_title">Tìm thấy 6 kết quả</string>
+    <string name="found">Found</string>
+    <string name="results">results</string>
 
     <!--    My profile-->
     <string name="my_profile_information">Thông tin</string>
