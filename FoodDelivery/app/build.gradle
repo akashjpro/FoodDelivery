@@ -22,10 +22,17 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "URL_BASE", '"http://192.168.0.64:3000/"'
+        }
+        debug {
+            applicationIdSuffix '.debug'
+            buildConfigField "String", "URL_BASE", '"http://192.168.0.64:3000/"'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

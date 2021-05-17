@@ -1,0 +1,22 @@
+package com.its.food.delivery.repository
+
+import com.its.food.delivery.repository.remote.DataResponse
+import com.its.food.delivery.repository.remote.LoginDataResponse
+import com.its.food.delivery.util.api.Resource
+import kotlinx.coroutines.flow.Flow
+
+interface Repo {
+
+    // SETUP HEADER ------------------------------------------------------------------------------------
+
+    fun setHeaderRequest(headers: Map<String, String>)
+
+    // EMPLOYEE ------------------------------------------------------------------------------------
+
+    fun login(
+        username: String,
+        password: String,
+        force: Boolean = false
+    ): Flow<Resource<DataResponse<LoginDataResponse>>>
+
+}

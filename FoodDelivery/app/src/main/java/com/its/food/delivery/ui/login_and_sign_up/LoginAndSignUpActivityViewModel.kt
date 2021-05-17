@@ -4,21 +4,36 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.its.food.delivery.repository.Repo
 import com.its.food.delivery.ui.BaseViewModel
+import com.its.food.delivery.util.EMPLOYEE
+import com.its.food.delivery.util.api.Resource
 import com.its.food.delivery.util.extensions.valueNotDistinct
 import com.its.food.delivery.util.livedata.SingleEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
-class LoginAndSignUpActivityViewModel @Inject constructor() : BaseViewModel() {
+@ExperimentalCoroutinesApi
+@HiltViewModel
+class LoginAndSignUpActivityViewModel @Inject constructor(private val repo: Repo) : BaseViewModel() {
 
     private val _navigateToMain by lazy { MutableStateFlow<Boolean?>(null) }
     val navigateToMain by lazy {
         _navigateToMain.mapNotNull { SingleEvent.createOrNull(it) }
             .asLiveData(viewModelScope.coroutineContext)
     }
+
+    private val _loginEvent by lazy { MutableStateFlow<Boolean?>(null) }
+    val loginEvent by lazy {
+        _loginEvent.mapNotNull { SingleEvent.createOrNull(it) }
+            .asLiveData(viewModelScope.coroutineContext)
+    }
+
 
 
     // Life cycle
@@ -53,8 +68,9 @@ class LoginAndSignUpActivityViewModel @Inject constructor() : BaseViewModel() {
     }
 
     fun onClickLogin() {
-        viewModelScope.launch {
-            _navigateToMain.valueNotDistinct(true)
-        }
+        _loginEvent.valueNotDistinct(true)
     }
+
+    fun login(userName: String, password: String) =
+        repo.login(userName, password).asLiveData()
 }
