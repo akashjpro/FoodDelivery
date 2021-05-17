@@ -8,6 +8,7 @@ const val HTTP_500 = 500
 const val BUNDLE_KEY = "bundle"
 const val FOOD_ENTITY_KEY = "foodEntity"
 const val SEARCH_KEY = "searchKey"
+
 // ERROR CODE --------------------------------------------------------------------------------------
 
 enum class ErrorCode {
@@ -17,3 +18,7 @@ enum class ErrorCode {
     FORBIDDEN,
     UNKNOWN_ERROR
 }
+
+// ROLE --------------------------------------------------------------------------------------------
+const val ADMIN = "admin"
+const val EMPLOYEE = "employee"

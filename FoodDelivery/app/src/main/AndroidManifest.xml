@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.its.food.delivery">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".ui.FoodDeliveryApplication"
@@ -9,9 +12,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodDelivery">
+        android:theme="@style/Theme.FoodDelivery"
+        tools:targetApi="m">
         <activity android:name=".ui.no_offers.NoOffersActivity" />
         <activity android:name=".ui.no_internet.NoInternetActivity" />
         <activity android:name=".ui.item_not_found.ItemNotFoundActivity" />
