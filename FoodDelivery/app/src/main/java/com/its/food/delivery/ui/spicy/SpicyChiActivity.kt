@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_spicy_chiecrns.*
 
 class SpicyChiActivity : BaseActivity<ActivitySpicyChiecrnsBinding, SpicyChiViewModel>(),
     ExampleListFood {
-    val exampleListFood = exampleLis()
+    private val exampleListFood = exampleLis()
 
     @SuppressLint("LogNotTimber")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,19 +43,16 @@ class SpicyChiActivity : BaseActivity<ActivitySpicyChiecrnsBinding, SpicyChiView
 
         val foodName = intent?.getBundleExtra(SEARCH_KEY)?.get("KEY")
         toolbarResults.title = foodName as CharSequence?
-        Log.d("aaaa", "Từ truyền sang -- $foodName --")
         foodAdapter.getFilter(onCount = {
             viewModel.setCount(it)
             if (it == 0){
                 val intent = Intent(this@SpicyChiActivity, ItemNotFoundActivity::class.java)
                 startActivity(intent)
             }
-            Log.d("aaaa", viewModel.setCount(it).toString())
         }).filter(foodName.toString())
 
         //Update list food
         foodAdapter.submitList(exampleListFood)
-
 
         binding.recyclerSpicyChiecrns.adapter = foodAdapter
         binding.recyclerSpicyChiecrns.layoutManager = GridLayoutManager(this, 2)

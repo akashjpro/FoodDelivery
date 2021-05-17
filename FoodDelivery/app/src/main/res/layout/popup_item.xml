@@ -7,7 +7,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/materialTextView3"
-        android:layout_width="393dp"
+        android:layout_width="0dp"
         android:layout_height="23dp"
         android:layout_marginTop="10dp"
         android:text="Delivery to Mainland"
@@ -21,7 +21,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/materialTextView2"
-        android:layout_width="393dp"
+        android:layout_width="0dp"
         android:layout_height="26dp"
         android:layout_marginBottom="10dp"
         android:text="N1000 - N2000"

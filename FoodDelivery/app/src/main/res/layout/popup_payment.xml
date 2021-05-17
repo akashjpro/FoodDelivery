@@ -12,7 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/shape_rectangle_while7">
 
 
@@ -40,9 +40,10 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerviewNoteFood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/please_note_margin_10"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="41dp"
+            tools:listitem="@layout/popup_item"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView10" />

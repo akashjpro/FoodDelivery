@@ -1,5 +1,7 @@
 package com.its.food.delivery.adapters
 
+import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -14,10 +16,6 @@ import kotlin.collections.ArrayList
 class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallback()) {
     //    var foodListFilterde = ArrayList<Food>()
-    override fun getItemCount(): Int {
-        return super.getItemCount()
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
             FoodItemBinding.inflate(
@@ -60,9 +58,11 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
                 val foodList = ArrayList<Food>()
                 if (charSearch.isEmpty()) {
                 } else {
-
                     for (item in currentList) {
                         if (item.foodName.toLowerCase(Locale.ROOT)
+                                .contains(charSearch.toLowerCase(Locale.ROOT)) || item.typeOfFood.toLowerCase(
+                                Locale.ROOT
+                            )
                                 .contains(charSearch.toLowerCase(Locale.ROOT))
                         ) {
                             foodList.add(item)
@@ -71,7 +71,6 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
                 }
                 val filterResults = FilterResults()
                 filterResults.values = foodList
-//                filterResults.count
                 return filterResults
             }
 
@@ -80,12 +79,58 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
                 submitList(
                     results?.values as ArrayList<Food>
                 )
-                val exampleList : ArrayList<Food> = results?.values as ArrayList<Food>
+                val exampleList: ArrayList<Food> = results.values as ArrayList<Food>
                 onCount(exampleList.count())
                 notifyDataSetChanged()
             }
         }
     }
+
+    //        fun getFilterTypeOfFood(): Filter {
+//        return object : Filter() {
+//            @SuppressLint("LogNotTimber")
+//            override fun performFiltering(constraint: CharSequence?): FilterResults {
+//                Log.d("aaaa","Here : 1")
+//                val charSearch = constraint.toString()
+//                val foodList = ArrayList<Food>()
+//                if (charSearch.isEmpty()) {
+//                    Log.d("aaaa","Here :  $charSearch")
+//                } else {
+//                    for (item in currentList) {
+//                        if (item.typeOfFood.toLowerCase(Locale.ROOT)
+//                                .contains(charSearch.toLowerCase(Locale.ROOT))
+//                        ) {
+//                            Log.d("aaaa","Here : ${item.typeOfFood} + $charSearch")
+//                            foodList.add(item)
+//                        }
+//                    }
+//                }
+//                val filterResults = FilterResults()
+//                filterResults.values = foodList
+//                return filterResults
+//            }
+//
+//            @Suppress("UNCHECKED_CAST")
+//            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+//                submitList(
+//                    results?.values as ArrayList<Food>
+//                )
+//                notifyDataSetChanged()
+//            }
+//        }
+//    }
+//    @SuppressLint("LogNotTimber")
+//    fun getFilterTypeOfFood(charSearch: String) {
+//        val foodList = ArrayList<Food>()
+//        for (item in currentList) {
+//            if (item.typeOfFood == charSearch)
+//             {
+//                Log.d("aaaa", "Here : ${item.typeOfFood} + $charSearch")
+//                foodList.add(item)
+//            }
+//        }
+//        submitList(foodList)
+//    }
 }
 
 private class FoodDiffCallback : DiffUtil.ItemCallback<Food>() {
