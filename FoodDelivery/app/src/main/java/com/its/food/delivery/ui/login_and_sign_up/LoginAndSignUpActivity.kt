@@ -56,8 +56,13 @@ class LoginAndSignUpActivity :
 
         viewModel.loginEvent.observe(this) { event ->
             event.getContentIfNotHandled()?.let {
-                // TODO: 5/17/21  
-                processLogin("user1@gmail.com", "123456")
+                val userName = binding.editTextTextEmailAddress.text.trim().toString()
+                val password = binding.editTextTextEmailAddress.text.trim().toString()
+
+//                "username" : "user1@gmail.com",
+//                "password" : "123456"
+
+                processLogin(userName, password)
             }
 
         }

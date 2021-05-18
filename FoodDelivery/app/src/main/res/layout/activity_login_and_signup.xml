@@ -8,6 +8,7 @@
         <variable
             name="ViewModel"
             type="com.its.food.delivery.ui.login_and_sign_up.LoginAndSignUpActivityViewModel" />
+
     </data>
 
 
@@ -106,6 +107,7 @@
                     android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
                     android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
                     android:ems="10"
+                    android:text=""
                     android:inputType="textEmailAddress"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -131,6 +133,7 @@
                     android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
                     android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
                     android:ems="10"
+                    android:text=""
                     android:inputType="textPassword"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
