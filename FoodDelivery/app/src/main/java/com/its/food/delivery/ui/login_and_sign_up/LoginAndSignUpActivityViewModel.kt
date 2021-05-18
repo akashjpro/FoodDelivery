@@ -5,6 +5,7 @@ import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.its.food.delivery.repository.Repo
+import com.its.food.delivery.repository.setting.Setting
 import com.its.food.delivery.ui.BaseViewModel
 import com.its.food.delivery.util.EMPLOYEE
 import com.its.food.delivery.util.api.Resource
@@ -20,7 +21,7 @@ import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 @HiltViewModel
-class LoginAndSignUpActivityViewModel @Inject constructor(private val repo: Repo) : BaseViewModel() {
+class LoginAndSignUpActivityViewModel @Inject constructor(private val repo: Repo, private val setting: Setting) : BaseViewModel() {
 
     private val _navigateToMain by lazy { MutableStateFlow<Boolean?>(null) }
     val navigateToMain by lazy {
@@ -73,4 +74,8 @@ class LoginAndSignUpActivityViewModel @Inject constructor(private val repo: Repo
 
     fun login(userName: String, password: String) =
         repo.login(userName, password).asLiveData()
+
+    fun saveLogin(value: Boolean, role: String, userId: String, token: String) {
+        setting.saveLogin(value, role, userId, token)
+    }
 }

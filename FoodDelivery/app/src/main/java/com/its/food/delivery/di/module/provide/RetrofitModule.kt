@@ -3,7 +3,7 @@ package com.its.food.delivery.di.module.provide
 import android.content.Context
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.its.food.delivery.BuildConfig
-import com.its.food.delivery.di.module.BaseURL
+import com.its.food.delivery.di.BaseURL
 import com.its.food.delivery.repository.remote.RemoteService
 import com.its.food.delivery.util.retrofit.adapter.FlowCallAdapterFactory
 import dagger.Module

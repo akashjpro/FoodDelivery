@@ -1,4 +1,4 @@
-package com.its.food.delivery.di.module
+package com.its.food.delivery.di
 
 import javax.inject.Qualifier
 
