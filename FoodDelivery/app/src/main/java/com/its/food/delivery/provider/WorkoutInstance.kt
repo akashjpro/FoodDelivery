@@ -7,13 +7,18 @@ class WorkoutInstance {
     private var mList: List<Food> = ArrayList()
 
     companion object {
-        private var mInstance: WorkoutInstance? = null
+        private var INSTANCE: WorkoutInstance? = null
 
         fun getInstance(): WorkoutInstance {
-            if (mInstance == null) {
-                mInstance = WorkoutInstance()
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE?.let {
+                    return it
+                }
+
+                val instance = WorkoutInstance()
+                INSTANCE = instance
+                instance
             }
-            return mInstance!!
         }
     }
 

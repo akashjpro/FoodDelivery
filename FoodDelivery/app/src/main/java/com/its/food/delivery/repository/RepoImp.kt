@@ -1,6 +1,6 @@
 package com.its.food.delivery.repository
 
-import com.its.food.delivery.di.module.IODispatcher
+import com.its.food.delivery.di.IODispatcher
 import com.its.food.delivery.repository.local.LocalService
 import com.its.food.delivery.repository.remote.DataResponse
 import com.its.food.delivery.repository.remote.LoginDataResponse

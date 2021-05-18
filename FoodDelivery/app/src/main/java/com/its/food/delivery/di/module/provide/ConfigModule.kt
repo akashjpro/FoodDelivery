@@ -1,7 +1,7 @@
 package com.its.food.delivery.di.module.provide
 
 import com.its.food.delivery.BuildConfig
-import com.its.food.delivery.di.module.*
+import com.its.food.delivery.di.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

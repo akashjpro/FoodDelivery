@@ -100,6 +100,9 @@ class LoginAndSignUpActivity :
                         val userId = resource.data?.data?.userId ?: ""
                         val token = resource.data?.data?.token ?: ""
 
+                        // Save login success
+                        viewModel.saveLogin(true, role, userId, token)
+
                     } else {
                         // Show error dialog
                         errorDialog?.dismiss()

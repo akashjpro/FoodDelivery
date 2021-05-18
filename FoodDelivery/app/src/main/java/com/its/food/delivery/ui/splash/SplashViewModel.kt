@@ -1,6 +1,7 @@
 package com.its.food.delivery.ui.splash
 
 import androidx.lifecycle.*
+import com.its.food.delivery.repository.setting.Setting
 import com.its.food.delivery.ui.BaseViewModel
 import com.its.food.delivery.util.extensions.valueNotDistinct
 import com.its.food.delivery.util.livedata.SingleEvent
@@ -14,7 +15,7 @@ import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 @HiltViewModel
-class SplashViewModel  @Inject constructor() : BaseViewModel() {
+class SplashViewModel  @Inject constructor(private val setting: Setting) : BaseViewModel() {
 
     private val _navigateToLogin by lazy { MutableStateFlow<Int?>(null) }
     val navigateToLogin by lazy {
@@ -34,14 +35,14 @@ class SplashViewModel  @Inject constructor() : BaseViewModel() {
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
         viewModelScope.launch {
-            val isLogin = true
+            val isLogin = setting.isLogin
 
             when {
 
-                isLogin -> _navigateToLogin.valueNotDistinct(1)
+                isLogin -> _navigateToMain.valueNotDistinct(1)
 
                 // User not logged in
-                else -> _navigateToMain.valueNotDistinct(1)
+                else -> _navigateToLogin.valueNotDistinct(1)
             }
         }
     }

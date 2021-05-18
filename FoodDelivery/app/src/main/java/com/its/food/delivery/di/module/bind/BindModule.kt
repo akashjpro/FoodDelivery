@@ -4,6 +4,8 @@ import com.its.food.delivery.repository.Repo
 import com.its.food.delivery.repository.RepoImp
 import com.its.food.delivery.repository.local.LocalService
 import com.its.food.delivery.repository.local.LocalServiceImp
+import com.its.food.delivery.repository.setting.Setting
+import com.its.food.delivery.repository.setting.SettingImp
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,5 +23,9 @@ abstract class BindModule {
 
     @Binds
     abstract fun bindLocalService(impl: LocalServiceImp): LocalService
+
+    @Singleton
+    @Binds
+    abstract fun bindSetting(impl: SettingImp): Setting
 
 }
