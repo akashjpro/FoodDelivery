@@ -6,8 +6,10 @@ import android.os.Build
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.its.food.delivery.R
+import com.its.food.delivery.ui.appContext
 import kotlinx.android.synthetic.main.dialog_error.view.*
 import kotlinx.android.synthetic.main.dialog_progress.view.*
 import kotlin.system.exitProcess
@@ -36,14 +38,16 @@ fun errorDialog(
     context: Activity,
     message: String,
     title: String,
-    color: Int
+    color: Int,
+    positiveClick: (() -> Unit)
+
 ): AlertDialog {
     val contentView: View = context.layoutInflater.inflate(R.layout.dialog_error, null)
     contentView.tvTitleError.text = title
     contentView.tvMessageError.text = message
-    contentView.backgroundDialogError.setCardBackgroundColor(color)
+    contentView.backgroundDialogError.setCardBackgroundColor(ContextCompat.getColor(appContext,color))
     contentView.btnErrorOk.setOnClickListener{
-        Dialog(context).cancel()
+        positiveClick.invoke()
     }
     MaterialAlertDialogBuilder(context)
         .setView(contentView)
@@ -57,5 +61,6 @@ fun errorDialog(
 
 
 }
+
 
 

@@ -78,4 +78,8 @@ class LoginAndSignUpActivityViewModel @Inject constructor(private val repo: Repo
     fun saveLogin(value: Boolean, role: String, userId: String, token: String) {
         setting.saveLogin(value, role, userId, token)
     }
+
+    fun navigateToMain(){
+        _navigateToMain.value = true
+    }
 }

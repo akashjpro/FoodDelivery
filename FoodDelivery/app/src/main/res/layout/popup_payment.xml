@@ -10,72 +10,79 @@
             type="com.its.food.delivery.ui.popup.PaymentPopUpViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_rectangle_while7">
+        app:cardCornerRadius="30dp"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/please_note_image_frame_height"
-            android:background="@color/Background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/please_note_image_frame_height"
+                android:background="@color/Background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/please_note_margin_20"
-            android:layout_marginEnd="@dimen/please_note_margin_20"
-            android:text="@string/please_note_title"
-            android:textAppearance="@style/Overlay.please_note.title"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView10" />
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/please_note_margin_20"
+                android:layout_marginEnd="@dimen/please_note_margin_20"
+                android:text="@string/please_note_title"
+                android:textAppearance="@style/Overlay.please_note.title"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView10" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewNoteFood"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_margin="41dp"
-            tools:listitem="@layout/popup_item"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewNoteFood"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_margin="41dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView10"
+                tools:listitem="@layout/popup_item" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnProceed"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/please_note_btn_height"
-            android:layout_marginTop="@dimen/please_note_margin_20"
-            android:layout_marginRight="@dimen/please_note_margin_10"
-            android:text="@string/please_note_proceed"
-            android:textAppearance="@style/Overlay.please_note.title1"
-            app:cornerRadius="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnCancel"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerviewNoteFood" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnProceed"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/please_note_btn_height"
+                android:layout_marginTop="@dimen/please_note_margin_20"
+                android:layout_marginRight="@dimen/please_note_margin_10"
+                android:text="@string/please_note_proceed"
+                android:textAppearance="@style/Overlay.please_note.title1"
+                app:cornerRadius="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerviewNoteFood" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCancel"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/please_note_btn_height"
-            android:layout_marginLeft="@dimen/please_note_margin_10"
-            android:layout_marginTop="@dimen/please_note_margin_20"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:text="@string/please_note_cancel"
-            android:textAppearance="@style/Overlay.please_note.title1"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/btnProceed"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerviewNoteFood" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/please_note_btn_height"
+                android:layout_marginLeft="@dimen/please_note_margin_10"
+                android:layout_marginTop="@dimen/please_note_margin_20"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/please_note_cancel"
+                android:textAppearance="@style/Overlay.please_note.title1"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/btnProceed"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerviewNoteFood" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 </layout>

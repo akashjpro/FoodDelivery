@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityLoginAndSignupBinding
@@ -57,14 +58,11 @@ class LoginAndSignUpActivity :
         viewModel.loginEvent.observe(this) { event ->
             event.getContentIfNotHandled()?.let {
                 val userName = binding.editTextTextEmailAddress.text.trim().toString()
-                val password = binding.editTextTextEmailAddress.text.trim().toString()
-
+                val password = binding.editTextTextPassword.text.trim().toString()
 //                "username" : "user1@gmail.com",
 //                "password" : "123456"
-
                 processLogin(userName, password)
             }
-
         }
     }
 
@@ -72,7 +70,7 @@ class LoginAndSignUpActivity :
     private fun processLogin(userName: String, password: String) {
 
         progressDialog = progressDialog(this, getString(R.string.logging_msg))
-        errorDialog = errorDialog(this,getString(R.string.error_title_error),getString(R.string.error_message),R.color.darkColor)
+
         viewModel.login(userName, password).observe(this) { resource ->
             when (resource) {
                 is Resource.Loading -> {
@@ -84,6 +82,17 @@ class LoginAndSignUpActivity :
                     Timber.d("Error: ${resource.cachedData?.toString()} with code: ${resource.code}")
 
                     progressDialog?.dismiss()
+
+                    errorDialog = errorDialog(
+                        this,
+                        resource.code.name,
+                        getString(R.string.error_message),
+                        R.color.darkColor,
+                        positiveClick = {
+                            errorDialog?.dismiss()
+                        }
+                    )
+                    errorDialog?.show()
                 }
 
                 is Resource.Success -> {
@@ -102,10 +111,19 @@ class LoginAndSignUpActivity :
 
                         // Save login success
                         viewModel.saveLogin(true, role, userId, token)
-
+                        viewModel.navigateToMain()
                     } else {
                         // Show error dialog
-                        errorDialog?.dismiss()
+                        errorDialog = errorDialog(
+                            this,
+                            resource.data.error ?: "",
+                            getString(R.string.error_title_error),
+                            R.color.darkColor,
+                            positiveClick = {
+                                errorDialog?.dismiss()
+                            }
+                        )
+                        errorDialog?.show()
                     }
                 }
             }
