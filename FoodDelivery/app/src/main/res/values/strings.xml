@@ -114,4 +114,7 @@
     <string name="privacy_policy">Privacy policy</string>
     <string name="security">Security</string>
 
+    <!--Progress dialog-->
+    <string name="logging_msg">logging…</string>
+
 </resources>
