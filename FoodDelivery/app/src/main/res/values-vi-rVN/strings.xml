@@ -120,4 +120,10 @@
     <!--Progress dialog-->
     <string name="logging_msg">Đang đăng nhập…</string>
 
+    <!--Error dialog-->
+    <string name="error_title_error">Lỗi</string>
+    <string name="error_title_warning">Cảnh báo</string>
+    <string name="error_title_info">Thông tin</string>
+    <string name="error_message">Error message</string>
+
 </resources>
