@@ -35,8 +35,6 @@ class LoginAndSignUpActivityViewModel @Inject constructor(private val repo: Repo
             .asLiveData(viewModelScope.coroutineContext)
     }
 
-
-
     // Life cycle
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
