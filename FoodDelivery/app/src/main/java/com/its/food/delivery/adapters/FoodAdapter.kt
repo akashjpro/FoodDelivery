@@ -1,14 +1,12 @@
 package com.its.food.delivery.adapters
 
-import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.its.food.delivery.databinding.FoodItemBinding
+import com.its.food.delivery.databinding.ItemFoodBinding
 import com.its.food.delivery.entity.Food
 import java.util.*
 import kotlin.collections.ArrayList
@@ -18,7 +16,7 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     //    var foodListFilterde = ArrayList<Food>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
-            FoodItemBinding.inflate(
+            ItemFoodBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -32,7 +30,7 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     }
 
     class FoodViewHolder(
-        private val binding: FoodItemBinding,
+        private val binding: ItemFoodBinding,
         private val onItemClick: (item: Food) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
@@ -85,52 +83,6 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
             }
         }
     }
-
-    //        fun getFilterTypeOfFood(): Filter {
-//        return object : Filter() {
-//            @SuppressLint("LogNotTimber")
-//            override fun performFiltering(constraint: CharSequence?): FilterResults {
-//                Log.d("aaaa","Here : 1")
-//                val charSearch = constraint.toString()
-//                val foodList = ArrayList<Food>()
-//                if (charSearch.isEmpty()) {
-//                    Log.d("aaaa","Here :  $charSearch")
-//                } else {
-//                    for (item in currentList) {
-//                        if (item.typeOfFood.toLowerCase(Locale.ROOT)
-//                                .contains(charSearch.toLowerCase(Locale.ROOT))
-//                        ) {
-//                            Log.d("aaaa","Here : ${item.typeOfFood} + $charSearch")
-//                            foodList.add(item)
-//                        }
-//                    }
-//                }
-//                val filterResults = FilterResults()
-//                filterResults.values = foodList
-//                return filterResults
-//            }
-//
-//            @Suppress("UNCHECKED_CAST")
-//            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-//                submitList(
-//                    results?.values as ArrayList<Food>
-//                )
-//                notifyDataSetChanged()
-//            }
-//        }
-//    }
-//    @SuppressLint("LogNotTimber")
-//    fun getFilterTypeOfFood(charSearch: String) {
-//        val foodList = ArrayList<Food>()
-//        for (item in currentList) {
-//            if (item.typeOfFood == charSearch)
-//             {
-//                Log.d("aaaa", "Here : ${item.typeOfFood} + $charSearch")
-//                foodList.add(item)
-//            }
-//        }
-//        submitList(foodList)
-//    }
 }
 
 private class FoodDiffCallback : DiffUtil.ItemCallback<Food>() {

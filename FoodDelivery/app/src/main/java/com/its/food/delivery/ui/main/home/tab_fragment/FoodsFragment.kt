@@ -1,32 +1,53 @@
 package com.its.food.delivery.ui.main.home.tab_fragment
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.its.food.delivery.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.its.food.delivery.adapters.FoodAdapter
+import com.its.food.delivery.databinding.FragmentFoodBinding
+import com.its.food.delivery.delivery_interface.ExampleListFood
+import com.its.food.delivery.ui.BaseFragment2
+import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
+import com.its.food.delivery.ui.main.MainViewModel
+import com.its.food.delivery.util.BUNDLE_KEY
+import com.its.food.delivery.util.FOOD_ENTITY_KEY
 
-class FoodsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = FoodsFragment()
-    }
+class FoodsFragment : BaseFragment2<FragmentFoodBinding, FoodsViewModel, MainViewModel>(),
+    ExampleListFood {
 
-    private lateinit var viewModel: FoodsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_food, container, false)
-    }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FoodsViewModel::class.java)
-        // TODO: Use the ViewModel
+        binding = FragmentFoodBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        binding.viewModel = this.viewModel
+
+
+        val foodAdapter = FoodAdapter(onItemClick = {
+            val intent = Intent(this.context, FoodInformationActivity::class.java)
+            val bundle = Bundle()
+            bundle.putSerializable(FOOD_ENTITY_KEY, it)
+            intent.putExtra(BUNDLE_KEY, bundle)
+            startActivity(intent)
+        })
+        val type = "Food"
+        val listFood = filterFoodType(type)
+        foodAdapter.submitList(listFood)
+        binding.recyclerviewFoods1.adapter = foodAdapter
+        binding.recyclerviewFoods1.layoutManager = LinearLayoutManager(
+            this.context,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+
+        return binding.root
     }
 
 }

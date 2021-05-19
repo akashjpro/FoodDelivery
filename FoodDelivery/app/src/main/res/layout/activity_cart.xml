@@ -48,7 +48,7 @@
             android:layout_marginTop="@dimen/cart_recyclerview_margin"
             android:layout_marginEnd="@dimen/cart_recyclerview_margin"
             android:layout_marginBottom="@dimen/cart_recyclerview_margin"
-            tools:listitem="@layout/food_item_in_cart"
+            tools:listitem="@layout/item_food_in_cart"
             app:layout_constraintBottom_toTopOf="@+id/btnCompleteOrder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

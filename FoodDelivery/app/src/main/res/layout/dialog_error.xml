@@ -80,16 +80,14 @@
 
             <com.google.android.material.imageview.ShapeableImageView
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_error_outline_24" />
 
         </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </com.google.android.material.card.MaterialCardView>
-
 
 </layout>

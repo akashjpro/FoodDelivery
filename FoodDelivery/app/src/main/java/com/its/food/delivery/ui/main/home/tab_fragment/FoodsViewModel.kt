@@ -1,7 +1,8 @@
 package com.its.food.delivery.ui.main.home.tab_fragment
 
-import androidx.lifecycle.ViewModel
+import com.its.food.delivery.ui.BaseViewModel
+import javax.inject.Inject
 
-class FoodsViewModel : ViewModel() {
+class FoodsViewModel @Inject constructor() : BaseViewModel() {
     // TODO: Implement the ViewModel
 }

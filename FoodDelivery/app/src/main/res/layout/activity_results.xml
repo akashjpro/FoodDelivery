@@ -49,7 +49,7 @@
                 android:id="@+id/recycler_Spicy_Chiecrns"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/food_item"
+                tools:listitem="@layout/item_food"
                 android:numColumns="2" />
         </LinearLayout>
 

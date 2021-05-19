@@ -3,12 +3,11 @@ package com.its.food.delivery.ui.spicy
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.its.food.delivery.R
 import com.its.food.delivery.adapters.FoodAdapter
-import com.its.food.delivery.databinding.ActivitySpicyChiecrnsBinding
+import com.its.food.delivery.databinding.ActivityResultsBinding
 import com.its.food.delivery.delivery_interface.ExampleListFood
 import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
@@ -17,9 +16,9 @@ import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
 import com.its.food.delivery.util.SEARCH_KEY
 import kotlinx.android.synthetic.main.activity_checkout.*
-import kotlinx.android.synthetic.main.activity_spicy_chiecrns.*
+import kotlinx.android.synthetic.main.activity_results.*
 
-class SpicyChiActivity : BaseActivity<ActivitySpicyChiecrnsBinding, SpicyChiViewModel>(),
+class SpicyChiActivity : BaseActivity<ActivityResultsBinding, SpicyChiViewModel>(),
     ExampleListFood {
     private val exampleListFood = exampleLis()
 
@@ -29,7 +28,7 @@ class SpicyChiActivity : BaseActivity<ActivitySpicyChiecrnsBinding, SpicyChiView
 
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_spicy_chiecrns)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_results)
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
 
