@@ -51,6 +51,7 @@ dependencies {
     // ==================================== KOTLIN =================================================
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kt_reflection_version"
 
     // ==================================== COROUTINES =================================================
 

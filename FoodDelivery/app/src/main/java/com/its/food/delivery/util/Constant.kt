@@ -22,3 +22,8 @@ enum class ErrorCode {
 // ROLE --------------------------------------------------------------------------------------------
 const val ADMIN = "admin"
 const val EMPLOYEE = "employee"
+
+
+// FETCH LIMITER -----------------------------------------------------------------------------------
+
+const val GET_FOODS = "getFoods"

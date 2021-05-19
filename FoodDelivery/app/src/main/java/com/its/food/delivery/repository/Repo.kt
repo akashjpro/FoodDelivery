@@ -1,5 +1,6 @@
 package com.its.food.delivery.repository
 
+import com.its.food.delivery.database.entity.FoodEntity
 import com.its.food.delivery.repository.remote.DataResponse
 import com.its.food.delivery.repository.remote.LoginDataResponse
 import com.its.food.delivery.util.api.Resource
@@ -18,5 +19,7 @@ interface Repo {
         password: String,
         force: Boolean = false
     ): Flow<Resource<DataResponse<LoginDataResponse>>>
+
+    fun getFoods(force: Boolean = false): Flow<Resource<DataResponse<List<FoodEntity>>>>
 
 }
