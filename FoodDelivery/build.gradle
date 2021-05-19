@@ -52,6 +52,8 @@ ext {
     // Glide
     glide_version = "4.11.0"
 
+    kt_reflection_version = "1.4.31"
+
 }
 
 buildscript {

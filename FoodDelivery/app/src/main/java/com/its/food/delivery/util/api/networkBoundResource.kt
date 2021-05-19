@@ -58,3 +58,86 @@ inline fun <REMOTE, LOCAL> networkBoundResource (
         }
     }
 }
+
+/**
+ * This core function will handle database caching after performing network request
+ */
+// TODO: Check each function work on what thread
+@ExperimentalCoroutinesApi
+inline fun <DB, REMOTE> networkBoundResource(
+    crossinline fetchFromLocal: suspend () -> Flow<DB>,
+    crossinline shouldFetchFromRemote: suspend (DB?) -> Boolean,
+    crossinline fetchFromRemote: () -> Flow<APIResponse<REMOTE>>,
+    crossinline processRemoteResponse: suspend (response: APIResponse.Success<REMOTE>) -> Unit,
+    crossinline saveRemoteData: suspend (response: APIResponse.Success<REMOTE>) -> Unit,
+    crossinline onFetchFailed: suspend (error: APIResponse.BaseError<REMOTE>) -> Unit
+) = flow {
+
+    // Emit loading state without data
+    emit(Resource.loading(null))
+
+    val localData = tryCatchLogSuspendNullable(null) {
+        fetchFromLocal().first()
+    }
+
+    if (localData == null || shouldFetchFromRemote(localData)) {
+
+        // Emit loading state with nullable data
+        emit(Resource.loading(localData))
+
+        when (val fetchResult = tryCatchLogSuspendNullable(null) { fetchFromRemote().first() }) {
+
+            is APIResponse.Empty -> emitAll(fetchFromLocal().map { Resource.success(it) })
+
+            is APIResponse.Success -> {
+                processRemoteResponse(fetchResult)
+                saveRemoteData(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.success(it) })
+            }
+
+            is APIResponse.UnauthorizedError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.UNAUTHORIZED) })
+            }
+
+            is APIResponse.ForbiddenError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.FORBIDDEN) })
+            }
+
+            is APIResponse.HttpError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.HTTP_ERROR) })
+            }
+
+            is APIResponse.NetWorkError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.CONNECT_ERROR) })
+            }
+
+            is APIResponse.GenericError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.UNKNOWN_ERROR) })
+            }
+
+            is APIResponse.CombineHttpError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.HTTP_ERROR) })
+            }
+
+            is APIResponse.CombineNetworkError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.CONNECT_ERROR) })
+            }
+
+            is APIResponse.CombineError -> {
+                onFetchFailed(fetchResult)
+                emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.UNKNOWN_ERROR) })
+            }
+
+            else -> emitAll(fetchFromLocal().map { Resource.error(it, ErrorCode.UNKNOWN_ERROR) })
+        }
+    } else {
+        emitAll(fetchFromLocal().map { Resource.success(it) })
+    }
+}

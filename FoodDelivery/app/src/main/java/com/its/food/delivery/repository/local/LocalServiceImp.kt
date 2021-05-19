@@ -1,16 +1,24 @@
 package com.its.food.delivery.repository.local
 
+import com.its.food.delivery.database.dao.FoodDao
+import com.its.food.delivery.database.entity.FoodEntity
 import com.its.food.delivery.repository.remote.DataResponse
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
-class LocalServiceImp @Inject constructor() : LocalService {
+class LocalServiceImp @Inject constructor(private val foodDao: FoodDao) : LocalService {
     override fun login(): Flow<DataResponse<Boolean>> {
         val result = DEFAULT_RESPONSE
         return flow { emit(result) }.distinctUntilChanged()
     }
+
+    override fun getFoods(): Flow<DataResponse<List<FoodEntity>>> =
+        foodDao.getFoods().flatMapLatest { flow { DataResponse(true, it) } }
+
+    override suspend fun replaceAllFoods(foods: List<FoodEntity>) {
+        foodDao.replaceAllFoods(foods)
+    }
+
 
     companion object {
         private val DEFAULT_RESPONSE = DataResponse<Boolean>(false, null, null)
