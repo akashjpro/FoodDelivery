@@ -21,7 +21,6 @@ class MyProfileEditActivity : BaseActivity<ActivityMyProfileEditBinding, MyProfi
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
 
-
         init()
         observe()
         setSupportActionBar(toolbarMyProfileEdit)
@@ -31,7 +30,6 @@ class MyProfileEditActivity : BaseActivity<ActivityMyProfileEditBinding, MyProfi
         onBackPressed()
         return true
     }
-
 
     private fun init() {
         lifecycle.addObserver(viewModel)

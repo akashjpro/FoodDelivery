@@ -2,8 +2,10 @@ package com.its.food.delivery.ui.popup
 
 import android.app.Dialog
 import android.content.DialogInterface
+import android.os.Build
 import android.os.Bundle
 import android.view.KeyEvent
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.shape.Shapeable
@@ -30,6 +32,7 @@ class PaymentPopUp :
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val inflater = requireActivity().layoutInflater
         binding =
@@ -37,11 +40,20 @@ class PaymentPopUp :
         binding.viewModel = this.viewModel
         binding.lifecycleOwner = this
 
+        binding.btnCancel.setOnClickListener{
+            dialog?.dismiss()
+        }
+
+
         val dialog =
             MaterialAlertDialogBuilder(requireContext())
                 .setView(binding.root)
                 .create()
-
+                .apply {
+                    setCanceledOnTouchOutside(false)
+                    setCancelable(false)
+                    window?.setBackgroundDrawable(context.getDrawable(R.drawable.background_dialog))
+                }
         dialog.setCanceledOnTouchOutside(false)
 
         dialog.setOnKeyListener { _, keyCode, _ ->

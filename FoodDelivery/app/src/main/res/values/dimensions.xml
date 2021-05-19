@@ -140,7 +140,7 @@
     <dimen name="no_offers_margin_20">@dimen/margin_20</dimen>
 
     <!--    Please note Screen-->
-    <dimen name="please_note_margin_20">@dimen/margin_20</dimen>
+    <dimen name="please_note_margin_40">@dimen/margin_40</dimen>
     <dimen name="please_note_margin_10">@dimen/margin_10</dimen>
     <dimen name="please_note_image_frame_height">80dp</dimen>
     <dimen name="please_note_btn_height">60dp</dimen>

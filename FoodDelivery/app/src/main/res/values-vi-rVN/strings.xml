@@ -116,6 +116,7 @@
     <string name="offer_and_promo">Offer and promo</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="security">Security</string>
+    <string name="sign_out">Sign-out</string>
 
     <!--Progress dialog-->
     <string name="logging_msg">Đang đăng nhập…</string>
