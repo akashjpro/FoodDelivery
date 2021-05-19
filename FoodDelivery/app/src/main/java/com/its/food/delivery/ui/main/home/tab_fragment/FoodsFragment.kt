@@ -40,8 +40,8 @@ class FoodsFragment : BaseFragment2<FragmentFoodBinding, FoodsViewModel, MainVie
         val type = "Food"
         val listFood = filterFoodType(type)
         foodAdapter.submitList(listFood)
-        binding.recyclerviewFoods1.adapter = foodAdapter
-        binding.recyclerviewFoods1.layoutManager = LinearLayoutManager(
+        binding.recyclerviewFoods.adapter = foodAdapter
+        binding.recyclerviewFoods.layoutManager = LinearLayoutManager(
             this.context,
             LinearLayoutManager.HORIZONTAL,
             false
