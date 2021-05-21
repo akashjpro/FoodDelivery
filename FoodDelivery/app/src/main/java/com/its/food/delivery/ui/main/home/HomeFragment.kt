@@ -100,12 +100,14 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
             }
         }.attach()
 // ===================== Test ==============================
-        val titleTab = tabSelect(binding.tabLayout.selectedTabPosition)
 
-        Log.d("AAAA", "Tab position: ${binding.tabLayout.selectedTabPosition}")
-        Log.d("AAAA", "Tab Title: ${tabSelect(binding.tabLayout.selectedTabPosition)}")
 
         binding.txtSeeMore.setOnClickListener {
+            val titleTab = tabSelect(binding.tabLayout.selectedTabPosition)
+
+            Log.d("AAAA", "Tab position: ${binding.tabLayout.selectedTabPosition}")
+            Log.d("AAAA", "Tab Title: ${tabSelect(binding.tabLayout.selectedTabPosition)}")
+
             val intent = Intent(this.context, SeeMoreActivity::class.java)
             intent.putExtra(TEXT_TAB, titleTab)
             startActivity(intent)
