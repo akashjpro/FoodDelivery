@@ -3,6 +3,7 @@ package com.its.food.delivery.ui.main.home
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +42,9 @@ import kotlinx.android.synthetic.main.item_recyclerview_food_home.view.*
 class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewModel>(),
     ExampleListFood {
     @SuppressLint("LogNotTimber")
-    private val exampleListFood = exampleLis()
+//    private val exampleListFood = exampleLis()
+
+//    private var titleTab = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -80,34 +83,47 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
             }
         })
 
-        var textTab = ""
+
+
         binding.viewPager2Home.adapter = TabViewPagerAdapter(this)
         TabLayoutMediator(binding.tabLayout, binding.viewPager2Home) { tab, position ->
             when (position) {
                 0 -> {
                     tab.text = "Food"
-                    textTab = "Foods"
                 }
                 1 -> {
                     tab.text = "Drink"
-                    textTab = "Drinks"
                 }
                 2 -> {
                     tab.text = "Snack"
-                    textTab = "Snacks"
                 }
             }
         }.attach()
 // ===================== Test ==============================
-        binding.txtSeeMore.setOnClickListener{
+        val titleTab = tabSelect(binding.tabLayout.selectedTabPosition)
+
+        Log.d("AAAA", "Tab position: ${binding.tabLayout.selectedTabPosition}")
+        Log.d("AAAA", "Tab Title: ${tabSelect(binding.tabLayout.selectedTabPosition)}")
+
+        binding.txtSeeMore.setOnClickListener {
             val intent = Intent(this.context, SeeMoreActivity::class.java)
-            intent.putExtra(TEXT_TAB, textTab)
+            intent.putExtra(TEXT_TAB, titleTab)
             startActivity(intent)
         }
 
 // =========================================================
 
         return binding.root
+    }
+
+    fun tabSelect(position: Int): String {
+        var titleTab = ""
+        when (position) {
+            0 -> titleTab = "Food"
+            1 -> titleTab = "Drink"
+            2 -> titleTab = "Snack"
+        }
+        return titleTab
     }
 
 
@@ -131,9 +147,15 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
 
         override fun createFragment(position: Int): Fragment =
             when (position) {
-                0 -> FoodsFragment()
-                1 -> DrinksFragment()
-                2 -> SnacksFragment()
+                0 -> {
+                    FoodsFragment()
+                }
+                1 -> {
+                    DrinksFragment()
+                }
+                2 -> {
+                    SnacksFragment()
+                }
                 else -> throw IllegalArgumentException("Provide fragment")
             }
     }

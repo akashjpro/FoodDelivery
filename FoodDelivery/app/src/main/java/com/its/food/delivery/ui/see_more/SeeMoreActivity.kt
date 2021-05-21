@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.its.food.delivery.R
 import com.its.food.delivery.adapters.FoodAdapter
@@ -18,13 +19,14 @@ import kotlinx.android.synthetic.main.activity_results.*
 import kotlinx.android.synthetic.main.activity_see_more.*
 
 class SeeMoreActivity : BaseActivity<ActivitySeeMoreBinding, SeeMoreViewModel>(), ExampleListFood {
-    private val exampleListFood = exampleLis()
-
 
     @SuppressLint("LogNotTimber")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_see_more)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_see_more)
+        binding.lifecycleOwner = this
+        binding.viewModel = this.viewModel
 
         val foodAdapter = FoodAdapter(onItemClick = {
             val intent = Intent(this, FoodInformationActivity::class.java)
@@ -34,7 +36,7 @@ class SeeMoreActivity : BaseActivity<ActivitySeeMoreBinding, SeeMoreViewModel>()
             startActivity(intent)
         })
         val foodType: String? = intent?.getStringExtra(TEXT_TAB)
-        Log.d("AAAA","$foodType")
+        Log.d("AAAA", "$foodType")
         toolbarSeeMore.title = foodType
         val list = filterFoodType(foodType)
 
