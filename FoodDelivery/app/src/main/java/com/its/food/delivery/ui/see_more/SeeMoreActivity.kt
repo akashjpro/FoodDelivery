@@ -37,7 +37,7 @@ class SeeMoreActivity : BaseActivity<ActivitySeeMoreBinding, SeeMoreViewModel>()
         })
         val foodType: String? = intent?.getStringExtra(TEXT_TAB)
         Log.d("AAAA", "$foodType")
-        toolbarSeeMore.title = foodType
+        toolbarSeeMore.title = foodType + "s"
         val list = filterFoodType(foodType)
 
         //Update list food

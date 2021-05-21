@@ -13,7 +13,7 @@ import kotlin.collections.ArrayList
 
 class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallback()) {
-    //    var foodListFilterde = ArrayList<Food>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
             ItemFoodBinding.inflate(

@@ -42,9 +42,6 @@ import kotlinx.android.synthetic.main.item_recyclerview_food_home.view.*
 class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewModel>(),
     ExampleListFood {
     @SuppressLint("LogNotTimber")
-//    private val exampleListFood = exampleLis()
-
-//    private var titleTab = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,15 +54,6 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
-
-//        val foodAdapter = FoodAdapter(onItemClick = {
-//            val intent = Intent(this.context, FoodInformationActivity::class.java)
-//            val bundle = Bundle()
-//            bundle.putSerializable(FOOD_ENTITY_KEY, it)
-//            intent.putExtra(BUNDLE_KEY, bundle)
-//            startActivity(intent)
-//        })
-
 
         binding.editTextSearch.setOnKeyListener(object : View.OnKeyListener {
             override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
@@ -83,25 +71,22 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
             }
         })
 
-
-
         binding.viewPager2Home.adapter = TabViewPagerAdapter(this)
         TabLayoutMediator(binding.tabLayout, binding.viewPager2Home) { tab, position ->
             when (position) {
                 0 -> {
-                    tab.text = "Food"
+                    tab.text = "Foods"
                 }
                 1 -> {
-                    tab.text = "Drink"
+                    tab.text = "Drinks"
                 }
                 2 -> {
-                    tab.text = "Snack"
+                    tab.text = "Snacks"
                 }
             }
         }.attach()
+
 // ===================== Test ==============================
-
-
         binding.txtSeeMore.setOnClickListener {
             val titleTab = tabSelect(binding.tabLayout.selectedTabPosition)
 
@@ -112,7 +97,6 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
             intent.putExtra(TEXT_TAB, titleTab)
             startActivity(intent)
         }
-
 // =========================================================
 
         return binding.root
@@ -127,7 +111,6 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
         }
         return titleTab
     }
-
 
     @SuppressLint("LogNotTimber")
     fun searchFood() {
