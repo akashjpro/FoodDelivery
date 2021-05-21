@@ -1,5 +1,6 @@
 package com.its.food.delivery.ui.cart
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -32,7 +33,7 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>(),ExampleL
             bundle.putSerializable(FOOD_ENTITY_KEY, it)
             intent.putExtra(BUNDLE_KEY, bundle)
             startActivity(intent)
-        })
+        },this)
 
         foodInCartAdapter.submitList(exampleLis())
 

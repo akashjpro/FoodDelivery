@@ -141,4 +141,5 @@ dependencies {
 
     //noinspection GradleCompatible
     implementation 'com.android.support:design:29.1.0'
+    implementation "com.daimajia.swipelayout:library:1.2.0@aar"
 }
