@@ -6,14 +6,14 @@
     <data>
 <variable
     name="ViewModel"
-    type="com.its.food.delivery.ui.spicy.SpicyChiViewModel" />
+    type="com.its.food.delivery.ui.result.ResultViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f0ffff"
-        tools:context=".ui.spicy.SpicyChiActivity">
+        tools:context=".ui.result.SpicyChiActivity">
 
 
         <com.google.android.material.appbar.MaterialToolbar

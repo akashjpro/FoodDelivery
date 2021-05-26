@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="ViewModel"
             type="com.its.food.delivery.ui.food_in_formation.FoodInformationViewModel" />
@@ -20,10 +19,8 @@
             android:id="@+id/toolbarFoodInformation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/menu_food_information"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_food_information"
             app:navigationIcon="@drawable/ic_vector_back" />
 
         <androidx.core.widget.NestedScrollView

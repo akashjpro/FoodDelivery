@@ -14,7 +14,6 @@ import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
 import com.its.food.delivery.ui.main.MainViewModel
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
-import com.its.food.delivery.util.TEXT_TAB
 
 
 class DrinksFragment : BaseFragment2<FragmentDrinkBinding, DrinksViewModel, MainViewModel>(),
@@ -36,6 +35,7 @@ class DrinksFragment : BaseFragment2<FragmentDrinkBinding, DrinksViewModel, Main
             bundle.putSerializable(FOOD_ENTITY_KEY, it)
             intent.putExtra(BUNDLE_KEY, bundle)
             startActivity(intent)
+
         })
         val type = "Drink"
         val listFood = filterFoodType(type)

@@ -19,6 +19,7 @@ import com.its.food.delivery.ui.main.account.AccountFragment
 import com.its.food.delivery.ui.main.favorite.FavoriteFragment
 import com.its.food.delivery.ui.main.history.HistoryFragment
 import com.its.food.delivery.ui.main.home.HomeFragment
+import com.its.food.delivery.ui.orders.OrdersActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -91,55 +92,62 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 val intent = Intent(this@MainActivity, LoginAndSignUpActivity::class.java)
                 startActivity(intent)
                 finish()
-                viewModel.saveLogin(false,"","","")
+                viewModel.saveLogin(false, "", "", "")
 
             }
         }
+        viewModel.navigateToOrder.observe(this) { event ->
+            event.getContentIfNotHandled().let {
+                val intent = Intent(this@MainActivity, OrdersActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
-        private fun navigateBottomEvent() {
-            fragmentManager.beginTransaction().apply {
-                add(R.id.container, HISTORY_SCREEN, "History").hide(
-                    HISTORY_SCREEN
-                )
-                add(R.id.container, ACCOUNT_SCREEN, "Account").hide(
-                    ACCOUNT_SCREEN
-                )
-                add(R.id.container, FAVORITE_SCREEN, "Favorite").hide(
-                    FAVORITE_SCREEN
-                )
-                add(R.id.container, HOME_SCREEN, getString(R.string.title_home))
-            }.commit()
 
-            nav_view.setOnNavigationItemSelectedListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.navigation_home -> {
-                        fragmentManager.beginTransaction().hide(activeFragment).show(HOME_SCREEN)
-                            .commit()
-                        activeFragment = HOME_SCREEN
-                        true
-                    }
-                    R.id.navigation_favorite -> {
-                        fragmentManager.beginTransaction().hide(activeFragment)
-                            .show(FAVORITE_SCREEN)
-                            .commit()
-                        activeFragment = FAVORITE_SCREEN
-                        true
-                    }
-                    R.id.navigation_account -> {
-                        fragmentManager.beginTransaction().hide(activeFragment).show(ACCOUNT_SCREEN)
-                            .commit()
-                        activeFragment = ACCOUNT_SCREEN
-                        true
-                    }
-                    R.id.navigation_history -> {
-                        fragmentManager.beginTransaction().hide(activeFragment).show(HISTORY_SCREEN)
-                            .commit()
-                        activeFragment = HISTORY_SCREEN
-                        true
-                    }
+    private fun navigateBottomEvent() {
+        fragmentManager.beginTransaction().apply {
+            add(R.id.container, HISTORY_SCREEN, "History").hide(
+                HISTORY_SCREEN
+            )
+            add(R.id.container, ACCOUNT_SCREEN, "Account").hide(
+                ACCOUNT_SCREEN
+            )
+            add(R.id.container, FAVORITE_SCREEN, "Favorite").hide(
+                FAVORITE_SCREEN
+            )
+            add(R.id.container, HOME_SCREEN, getString(R.string.title_home))
+        }.commit()
 
-                    else -> false
+        nav_view.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    fragmentManager.beginTransaction().hide(activeFragment).show(HOME_SCREEN)
+                        .commit()
+                    activeFragment = HOME_SCREEN
+                    true
                 }
+                R.id.navigation_favorite -> {
+                    fragmentManager.beginTransaction().hide(activeFragment)
+                        .show(FAVORITE_SCREEN)
+                        .commit()
+                    activeFragment = FAVORITE_SCREEN
+                    true
+                }
+                R.id.navigation_account -> {
+                    fragmentManager.beginTransaction().hide(activeFragment).show(ACCOUNT_SCREEN)
+                        .commit()
+                    activeFragment = ACCOUNT_SCREEN
+                    true
+                }
+                R.id.navigation_history -> {
+                    fragmentManager.beginTransaction().hide(activeFragment).show(HISTORY_SCREEN)
+                        .commit()
+                    activeFragment = HISTORY_SCREEN
+                    true
+                }
+
+                else -> false
             }
         }
     }
+}

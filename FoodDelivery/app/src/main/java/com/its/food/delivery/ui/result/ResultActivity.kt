@@ -1,4 +1,4 @@
-import com.its.food.delivery.ui.spicy.SpicyChiViewModel
+package com.its.food.delivery.ui.result
 
 
 import android.annotation.SuppressLint
@@ -19,7 +19,8 @@ import com.its.food.delivery.util.SEARCH_KEY
 import kotlinx.android.synthetic.main.activity_checkout.*
 import kotlinx.android.synthetic.main.activity_results.*
 
-class SpicyChiActivity : BaseActivity<ActivityResultsBinding, SpicyChiViewModel>(),
+
+class ResultActivity : BaseActivity<ActivityResultsBinding, ResultViewModel>(),
     ExampleListFood {
     private val exampleListFood = exampleLis()
 
@@ -46,7 +47,7 @@ class SpicyChiActivity : BaseActivity<ActivityResultsBinding, SpicyChiViewModel>
         foodAdapter.getFilter(onCount = {
             viewModel.setCount(it)
             if (it == 0){
-                val intent = Intent(this@SpicyChiActivity, ItemNotFoundActivity::class.java)
+                val intent = Intent(this@ResultActivity, ItemNotFoundActivity::class.java)
                 startActivity(intent)
             }
         }).filter(foodName.toString())

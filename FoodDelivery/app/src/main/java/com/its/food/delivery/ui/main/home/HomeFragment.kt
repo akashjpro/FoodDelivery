@@ -1,6 +1,6 @@
 package com.its.food.delivery.ui.main.home
 
-import SpicyChiActivity
+import com.its.food.delivery.ui.result.ResultActivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -11,22 +11,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.its.food.delivery.adapters.FoodAdapter
 import com.its.food.delivery.databinding.FragmentHomeBinding
 import com.its.food.delivery.delivery_interface.ExampleListFood
-import com.its.food.delivery.entity.Food
 import com.its.food.delivery.ui.BaseFragment2
-import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
-import com.its.food.delivery.ui.main.MainActivity
 import com.its.food.delivery.ui.main.MainViewModel
 import com.its.food.delivery.ui.main.home.tab_fragment.DrinksFragment
 import com.its.food.delivery.ui.main.home.tab_fragment.FoodsFragment
 import com.its.food.delivery.ui.main.home.tab_fragment.SnacksFragment
 import com.its.food.delivery.ui.see_more.SeeMoreActivity
-import com.its.food.delivery.util.BUNDLE_KEY
-import com.its.food.delivery.util.FOOD_ENTITY_KEY
 import com.its.food.delivery.util.SEARCH_KEY
 import com.its.food.delivery.util.TEXT_TAB
 import kotlinx.android.synthetic.main.activity_food_information.*
@@ -114,7 +107,7 @@ class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewM
 
     @SuppressLint("LogNotTimber")
     fun searchFood() {
-        val intent = Intent(this.context, SpicyChiActivity::class.java)
+        val intent = Intent(this.context, ResultActivity::class.java)
         val i = binding.editTextSearch.text.toString().trim()
         val bundle = Bundle()
         bundle.putString("KEY", i)

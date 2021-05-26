@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
@@ -54,7 +53,7 @@
             android:background="@color/Background">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/imageView2"
+                android:id="@+id/cardView"
                 android:layout_width="0dp"
                 android:layout_height="102dp"
                 android:layout_marginStart="10dp"
@@ -73,7 +72,7 @@
                     android:layout_height="match_parent">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/circleImageView2"
+                        android:id="@+id/circleImageProduct"
                         android:layout_width="69.21dp"
                         android:layout_height="69.21dp"
                         android:layout_marginLeft="23.6dp"
@@ -84,7 +83,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/tvTitleProduct"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -93,11 +92,11 @@
                         android:text="@{food.foodName}"
                         android:textAppearance="@style/Overlay.item.FoodName"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/circleImageView2"
+                        app:layout_constraintStart_toEndOf="@+id/circleImageProduct"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/tvPriceProduct"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -107,7 +106,7 @@
                         android:textAppearance="@style/Overlay.item.FoodPrice"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/shapeableImageView"
-                        app:layout_constraintStart_toEndOf="@+id/circleImageView2" />
+                        app:layout_constraintStart_toEndOf="@+id/circleImageProduct" />
 
                     <ImageView
                         android:id="@+id/shapeableImageView"

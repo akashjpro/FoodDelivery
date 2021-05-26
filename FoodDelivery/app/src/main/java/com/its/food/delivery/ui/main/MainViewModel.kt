@@ -24,6 +24,12 @@ class MainViewModel @Inject constructor(private val setting: Setting) : BaseView
             .asLiveData(viewModelScope.coroutineContext)
     }
 
+    private val _navigateToOrder by lazy { MutableStateFlow<Boolean?>(null) }
+    val navigateToOrder by lazy {
+        _navigateToOrder.mapNotNull { SingleEvent.createOrNull(it) }
+            .asLiveData(viewModelScope.coroutineContext)
+    }
+
     fun navClicked(menuItem: MenuItem): Boolean =
         when (menuItem.itemId) {
             R.id.navProfile -> {
@@ -32,11 +38,10 @@ class MainViewModel @Inject constructor(private val setting: Setting) : BaseView
             }
             R.id.navSignOut -> {
                 _navigateToLogin.valueNotDistinct(true)
-//                saveLogin(false,"","","")
                 true
             }
             R.id.navOrder -> {
-
+                _navigateToOrder.valueNotDistinct(true)
                 true
             }
             R.id.navOffer -> {

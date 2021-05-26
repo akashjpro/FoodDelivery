@@ -17,7 +17,8 @@
         android:theme="@style/Theme.FoodDelivery"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.see_more.SeeMoreActivity"></activity>
+        <activity android:name=".ui.history.HistoryActivity"></activity>
+        <activity android:name=".ui.see_more.SeeMoreActivity" />
         <activity android:name=".ui.no_offers.NoOffersActivity" />
         <activity android:name=".ui.no_internet.NoInternetActivity" />
         <activity android:name=".ui.item_not_found.ItemNotFoundActivity" />
@@ -27,8 +28,8 @@
         <activity android:name=".ui.checkout_payment.CheckOutPaymentActivity" />
         <activity android:name=".ui.checkout.CheckoutActivity" />
         <activity android:name=".ui.food_in_formation.FoodInformationActivity" />
-        <activity android:name=".ui.spicy.SpicyChiActivity" />
         <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.result.ResultActivity" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

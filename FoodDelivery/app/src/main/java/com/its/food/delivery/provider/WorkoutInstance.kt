@@ -5,7 +5,7 @@ import com.its.food.delivery.entity.Food
 class WorkoutInstance {
 
     private var mList: List<Food> = ArrayList()
-
+    private var exampleListHistory = ArrayList<Food>()
     companion object {
         private var INSTANCE: WorkoutInstance? = null
 
@@ -29,4 +29,11 @@ class WorkoutInstance {
     fun setFoods(list: List<Food>) {
         mList = list
     }
+    fun setFoodHistory(food: Food){
+        exampleListHistory.add(food)
+    }
+    fun getListHistory():List<Food>{
+        return exampleListHistory
+    }
+
 }

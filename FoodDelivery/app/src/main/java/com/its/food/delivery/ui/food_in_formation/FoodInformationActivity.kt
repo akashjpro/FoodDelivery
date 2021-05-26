@@ -6,6 +6,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityFoodInformationBinding
 import com.its.food.delivery.entity.Food
+import com.its.food.delivery.provider.WorkoutInstance
 import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
@@ -13,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_food_information.*
 import me.relex.circleindicator.CircleIndicator3
 
 class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodInformationViewModel>(){
-    private  var imagesList = mutableListOf<Int>()
+    private var imagesList = mutableListOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,14 +23,16 @@ class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodI
         binding.viewModel = this.viewModel
 
         init()
-
         postToList()
+
 
         binding.viewpager2FoodInformation.adapter = SlideImageViewFood(imagesList)
         binding.viewpager2FoodInformation.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         val indicator: CircleIndicator3 = findViewById<CircleIndicator3>(R.id.CircleIndicator3_Image_Food)
         indicator.setViewPager(viewpager2FoodInformation)
         setSupportActionBar(toolbarFoodInformation)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -52,5 +55,6 @@ class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodI
         for (i in 1..5){
             addToList(food.imgFood)
         }
+        WorkoutInstance.getInstance().setFoodHistory(food)
     }
 }
