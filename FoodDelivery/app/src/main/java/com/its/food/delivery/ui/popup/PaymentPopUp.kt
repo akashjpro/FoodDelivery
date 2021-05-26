@@ -7,10 +7,13 @@ import android.os.Bundle
 import android.view.KeyEvent
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.shape.Shapeable
 import com.its.food.delivery.R
+import com.its.food.delivery.adapters.PopupAdapter
 import com.its.food.delivery.databinding.PopupPaymentBinding
+import com.its.food.delivery.entity.Popup
 import com.its.food.delivery.ui.ActivityBaseDialogFragment
 import com.its.food.delivery.ui.checkout.CheckOutViewModel
 import com.its.food.delivery.ui.checkout_payment.CheckOutPaymentViewModel
@@ -40,10 +43,20 @@ class PaymentPopUp :
         binding.viewModel = this.viewModel
         binding.lifecycleOwner = this
 
-        binding.btnCancel.setOnClickListener{
+        binding.btnCancel.setOnClickListener {
             dialog?.dismiss()
         }
 
+        val exampleListPopUp = mutableListOf<Popup>(
+            Popup("1", "Delivery to Mainland", "N1000 - N2000"),
+            Popup("1", "Delivery to Island", "N2000 - N3000"),
+            Popup("1", "Delivery to Island", "N2000 - N5000")
+        )
+
+        val popupAdapter = PopupAdapter()
+        popupAdapter.submitList(exampleListPopUp)
+        binding.recyclerviewNoteFood.adapter = popupAdapter
+        binding.recyclerviewNoteFood.layoutManager = LinearLayoutManager(context)
 
         val dialog =
             MaterialAlertDialogBuilder(requireContext())

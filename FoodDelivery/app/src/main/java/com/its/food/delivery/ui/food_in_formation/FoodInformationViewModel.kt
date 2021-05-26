@@ -21,6 +21,7 @@ class FoodInformationViewModel @Inject constructor() : BaseViewModel() {
     val food by lazy {
         _food.filterNotNull().asLiveData(viewModelScope.coroutineContext)
     }
+//    private  var imagesList = mutableListOf<Int>()
 
     fun processIntentData(intent: Intent?) {
         val food = intent?.getBundleExtra(BUNDLE_KEY)?.get(FOOD_ENTITY_KEY)  as Food
@@ -29,5 +30,9 @@ class FoodInformationViewModel @Inject constructor() : BaseViewModel() {
         } else {
             this._food.valueNotDistinct(food)
         }
+//        for (i in 1..5){
+//            imagesList.add(food.imgFood)
+//        }
     }
+
 }

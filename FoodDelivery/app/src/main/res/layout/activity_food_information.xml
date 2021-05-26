@@ -35,7 +35,8 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbarFoodInformation">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/Background">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewpager2FoodInformation"
@@ -50,6 +51,7 @@
                 android:id="@+id/CircleIndicator3_Image_Food"
                 android:layout_width="@dimen/food_information_CircleIndicator3_width"
                 android:layout_height="@dimen/food_information_CircleIndicator3_height"
+                app:ci_drawable="@drawable/indicator_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewpager2FoodInformation" />

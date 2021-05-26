@@ -1,5 +1,6 @@
 package com.its.food.delivery.ui.main.home
 
+import SpicyChiActivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -24,7 +25,6 @@ import com.its.food.delivery.ui.main.home.tab_fragment.DrinksFragment
 import com.its.food.delivery.ui.main.home.tab_fragment.FoodsFragment
 import com.its.food.delivery.ui.main.home.tab_fragment.SnacksFragment
 import com.its.food.delivery.ui.see_more.SeeMoreActivity
-import com.its.food.delivery.ui.spicy.SpicyChiActivity
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
 import com.its.food.delivery.util.SEARCH_KEY

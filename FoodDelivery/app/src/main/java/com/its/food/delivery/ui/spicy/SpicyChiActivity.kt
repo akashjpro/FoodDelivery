@@ -1,10 +1,11 @@
-package com.its.food.delivery.ui.spicy
+import com.its.food.delivery.ui.spicy.SpicyChiViewModel
+
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.its.food.delivery.R
 import com.its.food.delivery.adapters.FoodAdapter
 import com.its.food.delivery.databinding.ActivityResultsBinding
@@ -54,7 +55,7 @@ class SpicyChiActivity : BaseActivity<ActivityResultsBinding, SpicyChiViewModel>
         foodAdapter.submitList(exampleListFood)
 
         binding.recyclerSpicyChiecrns.adapter = foodAdapter
-        binding.recyclerSpicyChiecrns.layoutManager = GridLayoutManager(this, 2)
+        binding.recyclerSpicyChiecrns.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         setSupportActionBar(toolbarResults)
     }
 

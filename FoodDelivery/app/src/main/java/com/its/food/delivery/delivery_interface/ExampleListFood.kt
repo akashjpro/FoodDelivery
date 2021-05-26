@@ -17,15 +17,32 @@ interface ExampleListFood {
     fun generateList(size: Int): List<Food> {
         val list = ArrayList<Food>()
         for (i in 0 until size) {
-            val item = Food(
-                "1",
-                "Veggie mix $i",
-                "19000",
-                R.drawable.img_image,
-                "Food",
-                "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
+            list.add(
+                Food(
+                    "1",
+                    "Veggie mix $i",
+                    "19000",
+                    R.drawable.img_image,
+                    "Food",
+                    "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
+                )
             )
-            list += item
+            list.add(
+                Food("1",
+                    "Drink $i",
+                    "19000",
+                    R.drawable.img_drink,
+                    "Drink",
+                    "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm")
+            )
+            list.add(
+                Food("1",
+                    "Snack $i",
+                    "19000",
+                    R.drawable.img_snack,
+                    "Snack",
+                    "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm")
+            )
         }
         return list
     }
@@ -39,5 +56,4 @@ interface ExampleListFood {
         }
         return list
     }
-
 }

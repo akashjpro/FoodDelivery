@@ -48,8 +48,9 @@ class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodI
     }
 
     private fun postToList(){
+        val food = intent?.getBundleExtra(BUNDLE_KEY)?.get(FOOD_ENTITY_KEY)  as Food
         for (i in 1..5){
-            addToList(R.drawable.img_image1)
+            addToList(food.imgFood)
         }
     }
 }
