@@ -1,36 +1,27 @@
 package com.its.food.delivery.adapters
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
-import android.content.Context
-import android.content.DialogInterface
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.its.food.delivery.databinding.ItemFoodInCartBinding
+import com.its.food.delivery.databinding.ItemFavoriteBinding
 import com.its.food.delivery.entity.Food
-import com.its.food.delivery.provider.WorkoutInstance
-import com.its.food.delivery.ui.appContext
-import com.its.food.delivery.ui.cart.CartActivity
 
-class FoodInCartAdapter(
-    private val onItemClick: (item: Food) -> Unit,
-    private val onFavoriteClick: (item: Food) -> Unit,
-    private val context: Context
+class FavoriteAdapter(
+    private val onItemClick: (item: Food) -> Unit
 ) :
-    ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallback1()) {
+    ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallbackFavorite())
+{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
-            ItemFoodInCartBinding.inflate(
+            ItemFavoriteBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ), onItemClick, onFavoriteClick, context
+            ), onItemClick
         )
     }
 
@@ -41,26 +32,14 @@ class FoodInCartAdapter(
 
     @SuppressLint("LogNotTimber")
     class FoodViewHolder(
-        private val binding: ItemFoodInCartBinding,
+        private val binding: ItemFavoriteBinding,
         private val onItemClick: (item: Food) -> Unit,
-        private val onFavoriteClick: (item: Food) -> Unit,
-        private val context: Context
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.setClickListener {
                 binding.food?.let { food ->
                     onItemClick(food)
                 }
-            }
-            binding.btnFavorite.setOnClickListener {
-                binding.food?.let { food ->
-                    onFavoriteClick(food)
-                }
-
-                Log.d("aaaa", "Button favorite is click = ${binding.food?.foodName}")
-            }
-            binding.btnDelete.setOnClickListener {
-                Log.d("aaaa", "Button Delete is click = ${binding.food?.foodName}")
             }
         }
 
@@ -69,11 +48,14 @@ class FoodInCartAdapter(
                 food = item
                 executePendingBindings()
             }
+
         }
+
     }
+
 }
 
-private class FoodDiffCallback1 : DiffUtil.ItemCallback<Food>() {
+private class FoodDiffCallbackFavorite : DiffUtil.ItemCallback<Food>() {
 
     override fun areItemsTheSame(oldItem: Food, newItem: Food): Boolean {
         return oldItem.foodId == newItem.foodId

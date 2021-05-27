@@ -6,6 +6,7 @@
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="food"
             type="com.its.food.delivery.entity.Food" />
@@ -19,10 +20,9 @@
             android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="102dp"
-            app:cardCornerRadius="20dp"
             android:layout_margin="5dp"
             android:onClick="@{clickListener}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -72,4 +72,3 @@
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-

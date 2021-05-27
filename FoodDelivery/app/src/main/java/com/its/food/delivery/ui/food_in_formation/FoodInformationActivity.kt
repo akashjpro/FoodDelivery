@@ -1,6 +1,9 @@
 package com.its.food.delivery.ui.food_in_formation
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.its.food.delivery.R
@@ -8,9 +11,11 @@ import com.its.food.delivery.databinding.ActivityFoodInformationBinding
 import com.its.food.delivery.entity.Food
 import com.its.food.delivery.provider.WorkoutInstance
 import com.its.food.delivery.ui.BaseActivity
+import com.its.food.delivery.ui.cart.CartActivity
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
 import kotlinx.android.synthetic.main.activity_food_information.*
+import kotlinx.android.synthetic.main.activity_main.*
 import me.relex.circleindicator.CircleIndicator3
 
 class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodInformationViewModel>(){
@@ -40,6 +45,15 @@ class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodI
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menuItemFavorite -> {
+                WorkoutInstance.getInstance().setFoodFavorite(intent?.getBundleExtra(BUNDLE_KEY)?.get(FOOD_ENTITY_KEY)  as Food)
+              true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
     private fun init() {
         // Process intent data

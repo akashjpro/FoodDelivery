@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.its.food.delivery.adapters.FavoriteAdapter
 import com.its.food.delivery.adapters.HistoryAdapter
 import com.its.food.delivery.databinding.FragmentHistoryBinding
+import com.its.food.delivery.entity.Food
 import com.its.food.delivery.provider.WorkoutInstance
 import com.its.food.delivery.ui.BaseFragment2
 import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
@@ -34,11 +36,12 @@ class HistoryFragment : BaseFragment2<FragmentHistoryBinding, HistoryViewModel, 
             startActivity(intent)
         })
 
-        historyAdapter.submitList(WorkoutInstance.getInstance().getListHistory())
-        binding.recyclerviewHistory.adapter  = historyAdapter
+        binding.recyclerviewHistory.adapter = historyAdapter
         binding.recyclerviewHistory.layoutManager = LinearLayoutManager(this.context)
 
-
+        historyAdapter.submitList(WorkoutInstance.getInstance().getListHistory())
         return binding.root
     }
+
+
 }
