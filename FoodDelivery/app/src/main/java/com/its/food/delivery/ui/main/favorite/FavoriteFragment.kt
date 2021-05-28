@@ -1,7 +1,9 @@
 package com.its.food.delivery.ui.main.favorite
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +14,7 @@ import com.its.food.delivery.adapters.FavoriteAdapter
 import com.its.food.delivery.adapters.HistoryAdapter
 import com.its.food.delivery.databinding.FragmentFavoriteBinding
 import com.its.food.delivery.databinding.FragmentHistoryBinding
+import com.its.food.delivery.entity.Food
 import com.its.food.delivery.provider.WorkoutInstance
 import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.ui.BaseFragment2
@@ -27,7 +30,13 @@ import com.its.food.delivery.util.FOOD_ENTITY_KEY
  */
 class FavoriteFragment :
     BaseFragment2<FragmentFavoriteBinding, FavoriteViewModel, MainViewModel>() {
-
+     private val favoriteAdapter = FavoriteAdapter(onItemClick = {
+        val intent = Intent(this.context, FoodInformationActivity::class.java)
+        val bundle = Bundle()
+        bundle.putSerializable(FOOD_ENTITY_KEY, it)
+        intent.putExtra(BUNDLE_KEY, bundle)
+        startActivity(intent)
+    })
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,17 +45,16 @@ class FavoriteFragment :
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
 
-        val favoriteAdapter = FavoriteAdapter(onItemClick = {
-            val intent = Intent(this.context, FoodInformationActivity::class.java)
-            val bundle = Bundle()
-            bundle.putSerializable(FOOD_ENTITY_KEY, it)
-            intent.putExtra(BUNDLE_KEY, bundle)
-            startActivity(intent)
-        })
-        val listFavorite = WorkoutInstance.getInstance().getListFavorite()
         binding.recyclerViewFavorite.adapter = favoriteAdapter
         binding.recyclerViewFavorite.layoutManager = LinearLayoutManager(this.context)
-        favoriteAdapter.submitList(listFavorite)
+        favoriteAdapter.submitList(WorkoutInstance.getInstance().getListFavorite())
         return binding.root
+    }
+    @SuppressLint("LogNotTimber")
+    fun updateAdapter(){
+        favoriteAdapter.update(WorkoutInstance.getInstance().getListFavorite() as ArrayList<Food>)
+
+//        favoriteAdapter.submitList(WorkoutInstance.getInstance().getListFavorite())
+//        favoriteAdapter.notifyDataSetChanged()
     }
 }

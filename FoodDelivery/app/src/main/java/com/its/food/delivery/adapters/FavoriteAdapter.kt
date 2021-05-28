@@ -52,6 +52,10 @@ class FavoriteAdapter(
         }
 
     }
+    fun update(modelList:ArrayList<Food>){
+        submitList(modelList)
+        notifyDataSetChanged()
+    }
 
 }
 

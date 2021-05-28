@@ -38,7 +38,6 @@ class HistoryFragment : BaseFragment2<FragmentHistoryBinding, HistoryViewModel, 
 
         binding.recyclerviewHistory.adapter = historyAdapter
         binding.recyclerviewHistory.layoutManager = LinearLayoutManager(this.context)
-
         historyAdapter.submitList(WorkoutInstance.getInstance().getListHistory())
         return binding.root
     }

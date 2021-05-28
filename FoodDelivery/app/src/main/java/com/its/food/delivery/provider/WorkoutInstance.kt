@@ -1,8 +1,15 @@
 package com.its.food.delivery.provider
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
 import android.util.Log
+import androidx.room.Update
+import com.its.food.delivery.adapters.FavoriteAdapter
 import com.its.food.delivery.entity.Food
+import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
+import com.its.food.delivery.util.BUNDLE_KEY
+import com.its.food.delivery.util.FOOD_ENTITY_KEY
 
 class WorkoutInstance {
 
@@ -52,12 +59,13 @@ class WorkoutInstance {
     @SuppressLint("LogNotTimber")
     fun setFoodFavorite(food: Food) {
         exampleListFavorite.add(food)
+
         Log.d("AAAA","Add Food ${food.foodName} vào List Favorite thành công  | Size == ${exampleListFavorite.size}")
     }
 
     @SuppressLint("LogNotTimber")
     fun getListFavorite(): List<Food> {
-        Log.d("AAAA","===== Lấy List Favorite =========")
+        Log.d("AAAA","===== Lấy List Favorite ========= ${exampleListFavorite.size}")
         return exampleListFavorite
     }
 

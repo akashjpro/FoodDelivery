@@ -7,6 +7,7 @@ import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.its.food.delivery.R
+import com.its.food.delivery.adapters.FavoriteAdapter
 import com.its.food.delivery.databinding.ActivityFoodInformationBinding
 import com.its.food.delivery.entity.Food
 import com.its.food.delivery.provider.WorkoutInstance

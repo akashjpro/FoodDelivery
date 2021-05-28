@@ -1,7 +1,7 @@
 package com.its.food.delivery.ui.cart
 
+
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -16,11 +16,13 @@ import com.its.food.delivery.provider.WorkoutInstance
 import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.ui.checkout.CheckoutActivity
 import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
+import com.its.food.delivery.ui.main.favorite.FavoriteFragment
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
 import kotlinx.android.synthetic.main.activity_cart.*
 
 class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>(), ExampleListFood {
+    @SuppressLint("LogNotTimber")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -40,6 +42,10 @@ class CartActivity : BaseActivity<ActivityCartBinding, CartViewModel>(), Example
         }, onFavoriteClick = {
             val a = it
             WorkoutInstance.getInstance().setFoodFavorite(a)
+//            FavoriteFragment().updateAdapter(WorkoutInstance.getInstance().getListFavorite())
+//            FavoriteFragment().favoriteAdapter.submitList(WorkoutInstance.getInstance().getListFavorite())
+            Log.d("AAA","==============${WorkoutInstance.getInstance().getListFavorite()}")
+            FavoriteFragment().updateAdapter()
         }, this)
 
         foodInCartAdapter.submitList(exampleLis())

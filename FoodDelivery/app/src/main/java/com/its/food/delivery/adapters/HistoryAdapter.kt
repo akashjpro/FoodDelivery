@@ -26,8 +26,10 @@ class HistoryAdapter(
         )
     }
 
+    @SuppressLint("LogNotTimber")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val food = getItem(position)
+        Log.d("AAAA","$food")
         (holder as FoodViewHolder).bind(food)
     }
 
