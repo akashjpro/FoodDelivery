@@ -1,5 +1,6 @@
 package com.its.food.delivery.repository
 
+import android.util.Log
 import com.its.food.delivery.database.entity.FoodEntity
 import com.its.food.delivery.di.IODispatcher
 import com.its.food.delivery.repository.local.LocalService
@@ -56,18 +57,23 @@ class RepoImp @Inject constructor(
 
     override fun getFoods(force: Boolean): Flow<Resource<DataResponse<List<FoodEntity>>>>  =
         networkBoundResource(
-            fetchFromLocal = { localService.getFoods() },
+            fetchFromLocal = {
+                localService.getFoods()
+            },
             shouldFetchFromRemote = { result ->
                 val list = result?.data ?: ArrayList()
                 force || list == null || list.isEmpty() || fetchLimiter.shouldFetch(GET_FOODS)
             },
-            fetchFromRemote = { remoteService.getFoods(headerRequest) },
-            processRemoteResponse = {},
+            fetchFromRemote = {
+                remoteService.getFoods(headerRequest)
+            },
+            processRemoteResponse = {
+            },
             saveRemoteData = { response ->
                 // Save response data in app scope
                 appScope.launch {
                     val listFood = response.body?.data ?: ArrayList()
-                   localService.replaceAllFoods(listFood.toFoodList())
+                    localService.replaceAllFoods(listFood.toFoodList())
                 }.join()
             },
             onFetchFailed = {

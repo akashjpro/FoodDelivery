@@ -41,7 +41,7 @@ class SeeMoreActivity : BaseActivity<ActivitySeeMoreBinding, SeeMoreViewModel>()
         val list = filterFoodType(foodType)
 
         //Update list food
-        foodAdapter.submitList(list)
+        //foodAdapter.submitList(list)
 
         binding.recyclerSeeMore.adapter = foodAdapter
         binding.recyclerSeeMore.layoutManager = GridLayoutManager(this, 2)

@@ -1,5 +1,8 @@
 package com.its.food.delivery.util
 
+// ACCESS TOKEN ------------------------------------------------------------------------------------
+const val ACCESS_TOKEN = "token"
+
 // HTTP RESPONSE -----------------------------------------------------------------------------------
 
 const val HTTP_NO_CONTENT = 204

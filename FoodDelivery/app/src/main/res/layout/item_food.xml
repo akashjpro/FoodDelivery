@@ -11,7 +11,7 @@
 
         <variable
             name="food"
-            type="com.its.food.delivery.entity.Food" />
+            type="com.its.food.delivery.database.entity.FoodEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +65,7 @@
             android:elevation="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_image"
-            app:bindingImageResource="@{food.imgFood}"
+            app:bindingImageUrl="@{food.imgFoodUrl}"
             app:layout_constraintBottom_toBottomOf="@+id/viewItemFood"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

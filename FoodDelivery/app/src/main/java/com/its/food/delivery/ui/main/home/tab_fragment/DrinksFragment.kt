@@ -2,6 +2,7 @@ package com.its.food.delivery.ui.main.home.tab_fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,9 +38,8 @@ class DrinksFragment : BaseFragment2<FragmentDrinkBinding, DrinksViewModel, Main
             startActivity(intent)
 
         })
-        val type = "Drink"
-        val listFood = filterFoodType(type)
-        foodAdapter.submitList(listFood)
+//        val type = "Drink"
+//        val listFood = filterFoodType(type)
         binding.recyclerviewDrink.adapter = foodAdapter
         binding.recyclerviewDrink.layoutManager = LinearLayoutManager(
             this.context,
@@ -47,6 +47,16 @@ class DrinksFragment : BaseFragment2<FragmentDrinkBinding, DrinksViewModel, Main
             false
         )
 
+        observe(foodAdapter)
+
         return binding.root
+    }
+
+    private fun observe(foodAdapter:FoodAdapter) {
+        activityViewModel.foodsEntity.observe(requireActivity()) { event ->
+            event.getContentIfNotHandled().let {
+                foodAdapter.submitList(it)
+            }
+        }
     }
 }

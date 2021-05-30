@@ -53,7 +53,7 @@ class ResultActivity : BaseActivity<ActivityResultsBinding, ResultViewModel>(),
         }).filter(foodName.toString())
 
         //Update list food
-        foodAdapter.submitList(exampleListFood)
+        //foodAdapter.submitList(exampleListFood)
 
         binding.recyclerSpicyChiecrns.adapter = foodAdapter
         binding.recyclerSpicyChiecrns.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)

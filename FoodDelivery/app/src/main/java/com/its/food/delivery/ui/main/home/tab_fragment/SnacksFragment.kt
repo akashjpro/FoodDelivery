@@ -37,7 +37,7 @@ class SnacksFragment : BaseFragment2<FragmentSnackBinding, SnacksViewModel, Main
         })
         val type = "Snack"
         val listFood = filterFoodType(type)
-        foodAdapter.submitList(listFood)
+//        foodAdapter.submitList(listFood)
         binding.recyclerviewSnack.adapter = foodAdapter
         binding.recyclerviewSnack.layoutManager = LinearLayoutManager(
             this.context,
@@ -45,7 +45,17 @@ class SnacksFragment : BaseFragment2<FragmentSnackBinding, SnacksViewModel, Main
             false
         )
 
+        observe(foodAdapter)
+
         return binding.root
+    }
+
+    private fun observe(foodAdapter:FoodAdapter) {
+        activityViewModel.foodsEntity.observe(requireActivity()) { event ->
+            event.getContentIfNotHandled().let {
+                foodAdapter.submitList(it)
+            }
+        }
     }
 
 }

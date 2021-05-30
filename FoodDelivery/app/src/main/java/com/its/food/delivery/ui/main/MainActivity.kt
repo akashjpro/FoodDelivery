@@ -1,12 +1,16 @@
 package com.its.food.delivery.ui.main
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.its.food.delivery.R
@@ -20,11 +24,16 @@ import com.its.food.delivery.ui.main.favorite.FavoriteFragment
 import com.its.food.delivery.ui.main.history.HistoryFragment
 import com.its.food.delivery.ui.main.home.HomeFragment
 import com.its.food.delivery.ui.orders.OrdersActivity
+import com.its.food.delivery.util.EMPLOYEE
+import com.its.food.delivery.util.api.Resource
+import com.its.food.delivery.util.errorDialog
+import com.its.food.delivery.util.progressDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
@@ -38,6 +47,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     private val fragmentManager = supportFragmentManager
     private var activeFragment: Fragment = HOME_SCREEN
+
+    private var progressDialog: AlertDialog? = null
 
     private val bottomSheetViewModel: BottomSheetViewModel by viewModels()
 
@@ -83,7 +94,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     private fun init() {
-
+        viewModel.setHeaderApi()
+        processGetFoods()
     }
 
     private fun observe() {
@@ -147,6 +159,33 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 }
 
                 else -> false
+            }
+        }
+    }
+
+    private fun processGetFoods() {
+        progressDialog = progressDialog(this, getString(R.string.logging_msg))
+
+        viewModel.getFoods().observe(this) { resource ->
+
+            when(resource){
+                is Resource.Loading -> {
+                    progressDialog?.show()
+                }
+                is Resource.Error -> {
+                    progressDialog?.dismiss()
+                }
+                is Resource.Success -> {
+                    progressDialog?.dismiss()
+
+                    val result = resource.data.result
+
+                    if (result) {
+                        val foods = resource.data?.data
+
+                        viewModel.setFoods(foods)
+                    }
+                }
             }
         }
     }

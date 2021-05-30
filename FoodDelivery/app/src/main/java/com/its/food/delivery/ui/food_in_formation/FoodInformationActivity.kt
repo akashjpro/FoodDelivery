@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.its.food.delivery.R
 import com.its.food.delivery.adapters.FavoriteAdapter
+import com.its.food.delivery.database.entity.FoodEntity
 import com.its.food.delivery.databinding.ActivityFoodInformationBinding
 import com.its.food.delivery.entity.Food
 import com.its.food.delivery.provider.WorkoutInstance
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import me.relex.circleindicator.CircleIndicator3
 
 class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodInformationViewModel>(){
-    private var imagesList = mutableListOf<Int>()
+    private var imagesList = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -61,15 +62,15 @@ class FoodInformationActivity: BaseActivity<ActivityFoodInformationBinding,FoodI
         viewModel.processIntentData(intent)
     }
 
-    private fun addToList(image: Int){
+    private fun addToList(image: String){
         imagesList.add(image)
     }
 
     private fun postToList(){
-        val food = intent?.getBundleExtra(BUNDLE_KEY)?.get(FOOD_ENTITY_KEY)  as Food
+        val food = intent?.getBundleExtra(BUNDLE_KEY)?.get(FOOD_ENTITY_KEY)  as FoodEntity
         for (i in 1..5){
-            addToList(food.imgFood)
+            addToList(food.imgFoodUrl)
         }
-        WorkoutInstance.getInstance().setFoodHistory(food)
+        //WorkoutInstance.getInstance().setFoodHistory(food)
     }
 }

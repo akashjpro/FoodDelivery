@@ -6,13 +6,14 @@ import android.widget.Filter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.its.food.delivery.database.entity.FoodEntity
 import com.its.food.delivery.databinding.ItemFoodBinding
 import com.its.food.delivery.entity.Food
 import java.util.*
 import kotlin.collections.ArrayList
 
-class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
-    ListAdapter<Food, RecyclerView.ViewHolder>(FoodDiffCallback()) {
+class FoodAdapter(private val onItemClick: (item: FoodEntity) -> Unit) :
+    ListAdapter<FoodEntity, RecyclerView.ViewHolder>(FoodDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return FoodViewHolder(
@@ -31,7 +32,7 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
 
     class FoodViewHolder(
         private val binding: ItemFoodBinding,
-        private val onItemClick: (item: Food) -> Unit
+        private val onItemClick: (item: FoodEntity) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.setClickListener {
@@ -41,7 +42,7 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
             }
         }
 
-        fun bind(item: Food) {
+        fun bind(item: FoodEntity) {
             binding.apply {
                 food = item
                 executePendingBindings()
@@ -53,7 +54,7 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val charSearch = constraint.toString()
-                val foodList = ArrayList<Food>()
+                val foodList = ArrayList<FoodEntity>()
                 if (charSearch.isEmpty()) {
                 } else {
                     for (item in currentList) {
@@ -75,7 +76,7 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 submitList(
-                    results?.values as ArrayList<Food>
+                    results?.values as ArrayList<FoodEntity>
                 )
                 val exampleList: ArrayList<Food> = results.values as ArrayList<Food>
                 onCount(exampleList.count())
@@ -85,13 +86,13 @@ class FoodAdapter(private val onItemClick: (item: Food) -> Unit) :
     }
 }
 
-private class FoodDiffCallback : DiffUtil.ItemCallback<Food>() {
+private class FoodDiffCallback : DiffUtil.ItemCallback<FoodEntity>() {
 
-    override fun areItemsTheSame(oldItem: Food, newItem: Food): Boolean {
+    override fun areItemsTheSame(oldItem: FoodEntity, newItem: FoodEntity): Boolean {
         return oldItem.foodId == newItem.foodId
     }
 
-    override fun areContentsTheSame(oldItem: Food, newItem: Food): Boolean {
+    override fun areContentsTheSame(oldItem: FoodEntity, newItem: FoodEntity): Boolean {
         return oldItem == newItem
     }
 }

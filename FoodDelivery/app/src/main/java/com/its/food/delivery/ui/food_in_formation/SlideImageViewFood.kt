@@ -5,9 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.its.food.delivery.R
+import com.its.food.delivery.ui.appContext
 
-class SlideImageViewFood(private var images: List<Int>): RecyclerView.Adapter<SlideImageViewFood.Pager2ViewHolder>() {
+class SlideImageViewFood(private var images: List<String>): RecyclerView.Adapter<SlideImageViewFood.Pager2ViewHolder>() {
     inner class Pager2ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val itemImage: ImageView = itemView.findViewById(R.id.imageViewItemImageFood)
     }
@@ -20,7 +22,7 @@ class SlideImageViewFood(private var images: List<Int>): RecyclerView.Adapter<Sl
     }
 
     override fun onBindViewHolder(holder: SlideImageViewFood.Pager2ViewHolder, position: Int) {
-        holder.itemImage.setImageResource(images[position])
+        Glide.with(appContext).load(images[position]).into(holder.itemImage)
     }
 
     override fun getItemCount(): Int {
