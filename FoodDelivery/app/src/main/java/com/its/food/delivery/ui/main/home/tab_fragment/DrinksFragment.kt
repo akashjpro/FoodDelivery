@@ -14,7 +14,9 @@ import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
 import com.its.food.delivery.ui.main.MainViewModel
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class DrinksFragment : BaseFragment2<FragmentDrinkBinding, DrinksViewModel, MainViewModel>(),
     ExampleListFood {
@@ -22,7 +24,7 @@ class DrinksFragment : BaseFragment2<FragmentDrinkBinding, DrinksViewModel, Main
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
 
         binding = FragmentDrinkBinding.inflate(inflater, container, false)

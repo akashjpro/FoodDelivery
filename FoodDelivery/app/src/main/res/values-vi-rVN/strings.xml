@@ -12,8 +12,12 @@
     <string name="login">Đăng nhập</string>
     <string name="sign_up">Đăng ký</string>
     <string name="login_email">Địa chỉ </string>
-    <string name="login_pass">Mật khẩu</string>
+    <string name="password">Mật khẩu</string>
     <string name="forgot_pass_code">Quên mật khẩu?</string>
+    <string name="confirm_pass">Xác nhận mật khẩu</string>
+    <string name="email">E-mal</string>
+    <string name="birth_day">Ngày sinh</string>
+    <string name="full_name">Họ và tên</string>
 
     <!--Home Screen-->
     <string name="home_tittle">Thức ăn thơm ngon cho bạn</string>

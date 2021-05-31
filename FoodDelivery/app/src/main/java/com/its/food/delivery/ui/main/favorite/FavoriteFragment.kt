@@ -22,12 +22,14 @@ import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
 import com.its.food.delivery.ui.main.MainViewModel
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass.
  * Use the [FavoriteFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+@AndroidEntryPoint
 class FavoriteFragment :
     BaseFragment2<FragmentFavoriteBinding, FavoriteViewModel, MainViewModel>() {
      private val favoriteAdapter = FavoriteAdapter(onItemClick = {

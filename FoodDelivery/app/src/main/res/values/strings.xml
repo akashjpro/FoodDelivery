@@ -10,10 +10,14 @@
 
     <!-- Login and SignUp Screen -->
     <string name="login">Login</string>
-    <string name="sign_up">Sign-up</string>
+    <string name="sign_up">Create Account</string>
     <string name="login_email">Email address</string>
-    <string name="login_pass">Password</string>
-    <string name="forgot_pass_code">Forgot passcode?</string>
+    <string name="password">Password</string>
+    <string name="forgot_pass_code">Forgot password?</string>
+    <string name="confirm_pass">confirm password</string>
+    <string name="email">E-mal</string>
+    <string name="birth_day">Birth Day</string>
+    <string name="full_name">Full name</string>
 
     <!-- Home Screen -->
     <string name="home_tittle">Delicious food for you</string>

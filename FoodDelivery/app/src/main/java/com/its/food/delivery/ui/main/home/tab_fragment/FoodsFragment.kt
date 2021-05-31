@@ -14,7 +14,9 @@ import com.its.food.delivery.ui.food_in_formation.FoodInformationActivity
 import com.its.food.delivery.ui.main.MainViewModel
 import com.its.food.delivery.util.BUNDLE_KEY
 import com.its.food.delivery.util.FOOD_ENTITY_KEY
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class FoodsFragment : BaseFragment2<FragmentFoodBinding, FoodsViewModel, MainViewModel>(),
     ExampleListFood {

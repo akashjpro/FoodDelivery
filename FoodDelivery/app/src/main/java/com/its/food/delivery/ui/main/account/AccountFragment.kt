@@ -10,6 +10,7 @@ import com.its.food.delivery.databinding.FragmentAccountBinding
 import com.its.food.delivery.ui.BaseFragment2
 import com.its.food.delivery.ui.main.MainViewModel
 import com.its.food.delivery.ui.my_profile2.MyProfileEditActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 
 /**
@@ -17,6 +18,7 @@ import com.its.food.delivery.ui.my_profile2.MyProfileEditActivity
  * Use the [AccountFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+@AndroidEntryPoint
 class AccountFragment : BaseFragment2<FragmentAccountBinding,AccountViewModel,MainViewModel>() {
 
     override fun onCreateView(

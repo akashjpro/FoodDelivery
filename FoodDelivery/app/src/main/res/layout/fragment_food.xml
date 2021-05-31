@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="ViewModel"
-    type="com.its.food.delivery.ui.main.home.tab_fragment.FoodsViewModel" />
+
+        <variable
+            name="ViewModel"
+            type="com.its.food.delivery.ui.main.home.tab_fragment.FoodsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

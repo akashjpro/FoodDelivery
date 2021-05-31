@@ -22,6 +22,7 @@ import com.its.food.delivery.ui.main.home.tab_fragment.SnacksFragment
 import com.its.food.delivery.ui.see_more.SeeMoreActivity
 import com.its.food.delivery.util.SEARCH_KEY
 import com.its.food.delivery.util.TEXT_TAB
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_food_information.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.item_recyclerview_food_home.view.*
@@ -32,6 +33,7 @@ import kotlinx.android.synthetic.main.item_recyclerview_food_home.view.*
  * create an instance of this fragment.
  */
 @Suppress("DEPRECATION")
+@AndroidEntryPoint
 class HomeFragment : BaseFragment2<FragmentHomeBinding, HomeViewModel, MainViewModel>(),
     ExampleListFood {
     @SuppressLint("LogNotTimber")

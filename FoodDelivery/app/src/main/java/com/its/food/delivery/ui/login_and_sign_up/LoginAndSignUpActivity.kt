@@ -1,33 +1,34 @@
 package com.its.food.delivery.ui.login_and_sign_up
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.google.android.material.tabs.TabLayoutMediator
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityLoginAndSignupBinding
 import com.its.food.delivery.ui.BaseActivity
-import com.its.food.delivery.ui.main.MainActivity
-import com.its.food.delivery.util.EMPLOYEE
-import com.its.food.delivery.util.api.Resource
-import com.its.food.delivery.util.errorDialog
-import com.its.food.delivery.util.progressDialog
+import com.its.food.delivery.ui.login_and_sign_up.fragment.LoginFragment
+import com.its.food.delivery.ui.login_and_sign_up.fragment.SignUpFragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import timber.log.Timber
 
-@ExperimentalCoroutinesApi
+
+//@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 class LoginAndSignUpActivity :
     BaseActivity<ActivityLoginAndSignupBinding, LoginAndSignUpActivityViewModel>() {
+    companion object {
 
-    private var progressDialog: AlertDialog? = null
-    private var errorDialog: AlertDialog? = null
+        private val LOGIN = LoginFragment()
+        private val SIGN_UP = SignUpFragment()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,96 +38,37 @@ class LoginAndSignUpActivity :
         binding.lifecycleOwner = this
         binding.viewModel = this.viewModel
 
-        init()
-        observe()
-    }
-
-    private fun init() {
-        lifecycle.addObserver(viewModel)
-    }
-
-    private fun observe() {
-        viewModel.navigateToMain.observe(this) { event ->
-            event.getContentIfNotHandled()?.let {
-                val intent = Intent(this@LoginAndSignUpActivity, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-
-        }
-
-        viewModel.loginEvent.observe(this) { event ->
-            event.getContentIfNotHandled()?.let {
-                val userName = binding.editTextTextEmailAddress.text.trim().toString()
-                val password = binding.editTextTextPassword.text.trim().toString()
-//                "username" : "user1@gmail.com",
-//                "password" : "123456"
-                processLogin(userName, password)
-            }
-        }
-    }
 
 
-    private fun processLogin(userName: String, password: String) {
 
-        progressDialog = progressDialog(this, getString(R.string.logging_msg))
+        binding.containerLoginSignUp.adapter = ViewStateAdapter(supportFragmentManager, lifecycle)
 
-        viewModel.login(userName, password).observe(this) { resource ->
-            when (resource) {
-                is Resource.Loading -> {
-                    Timber.d("Loading data: ${resource.cachedData?.toString()}")
-
-                    progressDialog?.show()
+        TabLayoutMediator(binding.tabLoginSignUp, binding.containerLoginSignUp) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = "Login"
                 }
-                is Resource.Error -> {
-                    Timber.d("Error: ${resource.cachedData?.toString()} with code: ${resource.code}")
-
-                    progressDialog?.dismiss()
-
-                    errorDialog = errorDialog(
-                        this,
-                        resource.code.name,
-                        getString(R.string.error_message),
-                        R.color.darkColor,
-                        positiveClick = {
-                            errorDialog?.dismiss()
-                        }
-                    )
-                    errorDialog?.show()
+                1 -> {
+                    tab.text = "Sign-Up"
                 }
 
-                is Resource.Success -> {
-
-                    // Hide progress dialog
-                    progressDialog?.dismiss()
-
-                    val result = resource.data.result
-
-                    Timber.d("result: ${resource.data.toString()}")
-
-                    if (result) {
-                        val role = resource.data?.data?.role ?: EMPLOYEE
-                        val userId = resource.data?.data?.userId ?: ""
-                        val token = resource.data?.data?.token ?: ""
-
-                        // Save login success
-                        viewModel.saveLogin(true, role, userId, token)
-                        viewModel.navigateToMain()
-                    } else {
-                        // Show error dialog
-                        errorDialog = errorDialog(
-                            this,
-                            resource.data.error ?: "",
-                            getString(R.string.error_title_error),
-                            R.color.darkColor,
-                            positiveClick = {
-                                errorDialog?.dismiss()
-                            }
-                        )
-                        errorDialog?.show()
-                    }
-                }
             }
+        }.attach()
+
+    }
+    private class ViewStateAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+        FragmentStateAdapter(fragmentManager, lifecycle) {
+        override fun createFragment(position: Int): Fragment {
+            // Hardcoded in this order, you'll want to use lists and make sure the titles match
+            return if (position == 1) {
+                SIGN_UP
+            } else LOGIN
+        }
+
+        override fun getItemCount(): Int {
+            // Hardcoded, use lists
+            return 2
         }
     }
+
 }

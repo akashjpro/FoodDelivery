@@ -17,7 +17,8 @@
         android:theme="@style/Theme.FoodDelivery"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.favorite.FavoriteActivity"></activity>
+        <activity android:name=".ui.sign_up.SignUpActivity"></activity>
+        <activity android:name=".ui.favorite.FavoriteActivity" />
         <activity android:name=".ui.history.HistoryActivity" />
         <activity android:name=".ui.see_more.SeeMoreActivity" />
         <activity android:name=".ui.no_offers.NoOffersActivity" />
