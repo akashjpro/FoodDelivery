@@ -44,6 +44,7 @@ class LoginFragment :
         lifecycle.addObserver(viewModel)
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun observe() {
         viewModel.navigateToMain.observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let {
@@ -57,9 +58,21 @@ class LoginFragment :
             event.getContentIfNotHandled()?.let {
                 val userName = binding.editTextTextEmailAddress.text.trim().toString()
                 val password = binding.editTextTextPassword.text.trim().toString()
+                if (userName.isEmpty() || userName == "") {
+                    binding.tvValidateEmail.text = "*"
+//                    binding.tvValidatePass.setTextColor(R.color.primaryColor)
+                }
+                if (password.isEmpty() || password == "") {
+                    binding.tvValidatePass.text = "*"
+                } else {
+                    binding.tvValidateEmail.text = ""
+                    binding.tvValidatePass.text = ""
+                    processLogin(userName, password)
+                }
+
 //                "username" : "user1@gmail.com",
 //                "password" : "123456"
-                processLogin(userName, password)
+
             }
         }
     }

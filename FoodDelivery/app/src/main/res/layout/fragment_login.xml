@@ -31,14 +31,23 @@
                     android:id="@+id/textView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+                    android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
                     android:layout_marginTop="@dimen/edit_text_and_text_view_margin"
-                    android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
                     android:text="@string/login_email"
                     android:textAppearance="@style/Overlay.Login.Title2"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvValidateEmail"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvValidateEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="@dimen/login_sign_up_margin_40"
+                    android:textColor="@color/primaryColor"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
 
                 <EditText
                     android:id="@+id/editTextTextEmailAddress"
@@ -58,14 +67,23 @@
                     android:id="@+id/textViewPassword"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/edit_text_and_text_view_margin"
+                    android:layout_marginLeft="@dimen/edit_text_and_text_view_margin"
                     android:layout_marginTop="@dimen/textViewPassword_margin_top"
-                    android:layout_marginEnd="@dimen/edit_text_and_text_view_margin"
                     android:text="@string/password"
                     android:textAppearance="@style/Overlay.Login.Title2"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvValidatePass"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+                <TextView
+                    android:id="@+id/tvValidatePass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="@dimen/login_sign_up_margin_40"
+                    android:textColor="@color/primaryColor"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewPassword"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewPassword" />
 
                 <EditText
                     android:id="@+id/editTextTextPassword"
@@ -98,11 +116,12 @@
                     android:layout_width="@dimen/button_login_width"
                     android:layout_height="@dimen/button_login_height"
                     android:layout_marginTop="@dimen/button_login_margin_bottom"
+                    android:layout_marginBottom="@dimen/login_sign_up_margin_20"
+                    android:onClick="@{() -> viewModel.onClickLogin()}"
                     android:text="@string/login"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.LoginAndSignUp.ButtonText"
                     app:cornerRadius="30dp"
-                    android:onClick="@{() -> viewModel.onClickLogin()}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.494"
