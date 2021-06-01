@@ -21,7 +21,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment2<FragmentLoginBinding, LoginViewModel, LoginAndSignUpActivityViewModel>() {
+class LoginFragment :
+    BaseFragment2<FragmentLoginBinding, LoginViewModel, LoginAndSignUpActivityViewModel>() {
     private var progressDialog: AlertDialog? = null
     private var errorDialog: AlertDialog? = null
 

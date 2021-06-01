@@ -18,79 +18,72 @@
         tools:context=".ui.login_and_sign_up.LoginAndSignUpActivity">
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgTopFrame"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/shape_rectangle_while7" />
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imgTopFrame"
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="@dimen/login_image_logo_width"
+                android:layout_height="@dimen/login_image_logo_height"
+                app:layout_constraintBottom_toBottomOf="@+id/imgTopFrame"
+                app:layout_constraintEnd_toEndOf="@id/imgTopFrame"
+                app:layout_constraintStart_toStartOf="@id/imgTopFrame"
+                app:layout_constraintTop_toTopOf="@+id/imgTopFrame"
+                app:srcCompat="@drawable/img_logo_bella_olonje1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@id/imgTopFrame"
+                app:layout_constraintStart_toStartOf="@id/imgTopFrame">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLoginSignUp"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/image_TopFrame_height"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/shape_rectangle_while7" />
-
-                <ImageView
-                    android:id="@+id/imgLogo"
-                    android:layout_width="@dimen/login_image_logo_width"
-                    android:layout_height="@dimen/login_image_logo_height"
-                    app:layout_constraintBottom_toBottomOf="@+id/imgTopFrame"
-                    app:layout_constraintEnd_toEndOf="@id/imgTopFrame"
-                    app:layout_constraintStart_toStartOf="@id/imgTopFrame"
-                    app:layout_constraintTop_toTopOf="@+id/imgTopFrame"
-                    app:srcCompat="@drawable/img_logo_bella_olonje1" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@+id/imgTopFrame"
-                    app:layout_constraintEnd_toEndOf="@id/imgTopFrame"
-                    app:layout_constraintStart_toStartOf="@id/imgTopFrame">
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tabLoginSignUp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/taps_margin"
-                        android:layout_marginEnd="@dimen/taps_margin"
-                        android:layout_weight="1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:tabIndicatorHeight="@dimen/tab_Indicator_Height"
-                        tools:layout_editor_absoluteX="40dp">
-
-                        <com.google.android.material.tabs.TabItem
-                            android:id="@+id/tabLogin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/taps_margin"
-                            android:layout_marginRight="@dimen/taps_margin"
-                            android:text="@string/login" />
-
-                        <com.google.android.material.tabs.TabItem
-                            android:id="@+id/tabSignUp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/taps_margin"
-                            android:layout_marginRight="@dimen/taps_margin"
-                            android:text="@string/sign_up" />
-
-                    </com.google.android.material.tabs.TabLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/containerLoginSignUp"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/taps_margin"
+                    android:layout_marginEnd="@dimen/taps_margin"
+                    android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                    app:tabIndicatorHeight="@dimen/tab_Indicator_Height"
+                    tools:layout_editor_absoluteX="40dp">
 
+
+                </com.google.android.material.tabs.TabLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/containerLoginSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

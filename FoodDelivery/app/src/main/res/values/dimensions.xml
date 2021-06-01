@@ -34,6 +34,11 @@
     <dimen name="textViewPassword_margin_top">@dimen/margin_32</dimen>
     <dimen name="text_view_forgot_pass_code_margin_top">@dimen/margin_24</dimen>
     <dimen name="taps_margin">@dimen/margin_50</dimen>
+    <!--Login - Sign-up-->
+    <dimen name="login_sign_up_margin_20">@dimen/margin_20</dimen>
+    <dimen name="login_sign_up_margin_10">@dimen/margin_10</dimen>
+    <dimen name="login_sign_up_margin_40">@dimen/margin_40</dimen>
+
 
     <!-- Home Screen-->
     <dimen name="home_title_width">250dp</dimen>
