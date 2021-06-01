@@ -25,7 +25,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginAndSignUpActivity :
     BaseActivity<ActivityLoginAndSignupBinding, LoginAndSignUpActivityViewModel>() {
     companion object {
-
         private val LOGIN = LoginFragment()
         private val SIGN_UP = SignUpFragment()
     }

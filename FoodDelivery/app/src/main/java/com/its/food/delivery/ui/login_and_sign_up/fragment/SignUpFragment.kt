@@ -42,28 +42,30 @@ class SignUpFragment :
 
     private fun observe() {
         val pass1 = binding.edtPassword.text.trim().toString()
-        val pass2 = binding.edtConfimPass.text.trim().toString()
-        if (pass1 == pass2) {
-            viewModel.navigateToCreate.observe(viewLifecycleOwner) { event ->
-                event.getContentIfNotHandled().let {
+        val pass2 = binding.edtConfirmPass.text.trim().toString()
+
+        viewModel.navigateToCreate.observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled().let {
+                if (pass1 == pass2 && pass1.isNotEmpty()) {
                     val fullName = binding.edtFullName.text.trim().toString()
                     val birthDay = binding.edtBirthDay.text.trim().toString()
                     val email = binding.edtEmail.text.trim().toString()
                     val pass = binding.edtPassword.text.trim().toString()
                     listAccount.add(Account(fullName, birthDay, email, pass))
+                } else {
+                    errorDialog = errorDialog(
+                        requireActivity(),
+                        "Create Account fail",
+                        getString(R.string.error_title_error),
+                        R.color.primaryColor,
+                        positiveClick = {
+                            errorDialog?.dismiss()
+                        }
+                    )
+                    errorDialog?.show()
                 }
             }
-        } else {
-            errorDialog = errorDialog(
-                this.context as Activity,
-                "Create Account fail",
-                getString(R.string.error_title_error),
-                R.color.primaryColor,
-                positiveClick = {
-                    errorDialog?.dismiss()
-                }
-            )
-            errorDialog?.show()
+
         }
     }
 }

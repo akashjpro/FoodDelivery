@@ -3,14 +3,11 @@ package com.its.food.delivery.ui.login_and_sign_up.fragment
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.databinding.DataBindingUtil
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.FragmentLoginBinding
 import com.its.food.delivery.ui.BaseFragment2
@@ -21,16 +18,16 @@ import com.its.food.delivery.util.api.Resource
 import com.its.food.delivery.util.errorDialog
 import com.its.food.delivery.util.progressDialog
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import timber.log.Timber
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment2<FragmentLoginBinding, LoginViewModel,LoginAndSignUpActivityViewModel>() {
+class LoginFragment : BaseFragment2<FragmentLoginBinding, LoginViewModel, LoginAndSignUpActivityViewModel>() {
     private var progressDialog: AlertDialog? = null
     private var errorDialog: AlertDialog? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false)
@@ -69,7 +66,6 @@ class LoginFragment : BaseFragment2<FragmentLoginBinding, LoginViewModel,LoginAn
     @SuppressLint("NewApi")
     private fun processLogin(userName: String, password: String) {
 
-        progressDialog = progressDialog(this.context as Activity, getString(R.string.logging_msg))
 
         viewModel.login(userName, password).observe(viewLifecycleOwner) { resource ->
             when (resource) {
@@ -84,7 +80,7 @@ class LoginFragment : BaseFragment2<FragmentLoginBinding, LoginViewModel,LoginAn
                     progressDialog?.dismiss()
 
                     errorDialog = errorDialog(
-                        this.context as Activity,
+                        requireActivity(),
                         resource.code.name,
                         getString(R.string.error_message),
                         R.color.darkColor,
@@ -115,7 +111,7 @@ class LoginFragment : BaseFragment2<FragmentLoginBinding, LoginViewModel,LoginAn
                     } else {
                         // Show error dialog
                         errorDialog = errorDialog(
-                            this.context as Activity,
+                            requireActivity(),
                             resource.data.error ?: "",
                             getString(R.string.error_title_error),
                             R.color.darkColor,
