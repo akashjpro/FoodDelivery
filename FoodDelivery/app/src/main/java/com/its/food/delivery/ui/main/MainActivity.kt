@@ -11,10 +11,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.its.food.delivery.R
 import com.its.food.delivery.databinding.ActivityMainBinding
+import com.its.food.delivery.provider.WorkoutInstance
 import com.its.food.delivery.ui.BaseActivity
 import com.its.food.delivery.ui.cart.CartActivity
 import com.its.food.delivery.ui.login_and_sign_up.LoginAndSignUpActivity
-import com.its.food.delivery.ui.login_and_sign_up.LoginAndSignUpActivityViewModel
 import com.its.food.delivery.ui.main.account.AccountFragment
 import com.its.food.delivery.ui.main.favorite.FavoriteFragment
 import com.its.food.delivery.ui.main.history.HistoryFragment
@@ -23,7 +23,6 @@ import com.its.food.delivery.ui.orders.OrdersActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
@@ -105,16 +104,27 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     private fun navigateBottomEvent() {
+        var title = "Not Item Yet"
         fragmentManager.beginTransaction().apply {
-            add(R.id.container, HISTORY_SCREEN, "History").hide(
-                HISTORY_SCREEN
-            )
-            add(R.id.container, ACCOUNT_SCREEN, "Account").hide(
-                ACCOUNT_SCREEN
-            )
-            add(R.id.container, FAVORITE_SCREEN, "Favorite").hide(
-                FAVORITE_SCREEN
-            )
+
+            add(R.id.container, EmptyFragment(title), "Favorite")
+                .hide(
+                    EmptyFragment(title)
+                )
+            add(R.id.container, HISTORY_SCREEN, "History")
+                .hide(
+                    HISTORY_SCREEN
+                )
+            add(R.id.container, ACCOUNT_SCREEN, "Account")
+                .hide(
+                    ACCOUNT_SCREEN
+                )
+
+            add(R.id.container, FAVORITE_SCREEN, "Favorite")
+                .hide(
+                    FAVORITE_SCREEN
+                )
+
             add(R.id.container, HOME_SCREEN, getString(R.string.title_home))
         }.commit()
 
@@ -127,11 +137,20 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                     true
                 }
                 R.id.navigation_favorite -> {
-                    fragmentManager.beginTransaction().hide(activeFragment)
-                        .show(FAVORITE_SCREEN)
-                        .commit()
-                    activeFragment = FAVORITE_SCREEN
-                    true
+                    title = "Not Favorite Yet"
+                    if (WorkoutInstance.getInstance().getListFavorite().isNotEmpty()) {
+                        fragmentManager.beginTransaction().hide(activeFragment)
+                            .show(FAVORITE_SCREEN)
+                            .commit()
+                        activeFragment = FAVORITE_SCREEN
+                        true
+                    } else {
+                        fragmentManager.beginTransaction().hide(activeFragment)
+                            .show(EmptyFragment(title))
+                            .commit()
+                        activeFragment = EmptyFragment(title)
+                        true
+                    }
                 }
                 R.id.navigation_account -> {
                     fragmentManager.beginTransaction().hide(activeFragment).show(ACCOUNT_SCREEN)
@@ -140,12 +159,20 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                     true
                 }
                 R.id.navigation_history -> {
-                    fragmentManager.beginTransaction().hide(activeFragment).show(HISTORY_SCREEN)
-                        .commit()
-                    activeFragment = HISTORY_SCREEN
-                    true
+                    title = "Not History Yet"
+                    if (WorkoutInstance.getInstance().getListHistory().isEmpty()) {
+                        fragmentManager.beginTransaction().hide(activeFragment)
+                            .show(EmptyFragment(title))
+                            .commit()
+                        activeFragment = EmptyFragment(title)
+                        true
+                    } else {
+                        fragmentManager.beginTransaction().hide(activeFragment).show(HISTORY_SCREEN)
+                            .commit()
+                        activeFragment = HISTORY_SCREEN
+                        true
+                    }
                 }
-
                 else -> false
             }
         }

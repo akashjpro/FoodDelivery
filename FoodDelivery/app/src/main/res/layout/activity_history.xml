@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/img_history" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/tvTitleEmpty"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/history_text_view_margin_50"
@@ -41,7 +41,7 @@
         android:textAppearance="@style/Overlay.history.text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleEmpty" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnStartOrdering"

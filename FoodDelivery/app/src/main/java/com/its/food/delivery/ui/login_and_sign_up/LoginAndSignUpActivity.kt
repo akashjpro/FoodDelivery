@@ -38,8 +38,6 @@ class LoginAndSignUpActivity :
         binding.viewModel = this.viewModel
 
 
-
-
         binding.containerLoginSignUp.adapter = ViewStateAdapter(supportFragmentManager, lifecycle)
 
         TabLayoutMediator(binding.tabLoginSignUp, binding.containerLoginSignUp) { tab, position ->
@@ -50,7 +48,6 @@ class LoginAndSignUpActivity :
                 1 -> {
                     tab.text = "Sign-Up"
                 }
-
             }
         }.attach()
 

@@ -58,16 +58,13 @@ class LoginFragment :
             event.getContentIfNotHandled()?.let {
                 val userName = binding.editTextTextEmailAddress.text.trim().toString()
                 val password = binding.editTextTextPassword.text.trim().toString()
-                if (userName.isEmpty() || userName == "") {
-                    binding.tvValidateEmail.text = "*"
-//                    binding.tvValidatePass.setTextColor(R.color.primaryColor)
-                }
-                if (password.isEmpty() || password == "") {
-                    binding.tvValidatePass.text = "*"
-                } else {
+                if (userName.isNotEmpty() && password.isNotEmpty()) {
                     binding.tvValidateEmail.text = ""
                     binding.tvValidatePass.text = ""
                     processLogin(userName, password)
+                } else {
+                    binding.tvValidateEmail.text = "*"
+                    binding.tvValidatePass.text = "*"
                 }
 
 //                "username" : "user1@gmail.com",
@@ -80,12 +77,12 @@ class LoginFragment :
     @SuppressLint("NewApi")
     private fun processLogin(userName: String, password: String) {
 
+        progressDialog = progressDialog(requireActivity(), getString(R.string.logging_msg))
 
         viewModel.login(userName, password).observe(viewLifecycleOwner) { resource ->
             when (resource) {
                 is Resource.Loading -> {
                     Timber.d("Loading data: ${resource.cachedData?.toString()}")
-
                     progressDialog?.show()
                 }
                 is Resource.Error -> {

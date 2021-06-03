@@ -1,8 +1,8 @@
-package com.its.food.delivery.ui.main.favorite
+package com.its.food.delivery.ui.main
 
 import com.its.food.delivery.ui.BaseViewModel
 import javax.inject.Inject
 
-class FavoriteEmptyViewModel @Inject constructor(): BaseViewModel() {
+class EmptyViewModel @Inject constructor(): BaseViewModel() {
     // TODO: Implement the ViewModel
 }
