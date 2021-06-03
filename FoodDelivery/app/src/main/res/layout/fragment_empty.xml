@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools">-->
+
+<!--    <data>-->
+
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.its.food.delivery.ui.main.favorite.FavoriteEmptyViewModel" />-->
+<!--    </data>-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.main.favorite.FavoriteEmptyFragment">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="@dimen/history_image_view_width"
+                android:layout_height="@dimen/history_image_view_height"
+                android:layout_marginTop="@dimen/history_image_view_margin_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_history" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/history_text_view_margin_50"
+                android:layout_marginTop="@dimen/history_text_view_margin_20"
+                android:layout_marginEnd="@dimen/history_text_view_margin_50"
+                android:gravity="center"
+                android:text="@string/favorite_title"
+                android:textAppearance="@style/Overlay.history.title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/history_text_view_margin_50"
+                android:layout_marginTop="@dimen/history_text_view_margin_20"
+                android:layout_marginEnd="@dimen/history_text_view_margin_50"
+                android:gravity="center"
+                android:text="@string/history_tv_2"
+                android:textAppearance="@style/Overlay.history.text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartOrdering"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/history_button_height"
+                android:layout_marginStart="@dimen/history_button_margin"
+                android:layout_marginTop="225dp"
+                android:layout_marginEnd="@dimen/history_button_margin"
+                android:layout_marginBottom="@dimen/history_button_margin"
+                android:text="@string/history_button"
+                android:textAppearance="@style/Overlay.history.button"
+                app:cornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--</layout>-->
