@@ -1,6 +1,7 @@
 package com.its.food.delivery.repository.remote
 
 import com.its.food.delivery.util.api.APIResponse
+import com.its.food.delivery.vo.Albums
 import com.its.food.delivery.vo.Food
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.Body
@@ -15,4 +16,7 @@ interface RemoteService {
 
     @GET("getFoods")
     fun getFoods(@HeaderMap headers: Map<String, String>): Flow<APIResponse<DataResponse<List<Food>>>>
+
+    @GET("albums/1/photos")
+    fun getAlbums(): Flow<APIResponse<List<Albums>>>
 }

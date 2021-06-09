@@ -95,7 +95,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     private fun init() {
         viewModel.setHeaderApi()
-        processGetFoods()
+        //processGetFoods()
+        processAlbums()
     }
 
     private fun observe() {
@@ -185,6 +186,30 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
                         viewModel.setFoods(foods)
                     }
+                }
+            }
+        }
+    }
+
+    private fun processAlbums() {
+        progressDialog = progressDialog(this, getString(R.string.logging_msg))
+
+        viewModel.getAlbums().observe(this) { resource ->
+
+            when(resource){
+                is Resource.Loading -> {
+                    progressDialog?.show()
+                    Log.d("TAG_MAIN", "Resource.Loading: ")
+                }
+                is Resource.Error -> {
+                    progressDialog?.dismiss()
+                    Log.d("TAG_MAIN", "Resource.Error resource.code: ${resource.code} ")
+                }
+                is Resource.Success -> {
+                    progressDialog?.dismiss()
+
+                    Log.d("TAG_MAIN", "Resource.Success resource.data: ${resource.data.toString()} ")
+
                 }
             }
         }

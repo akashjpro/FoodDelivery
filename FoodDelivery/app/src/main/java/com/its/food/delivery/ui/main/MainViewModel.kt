@@ -86,4 +86,6 @@ class MainViewModel @Inject constructor(private val setting: Setting, private va
     }
 
     fun getFoods() = repo.getFoods().asLiveData()
+
+    fun getAlbums() = repo.getAlbums().asLiveData()
 }

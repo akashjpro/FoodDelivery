@@ -13,6 +13,7 @@ import com.its.food.delivery.util.GET_FOODS
 import com.its.food.delivery.util.api.Resource
 import com.its.food.delivery.util.api.networkBoundResource
 import com.its.food.delivery.util.reflection.vo.toFoodList
+import com.its.food.delivery.vo.Albums
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -40,7 +41,7 @@ class RepoImp @Inject constructor(
     override fun login(
         username: String,
         password: String,
-        force: Boolean
+        force: Boolean,
     ) = networkBoundResource(fetchFromRemote = {
         remoteService.login(
             LoginRequest(
@@ -55,7 +56,7 @@ class RepoImp @Inject constructor(
         }
     })
 
-    override fun getFoods(force: Boolean): Flow<Resource<DataResponse<List<FoodEntity>>>>  =
+    override fun getFoods(force: Boolean): Flow<Resource<DataResponse<List<FoodEntity>>>> =
         networkBoundResource(
             fetchFromLocal = {
                 localService.getFoods()
@@ -80,4 +81,14 @@ class RepoImp @Inject constructor(
                 fetchLimiter.reset(GET_FOODS)
             }
         ).flowOn(dispatcher).conflate()
+
+    override fun getAlbums(force: Boolean): Flow<Resource<List<Albums>>> =
+        networkBoundResource(fetchFromRemote = {
+            remoteService.getAlbums()
+        }, remoteResponse = {
+            val dataResponse = it ?: ArrayList()
+            flow {
+                emit(dataResponse)
+            }
+        })
 }
